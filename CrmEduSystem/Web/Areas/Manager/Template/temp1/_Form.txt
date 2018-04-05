@@ -1,0 +1,4 @@
+﻿@using Common;
+@using Models;
+@model [ClassName]
+[Field]

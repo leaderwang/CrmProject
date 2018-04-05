@@ -1,0 +1,51 @@
+﻿@using Common;
+@using MvcPager;
+@using Lib;
+@using Models;
+@model PagedList<ArticleKind>
+<table class="table table-striped">
+    <thead>
+        <tr>
+          <th class="checkbox-column">
+                <input type="checkbox" name="checkall" onchange="selectall(this,'ID')" />
+            </th>
+                           <th class="sorting" data-sort="ID">ID</th>
+               <th class="sorting" data-sort="KindName">KindName</th>
+               <th class="sorting" data-sort="Remark">Remark</th>
+
+            <th class="btns-column">
+                操作
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+               <td class="checkbox-column"><input type="checkbox" name="ID" value="@item.ID"/></td>
+                               <td>@item.ID</td>
+               <td>@item.KindName</td>
+               <td>@item.Remark</td>
+
+                <td class="btns-column">
+					@Html.ViewButton("详细", "/admin/ArticleKind/Detail", new { href = "/admin/ArticleKind/Detail?id=" + item.ID })
+					@Html.EditButton("编辑", "/admin/ArticleKind/Edit", new { href = "/admin/ArticleKind/Edit?id=" + item.ID })
+					@Html.DeleteButton("删除", "/admin/ArticleKind/Delete", new { href = "javascript:void(0);", onclick = "Delete('/admin/ArticleKind/Delete/" + item.ID + "',this,'one');" })
+				</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="dt_footer fixed">
+    <div class="row-fluid">
+        <div class="span4">
+            <div class="dataTables_info" id="DataTables_Table_0_info">
+                @Model.CurrentPageIndex/@Model.TotalPageCount 页, 共@(Model.TotalItemCount)条记录
+            </div>
+        </div>
+        <div class="span8">
+            <div class="pagination">@Html.Pager(Model)</div>
+        </div>
+    </div>
+</div>
+@Html.PermissionValideScript()

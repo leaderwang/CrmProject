@@ -1,0 +1,73 @@
+﻿@using Common;
+@using Models;
+@model ApplyFund
+<div class="control-group">
+    <label class="control-label">ID</label><div class="controls">
+        <input id="ID" name ="ID" type="text" value ="@Model.ID" required readonly="readonly" />
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label">OpenID</label><div class="controls">
+        <textarea id="OpenID" name="OpenID">@Model.OpenID</textarea>
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label">申请时间</label><div class="controls">
+        <input id="ApplyDate" name ="ApplyDate" type="text" class="date" value ="@Model.ApplyDate.Format()" />
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label">申请人姓名</label><div class="controls">
+        <input id="RealName" name ="RealName" type="text" value ="@Model.RealName" />
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label">申请人Email</label><div class="controls">
+        <input id="Email" name ="Email" type="text" value ="@Model.Email" />
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label">申请人联系方式</label>
+    <div class="controls">
+        <input id="Mobile" name="Mobile" type="text" value="@Model.Mobile"/>
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label">是否发送资料</label><div class="controls">
+        <select id="VerifyStatus" name="VerifyStatus" required>
+            <option value="">请选择...</option>
+            <option value="1" @(Model.VerifyStatus == 1 ? "selected" : "")>已发送</option>
+            <option value="0" @(Model.VerifyStatus == 0 ? "selected" : "")>未发送</option>
+        </select>
+    </div>
+</div>
+
+
+<!--
+<div class="control-group">
+    <label class="control-label">Address</label><div class="controls">
+        <textarea id="Address" name="Address">@Model.Address</textarea>
+    </div>
+</div>
+
+<div class="control-group">
+    <label class="control-label">VerifyMemberID</label><div class="controls">
+        <input id="VerifyMemberID" name ="VerifyMemberID" type="text" value ="@Model.VerifyMemberID" style="width:30px;"/>
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label">VerifyRemark</label><div class="controls">
+        <textarea id="VerifyRemark" name="VerifyRemark">@Model.VerifyRemark</textarea>
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label">VerifyDate</label><div class="controls">
+        <input id="VerifyDate" name ="VerifyDate" type="text" class="date" value ="@Model.VerifyDate.Format()" />
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label">ApplyRemark</label><div class="controls">
+        <textarea id="ApplyRemark" name="ApplyRemark">@Model.ApplyRemark</textarea>
+    </div>
+</div>
+-->

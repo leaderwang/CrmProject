@@ -1,0 +1,6 @@
+﻿@using Common;
+@using Models;
+@model StoreTag
+<div class="control-group"><label class="control-label">ID</label><div class="controls"><input id="ID" name ="ID" type="text" value ="@Model.ID" required readonly="readonly" /></div></div>
+<div class="control-group"><label class="control-label">TagName</label><div class="controls"><textarea id="TagName" name ="TagName" required>@Model.TagName</textarea></div></div>
+<div class="control-group"><label class="control-label">Remark</label><div class="controls"><textarea id="Remark" name ="Remark">@Model.Remark</textarea></div></div>

@@ -1,0 +1,65 @@
+﻿@using Models
+@{
+    Layout = "~/Areas/Mobile/Views/Shared/_LayoutExpert.cshtml";
+}
+
+<nav class="head-box">
+    <div class="navbar-brand " href="#">
+        <strong>
+            <img alt="Brand" src="/areas/Mobile/Content/ico/icon09.png">专家笔谈</strong>
+        <span></span>
+    </div>
+</nav>
+<!-- banner  -->
+<div class="banner">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="/Areas/Mobile/Content/images/b2.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="/Areas/Mobile/Content/images/b1.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="/Areas/Mobile/Content/images/b3.jpg">
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<!-- banner end -->
+<!-- mainbav -->
+<div class="interview-list">
+    @if (((List<Article>)Model).Count == 0)
+    {
+        <p>精彩内容 即将上线！</p>
+    }
+    <ul>
+        @foreach (Article item in Model)
+        {
+            <li>
+                <div class="title blue">专家笔谈</div>
+                <div class="box">
+                    <div class="picture">
+                        <img src="@item.Thumbs">
+                    </div>
+                    <a href="/mobile/expert/detailconversation/@item.ID?openid=@ViewBag.openID">
+                        <div class="present">
+                            <span>@item.Title</span>
+                            <p>作者：@item.Author</p>
+                            @* <p>内容摘要：@item.Summary</p>*@
+                            <p>@item.ReleaseDate.Value.ToLongDateString()</p>
+                        </div>
+                    </a>
+                    <div class="cornerBlue">
+                        <span>专题</span>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+</div>
+
+<!-- mainbav end -->

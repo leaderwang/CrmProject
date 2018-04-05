@@ -1,0 +1,93 @@
+﻿@using Models;
+@using Common;
+@using System.Data;
+@{
+    ViewBag.Title = "Work";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    List<Role> roles = new RoleLogic().GetRoles();
+    List<Dictionary> pages = new DictionaryLogic().GetDictionarys(new Dictionary { DictionaryTypeID = EnumHelper.EnumDictionaryType.页面分类.GetHashCode() });
+    List<StatusBtn> btns_table = new StatusBtnLogic().GetStatusBtns(new StatusBtn { PageType = EnumHelper.EnumPageType.列表页.GetHashCode() });
+    List<StatusBtn> btns_form = new StatusBtnLogic().GetStatusBtns(new StatusBtn { PageType = EnumHelper.EnumPageType.表单页.GetHashCode() });
+    List<StatusBtn> btns_detail = new StatusBtnLogic().GetStatusBtns(new StatusBtn { PageType = EnumHelper.EnumPageType.明细页.GetHashCode() });
+    DataTable dt = new DbUtility.DBContext().ExecuteDataTableSql("select ltrim(MeettingStatus)+'|'+ltrim(RoleID)+'|'+ltrim(PageType)+'|'+ltrim(StatusBtnID) ids from RoleRelation");
+    string values = Character.DataTableToString(dt, "ids", ",");
+}
+<div class="row-fluid">
+    <div class="span12 widget">
+        <div class="widget-header">
+            <span class="title"><i class="icos-key-2"></i>权限设置</span>
+            <a class="btn btn-warning colorbox" href="/admin/StatusBtn/Index">管理现有权限</a>
+        </div>
+        <div class="widget-content form-container">
+            <form action="" method="post" id="myform" class="form-horizontal validator">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-success" style="text-align: right">角色</th>
+                            @foreach (Role item in roles)
+                            {
+                                <td colspan="3" class="text-success">@item.RoleName</td>
+                            }
+                        </tr>
+                        <tr>
+                            <th class="text-error" style="text-align: right">会议状态</th>
+                            @for (int i = 0; i < roles.Count; i++)
+                            {
+                                for (int j = 0; j < pages.Count; j++)
+                                { 
+                                <th>@pages[j].Name</th>
+                                }
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Dictionary item in new DictionaryLogic().GetDictionarys(new Dictionary { DictionaryTypeID = Common.EnumHelper.EnumDictionaryType.会议详细状态.GetHashCode() }))
+                        {
+                            <tr>
+                                <td class="text-error" style="text-align: right">@item.Name</td>
+                                @for (int i = 0; i < roles.Count; i++)
+                                {
+                                    for (int j = 0; j < pages.Count; j++)
+                                    { 
+                                    <th>
+                                        @if (j == 0)
+                                        {
+                                            foreach (StatusBtn item2 in btns_table)
+                                            {
+                                            <label>
+                                                <input type="checkbox" name="roles" value="@item.ID|@roles[i].ID|@pages[j].ID|@item2.ID" />@item2.BtnName</label>
+                                            }
+                                        }
+                                        else if (j == 1)
+                                        {
+                                            foreach (StatusBtn item2 in btns_form)
+                                            {
+                                            <label>
+                                                <input type="checkbox" name="roles" value="@item.ID|@roles[i].ID|@pages[j].ID|@item2.ID" />@item2.BtnName</label>
+                                            }
+                                        }
+                                        else if (j == 2)
+                                        {
+                                            foreach (StatusBtn item2 in btns_detail)
+                                            {
+                                            <label>
+                                                <input type="checkbox" name="roles" value="@item.ID|@roles[i].ID|@pages[j].ID|@item2.ID" />@item2.BtnName</label>
+                                            }
+                                        }
+                                    </th>
+                                    }
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="form-actions">
+                    <input type="submit" class="btn btn-primary" value="保 存" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    $("[name='roles']:first").attr("val", "@values");
+</script>

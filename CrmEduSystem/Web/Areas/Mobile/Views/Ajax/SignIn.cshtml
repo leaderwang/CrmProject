@@ -1,0 +1,598 @@
+﻿@using System.Data
+@using Models
+@{
+    Layout = "~/Areas/Mobile/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Areas/Mobile/Content/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet" />
+<script src="~/Areas/Mobile/Content/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+
+
+<!-- main -->
+<div class="main">
+    <!-- banner -->
+    <div class="banner">
+        <img src="/Areas/Mobile/Content/images/01.png" />
+    </div>
+    <!-- banner end -->
+    <!-- login -->
+    <form action="/" method="post" id="formsignin">
+        <input type="hidden" name="openid" value="@ViewBag.openID" />
+        <div class="login">
+            <ul>
+                <li class="first">
+                    <select name="province" id="province">
+                        <option value="">请选择省份</option>
+                        @foreach (THospital item in ViewBag.Area)
+                        {
+                            <option value="@item.provinceName">@item.provinceName</option>
+                        }
+                    </select>
+                </li>
+                <li class="first">
+                    <span id="div-city">
+                        <select name="city" id="city">
+                            <option value="">请选择城市</option>
+                        </select>
+                    </span>
+                </li>
+                <li class="first">
+                    <span id="div-country" style="display: none">
+                        <select name="country" id="country">
+                            <option value="">请选择地区</option>
+                        </select>
+                    </span>
+                </li>
+                <li class="first">
+                    <span id="div-hospital">
+                        <select name="hospital" id="hospital">
+                            <option value="">请选择医院</option>
+                        </select>
+                    </span>
+                </li>
+
+                <li id="li-unit">
+                    <input type="text" id="otherunit" name="otherunit" autocomplete="off" placeholder="请填写您的医院名称">
+                </li>
+
+
+
+                <li class="first">
+                    <select name="department" id="department">
+                        <option value="">请选择科室</option>
+                        <option value="儿科">儿科</option>
+                        <option value="儿保科">儿保科</option>
+                        <option value="新生儿科">新生儿科</option>
+                        <option value="产科">产科</option>
+                        <option value="营养科">营养科</option>
+                        <option value="9999">其他</option>
+                    </select>
+                </li>
+
+                <li id="li-department">
+                    <input type="text" id="otherdepart" name="otherdepart" autocomplete="off" placeholder="请填写您的科室名称">
+                    <span class="p-tips">请搜索您单位的关键字</span>
+                </li>
+
+                <li>
+                    <input type="text" placeholder="您的姓名" name="realname" id="realname" />
+                </li>
+                <li>
+                    <input type="text" placeholder="请输入您的手机号码" name="mobile" id="mobile" />
+                </li>
+                <li class="verification-code">
+                    <input type="text" placeholder="请输入验证码" id="pincode" name="pincode" />
+                    <a href="javascript:void(0)" id="btn-send">获取验证码</a>
+                </li>
+            </ul>
+            <div class="login-button">
+                <a href="javascript:void(0)" id="btn-signup">提 交</a>
+            </div>
+        </div>
+    </form>
+    <!-- login end -->
+</div>
+<!-- main end -->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                <h4 class="modal-title" id="myModalLabel">提示</h4>
+            </div>
+            <div class="modal-body" style="height: 290px; overflow-y: scroll">
+
+                <h5 class="text-center">NutriciaELN微信服务</h5>
+                <h5 class="text-center">《用户注册及使用条款》</h5>
+
+                <p>本《用户注册及使用条款》详述您（下称“用户”）在注册、登陆、使用由纽迪希亚生命早期营养品管理（上海）有限公司（下称“纽迪希亚”）提供的NutriciaELN微信服务（下称“NutriciaELN”）所需遵守的条款和条件。</p>
+                <p>请您在注册成为NutriciaELN用户前请仔细阅读本《用户注册及使用条款》, 一旦您注册成为NutriciaELN的注册用户即表示您已经阅读、同意并接受本《用户注册及使用条款》包含的所有条款和条件。如对本《用户注册及使用条款》有任何问题、意见或疑虑，请发电子邮件至 hcp.service@danone.com 。</p>
+                <p>本《用户注册及使用条款》可由纽迪希亚随时更新，如果我们对本条款进行了任何变更，我们会在NutriciaELN平台上发布相关变更事项的通知，更新后的条款一旦公布立即生效，用户也可在NutriciaELN微信平台查阅最新版本。在纽迪希亚修改本《用户注册及使用条款》后，如您有任何疑问，请先联系客服，如果用户不接受修改后的条款，请立即停止使用纽迪希亚提供的服务，必要时您可申请注销您的注册用户名，用户继续使用纽迪希亚提供的服务将被视为已接受了修改后的版本。</p>
+
+                <strong>一、用户注册</strong>
+                <p>1. 注册用户资格</p>
+                <ol>
+                    <li>
+                        <ul class="list-unstyled">
+                            <li>A. 注册用户必须是中国法律下具有民事行为能力的自然人。本微信平台目前仅向早期营养相关领域的医务工作者或其他相关专业人士开放注册。</li>
+                            <li>B. 纽迪希亚保留根据其意愿中止或终止您的账户的权利。被临时/无限期中止的注册用户不能以新帐户进行注册。</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>2. 资料填写</p>
+                <ol>
+                    <li>注册用户必须提供真实、有效的个人资料。如个人资料有变动，请及时更改。注册用户同意上述个人资料可用于接收您在注册时所选择的自NutriciaELN平台或者平台合作伙伴发出的邮件、短信、信件。注册用户提交的个人资料、帐号及密码根据本《用户注册及使用条款》下所描述的隐私政策受到保护。
+                    </li>
+                </ol>
+                <strong>二、信息发布规则</strong>
+                <p>1. 用户充分了解并同意，用户必须为自己注册帐号下的一切行为负责。用户应保证并承诺将不会利用本平台进行任何违法或不正当的活动，包括但不限于下列行为：</p>
+                <ol>
+                    <li>
+                        <ul class="list-unstyled">
+                            <li>A. 在本网站上载、张贴、复制、发布、传播或以其他方式传送含有下列任何内容的信息：违反法律、行政法规、规章、条例以及任何具有法律效力之规范所限制或禁止的内容的；</li>
+                            <li>B. 以任何方式危害未成年人的利益；</li>
+                            <li>C. 冒充任何人或机构，包含但不限于纽迪希亚或纽迪希亚合作方的员工，或以虚伪不实的方式陈述或谎称与任何人或机构有关；</li>
+                            <li>D. 伪造标题或以其它方式操控识别资料，以伪造经由本服务传送任何内容之来源；</li>
+                            <li>E. 将依据任何法律或合约或法定关系（例如由于雇佣关系和依据保密合约所得知或揭露之内部资料、专属及机密资料）知悉但无权传送之任何内容加以上载、张贴、发送电子邮件或以其它方式传送；</li>
+                            <li>F. 将侵害他人著作权、专利权、商标权、商业秘密、或其它专属权利（以下简称“专属权利”）之内容加以上载、张贴、发送电子邮件或以其它方式传送；</li>
+                            <li>G. 将任何广告信函、促销资料、“垃圾邮件”、“滥发信件"、“连锁信件”、“直销”或其它任何形式的劝诱资料加以上载、张贴、发送电子邮件或以其它方式传送；</li>
+                            <li>H. 将设计目的在于干扰、破坏或限制任何计算机软件、硬件或通讯设备功能之计算机病毒（包括但不限于木马程序(Trojan horses)、蠕虫(worms)、定时炸弹、删除蝇(cancelbots)（以下简称“病毒”））或其它计算机代码、档案和程序之任何资料，加以上载、张贴、发送电子邮件或以其它方式传送；</li>
+                            <li>I. 破坏正常的对话流程、造成荧屏快速移动，或使本服务其它用户无法输入，或对其它用户参加即时交流的能力产生负面影响；</li>
+                            <li>J. 干扰或破坏本服务或与本服务相连线之服务器和网络，或违反任何关于本服务连线网络之规定、程序、政策或规范；</li>
+                            <li>K. 跟踪或以其它方式骚扰他人；</li>
+                            <li>L. 未经合法授权而截获、篡改、收集、储存或删除他人个人信息、电子邮件或其它数据资料，或将获知的此类资料用于任何非法或不正当目的。</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>2. 纽迪希亚可依其合理判断，对违反有关法律法规或本协议约定、或侵犯、妨害、威胁任何人权利或安全的内容，或者假冒他人的行为，依法停止传输任何前述内容，并有权依其自行判断对违反本条款的任何用户采取适当的法律行动，包括但不限于，从“NutriciaELN”服务中删除具有违法性、侵权性、不当性等内容，终止违反者的成员资格，阻止其使用“NutriciaELN”全部或部分服务，并且依据法律法规保存有关信息并向有关部门报告等。</p>
+                <p>3. 对于因用户违反本条款或前述的保证及承诺而导致的任何第三方的主张，您在此同意防止并保证纽迪希亚及纽迪希亚关联公司、合作方的管理人员、主管、所有者、代理人、职员、信息提供者、关联企业、许可人及被许可人（统称为"受赔偿方"）不承担任何责任或费用（包括但不限于律师费及其他费用等）；如果前述受赔偿方已先予承担责任，则就受赔偿方已承担的责任及受赔偿方遭受的其他损失，您将对受赔偿方承担全部赔偿责任。作为本网站的使用者、访问者，为了您和我们的共同权益，您应尽合理的最大努力与我们一起防止该损害发生。</p>
+                <p>4. 用户应对通过“NutriciaELN”自其他用户所获得的信息自行加以判断，并承担因使用该内容而引起的所有风险，包括因对内容的真实性、正确性、完整性或实用性的依赖而产生的风险。纽迪希亚无法且不会对因用户行为而导致的任何损失或损害承担任何法律责任。</p>
+
+
+                <strong>三、知识产权声明</strong>
+                <p>1. NutriciaELN的所有信息（包括但不限于文字、图表、商标、标识或名称、按钮图标、图像、照片、音频、视频影音资料、页面设计、编排、数据及软件等，但注册用户在论坛以及任何其他应用下粘贴、转载、上传、发表或以任何其他方式提供的信息、内容除外）之知识产权，均由我们及/或相关权利方单独或共同所有或被授权使用，并受著作权法和商标法等知识产权法律法规、中国签订的国际条约和其它相关法律、法规的保护。未经纽迪希亚及/或相关权利方事先书面同意或授权，请勿以任何方式自行、与他人共同或授权/协助他人使用、转载、修改、复制、编纂、发行、出售、发表或以其它任何方式使用通过NutriciaELN所获得之内容或创造与信息内容有关的衍生产品。</p>
+                <p>2. 以上版权声明并不包含由NutriciaELN服务平台链接到的属于其他方网站之内容。纽迪希亚不对该等其他方网站的内容负责，任何对其他方网站的链接仅为本网站用户的方便而设。</p>
+                <p>3. 除非用户提供信息内容时即对该等作品附有版权声明明确表示不得作其他使用，纽迪希亚有权将通过本服务平台征集、收集或刊载的作品（包括但不限于您通过向本微信平台登载或发布消息、上载文件、插入数据等及/或就此与本网站沟通交流所提供的信息、注册用户在任何一个讨论区中提供的内容等）用于其它用途，且使用媒体包括但不限于网站（含关联网站）及其延伸的增值产品、有线/无线网络以及相关应用等新媒体及/或传统媒体。</p>
+
+                <strong>四、用户权利及义务</strong>
+                <p>1. “NutriciaELN”帐号的所有权归纽迪希亚所有，用户完成申请注册手续后，获得“NutriciaELN”帐号的使用权，请妥善保管您的用户账号，该使用权仅属于初始申请注册人，禁止赠与、借用、租用、转让或售卖。纽迪希亚因经营需要，有权回收用户的“NutriciaELN”帐号。</p>
+                <p>2. 用户有权更改、删除在“NutriciaELN”上的个人资料及注册信息等，但需注意，删除有关信息的同时也会删除任何您储存在系统中的文字和图片。用户需承担该风险。</p>
+                <p>3. 用户有责任妥善保管注册帐号信息及帐号密码的安全，用户需要对注册帐号以及密码下的行为承担法律责任。用户同意在任何情况下不使用其他成员的帐号或密码。在您怀疑他人在使用您的帐号或密码时，请您同意立即通知纽迪希亚。</p>
+                <p>4. 用户应遵守本协议的各项条款，正确、适当地使用本服务，如因用户违反本协议中的任何条款，纽迪希亚有权依据协议终止对违约用户“NutriciaELN”帐号提供服务。同时，纽迪希亚保留在任何时候收回“NutriciaELN”帐号、用户名的权利。</p>
+                <p>5. 用户注册“NutriciaELN”帐号后如果长期不登录该帐号，纽迪希亚有权回收该帐号，以免造成资源浪费，由此带来问题均由用户自行承担。</p>
+
+                <strong>五、隐私政策及数据安全</strong>
+                <p>1. 个人隐私信息：纽迪希亚提供服务时，可能会收集、储存和使用下列与您有关的信息。如果您不提供相关信息，可能无法注册成为“NutriciaELN”的用户或无法享受某些服务，或者无法达到相关服务拟达到的效果。 </p>
+                <ol>
+                    <li>
+                        <ul class="list-unstyled">
+                            <li>A.	注册账户或使用“NutriciaELN”服务时，向纽迪希亚提供的相关个人信息，包括但不限于姓名、电话号码、城市、医院、科室、职务等；及</li>
+                            <li>B. 参与“NutriciaELN”不定期用户调查时纽迪希亚收集的信息。</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <p>2. 尊重和保护用户个人隐私信息的私有性是纽迪希亚的一贯制度，纽迪希亚将会采取合理的措施保护用户的个人隐私信息，除法律或有法律赋予权限的政府部门要求或用户同意等原因外，纽迪希亚未经用户同意不向除合作单位以外的第三方公开、 透露用户个人隐私信息。 但是，经用户同意或用户与纽迪希亚及合作单位之间就用户个人隐私信息公开或使用另有约定的除外，同时用户应自行承担因此可能产生的任何风险，纽迪希亚对此不予负责。 </p>
+                <p>3. 非个人隐私信息：为了运营和改善纽迪希亚的技术和服务，纽迪希亚将可能会自行收集使用或向第三方提供用户的非个人隐私信息，这将有助于纽迪希亚向用户提供更好的用户体验和提高纽迪希亚的服务质量。该信息包括：</p>
+
+                <ol>
+                    <li>
+                        <ul class="list-unstyled">
+                            <li>A. 日志信息，指用户使用纽迪希亚的服务时，系统可能通过cookies、web beacon或其他方式自动采集的技术信息。</li>
+                            <li>B. 位置信息，指用户开启设备定位功能并使用纽迪希亚基于位置提供的相关服务时，收集的有关用户位置的信息。</li>
+                        </ul>
+                    </li>
+                </ol>
+
+
+                <p>4. 公开信息：如果用户在NutriciaELN的公开区域或向任何其他用户发布个人或其他敏感信息，用户应当谨慎考虑是否发布该信息。如果用户选择发布的任何个人信息被公开或使用，纽迪希亚概不负责。</p>
+                <p>5. 您了解并同意，纽迪希亚可依据法律法规的要求，或基于诚信为了以下目的或在合理必要范围内，认为必须将有关信息予以保存或披露时，可以保存或披露： </p>
+
+
+                <ol>
+                    <li>
+                        <ul class="list-unstyled">
+                            <li>A. 遵守法律程序；</li>
+                            <li>B. 执行本条款；</li>
+                            <li>C. 回应任何第三人提出的权利主张；</li>
+                            <li>D. 保护NutriciaELN微信服务平台、其用户及公众之权利、财产或个人安全；</li>
+                            <li>E. 其它本网站认为有必要的情况。</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <p>6. 您了解并同意经由本服务之技术处理及传送，您提供的任何内容，可能 </p>
+                <ol>
+                    <li>
+                        <ul class="list-unstyled">
+                            <li>A. 经由各个网路加以传送，且 </li>
+                            <li>B. 为了符合及配合连线网路或装置之技术要求而进行改变。</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>7. 链接：纽迪希亚的服务可能包括或链接至第三方提供的社交媒体或其他服务（包括网站）。本隐私政策仅适用于纽迪希亚所收集的信息，并不适用于任何第三方提供的服务或第三方的信息使用规则，纽迪希亚对任何第三方使用由用户提供的信息不承担任何责任。</p>
+                <p>8. 数据安全：纽迪希亚致力于保护用户的信息安全，并为此采取合理的预防措施。一旦纽迪希亚收到用户的数据，纽迪希亚将尽力确保其在服务器上的安全。同时，纽迪希亚建议用户采取适当的措施，以保证使用纽迪希亚服务的设备安全性。但是，互联网数据传输无法确保绝对的安全，因此，纽迪希亚无法保证在用户信息传输过程中的安全，从而不承担信息传输过程中的风险。</p>
+                <p>9. 退出使用：用户可以随时选择停止使用纽迪希亚提供的“NutriciaELN”服务或注销账户。但是由于电脑系统的运行和持续数据备份及存档特性，该等信息的残余副本可能继续存在。</p>
+                <strong>六、服务终止</strong>
+                <p>纽迪希亚保留因业务发展需要，单方面对本服务的全部或部分服务内容在任何时候不经任何通知的情况下变更、暂停、限制、终止或撤销“NutriciaELN”服务的权利，用户需承担此风险。</p>
+                <strong>七、 法律管辖</strong>
+                <p>本《用户注册及使用条款》受中华人民共和国法律管辖并按其进行解释。</p>
+            </div>
+            <div class="modal-footer" style="text-align: center">
+                <button type="button" class="btn btn-info" data-dismiss="modal" id="ok">同意</button>
+                <button type="button" class="btn btn-default" id="closeWindow">拒绝</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var readyFunc = function onBridgeReady() {
+        // 关闭当前webview窗口 - closeWindow
+        document.querySelector('#closeWindow').addEventListener('click', function (e) {
+            WeixinJSBridge.invoke('closeWindow', {
+            }, function (res) {
+
+                //alert(res.err_msg);
+
+            });
+        });
+    }
+    if (typeof WeixinJSBridge === "undefined") {
+        document.addEventListener('WeixinJSBridgeReady', readyFunc, false);
+    } else {
+        readyFunc();
+    }
+    function onBridgeReady() {
+        WeixinJSBridge.call('hideOptionMenu');
+    }
+    if (typeof WeixinJSBridge == "undefined") {
+        if (document.addEventListener) {
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        } else if (document.attachEvent) {
+            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }
+    } else {
+        onBridgeReady();
+    }
+
+    $(function () {
+
+        $('#myModal').modal({
+            keyboard: false,
+            backdrop: 'static'
+        });
+
+        //滚动到底部
+        //$(".modal-body").scroll(function () {
+        //    var viewH = $(this).height(); //可见高度  
+        //    var contentH = $(this).get(0).scrollHeight; //内容高度  
+        //    var scrollTop = $(this).scrollTop(); //滚动高度  
+        //    //console.log(parseInt(contentH - viewH - scrollTop));
+        //    if (parseInt(contentH - viewH - scrollTop) <= 30) {
+        //        $("#ok").removeAttr("disabled");
+        //        $("#ok").removeClass("btn-default");
+        //        $("#ok").addClass("btn-info");
+        //    } else {
+        //    }
+        //});
+
+        //返回
+        //   $("#btn-back")
+        /*客户名称自动匹配*/
+        function customerAutoComplete() {
+            $.ajax({
+                type: "GET",
+                url: encodeURI("/approvalajax/salesOrderApproval_findCustomerList"),
+                dataType: "json",
+                success: function (data, textStatus) {
+                    if (data != null && data.customerList != null) {
+                        $("#customerFullName").autocomplete(data.customerList, {
+                            /**加自定义表头**/
+                            tableHead: "<div><span style='width:40%' class='col-1'>客户编码</span> <span style='width:58%' class='col-2'>客户名称</span></div>",
+                            minChars: 0,
+                            width: 310,
+                            matchContains: "true",
+                            autoFill: false,
+                            extraParams: { ledger: $("#ledger").val() },
+                            formatItem: function (row, i, max) {
+                                return "<span style='width:40%' class='col-1'>" + row.cusCode + "</span> " + "<span style='width:58%' class='col-2'>" + row.cusName + "</span>";
+                            },
+                            formatMatch: function (row, i, max) {
+                                return row.cusCode + row.cusName;
+                            },
+                            formatResult: function (row) {
+                                return row.cusName;
+                            }
+                        }).result(function (e, data, value, sec) {/**加选中后的回调函数**/
+                            clearCustomerInfo();
+                            $("#customerShortName").val(data.cusAbbName);
+                            $("#customerFullName").val(data.cusName);
+                            $("#customerCode").val(data.cusCode);
+                            /*根据选择的客户、账套加载 对应产品线、收付款协议、账期*/
+                            setPLAndPCAndCP(data.cusCode);
+                            /*加载存货编码*/
+                            setInventoryAutoComplete(data.cusCode);
+                        }).bind("unmatch", function () {
+                            clearCustomerInfo();
+                        });
+                    }
+                }
+            });
+        }
+
+
+
+        //自动提示------------------------------------------------------------------------------------------
+        $("#otherunit").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: "/mobile/ajax/GetHospitalKey",
+                    dataType: "json",
+                    data: {
+                        province: $("#province").val(),
+                        cityname: $("#city").val(),
+                        country: $("#country").val(),
+                        key: $("#otherunit").val()
+                    },
+                    success: function (data) {
+                        response($.map(data, function (item) {
+                            return {
+                                label: item.hpName,
+                                value: item.hpName
+                            }
+                        }));
+                    }
+                });
+            },
+            select: function (event, ui) {
+                $(this).value = ui.item.label;
+                $("#otherunit").val(ui.item.value);
+                if ($("#hospital option").length <= 1) {
+                    $("#hospital option").val(ui.item.value);
+                    $("#hospital option").text(ui.item.value);
+                    //$.post("/mobile/ajax/GetHospitalByHpName", { hpname: ui.item.value }, function (date) {
+                    //    if (date != null) {
+
+                    //        $("#province option").each(function () {
+                    //            var txt = $(this).text();
+                    //            if (txt == date.provinceName) {
+                    //                $(this).attr("selected", true)
+                    //                return false;
+                    //            }
+                    //        });
+
+                    //        if ($("#city option").length <= 1) {
+                    //            $("#city option").val(date.cityName);
+                    //            $("#city option").text(date.cityName);
+                    //        } else {
+                    //            $("#city option").each(function () {
+                    //                var txt = $(this).text();
+                    //                if (txt == date.cityName) {
+                    //                    $(this).attr("selected", true)
+                    //                    return false;
+                    //                }
+                    //            });
+                    //        }
+
+                    //        if ($("#country option").length <= 1) {
+                    //            $("#country option").val(date.countiesNname);
+                    //            $("#country option").text(date.countiesNname);
+                    //        } else {
+                    //            $("#country option").each(function () {
+                    //                var txt = $(this).text();
+                    //                if (txt == date.countiesNname) {
+                    //                    $(this).attr("selected", true)
+                    //                    return false;
+                    //                }
+                    //            });
+                    //        }
+                    //    }
+                    //});
+                } else {
+                    $("#hospital option").each(function () {
+                        var txt = $(this).text();
+                        if (txt == ui.item.value) {
+                            $(this).attr("selected", true)
+                            return false;
+                        }
+                    });
+                }
+                event.preventDefault();
+            }
+        })
+
+        //自动提示------------------------------------------------------------------------------------------
+
+
+        //显示城市
+        $("#province").bind("change", function () {
+            $('#city').empty().append('<option value="">请选择城市</option>');
+            $.post("/mobile/ajax/GetCity", { province: $("#province").val() }, function (date) {
+                if ($.isArray(date)) {
+                    //-----遍历城市
+                    $.each(date, function (i, c) {
+                        $('#city').append('<option value="' + c.cityName + '">' + c.cityName + '</option>');
+                    });
+                    //-----遍历城市
+                }
+                $('#city').trigger('change');
+            });
+        });
+
+
+
+        //显示地区
+        $("#city").bind("change", function () {
+            //-----是否展示地区
+            $.post("/mobile/ajax/GetIsCountry", { province: $("#province").val(), city: $("#city").val() }, function (date) {
+                if (date.Status) {
+
+                    $("#div-country").show();//如果有地区
+                    //layer.msg("有地区");
+                    $('#country').empty().append('<option value="">请选择地区</option>');
+                    $.post("/mobile/ajax/GetCountry", { province: $("#province").val(), city: $("#city").val() }, function (date) {
+                        if ($.isArray(date)) {
+                            //-----遍历地区
+                            $.each(date, function (i, c) {
+                                $('#country').append('<option value="' + c.countiesNname + '">' + c.countiesNname + '</option>');
+                            });
+                            //-----遍历地区
+                        }
+                        $('#country').trigger('change');
+                        $('#hospital').trigger('change');
+                    });
+
+                } else {
+                    $("#div-country").hide();//没有地区
+                    //layer.msg("无地区");
+                    //显示医院
+                    // return;
+                    $('#hospital').empty().append('<option value="">请选择医院</option>');
+                    $.post("/mobile/ajax/GetHospital", { province: $("#province").val(), city: $("#city").val() }, function (date) {
+                        if ($.isArray(date)) {
+                            //-----遍历医院
+                            $.each(date, function (i, c) {
+                                $('#hospital').append('<option value="' + c.hpName + '">' + c.hpName + '</option>');
+                            });
+                            //-----遍历医院
+                            $('#hospital').append('<option value="9999">其他</option>');
+                        }
+                        $('#hospital').trigger('change');
+                    });
+                }
+            });
+        });
+        //-----是否展示地区
+
+        //显示医院
+        $("#country").bind("change", function () {
+            $('#hospital').empty().append('<option value="">请选择医院</option>');
+            $.post("/mobile/ajax/GetHospitalForCountry", { province: $("#province").val(), city: $("#city").val(), country: $("#country").val() }, function (date) {
+                if ($.isArray(date)) {
+                    //-----遍历医院
+                    $.each(date, function (i, c) {
+                        $('#hospital').append('<option value="' + c.hpName + '">' + c.hpName + '</option>');
+                    });
+                    //-----遍历医院
+                    $('#hospital').append('<option value="9999">其他</option>');
+                }
+                $('#hospital').trigger('change');
+            });
+        });
+
+
+
+        //$("#hospital").on("change", function () {
+        //    if ($("#hospital").val() == "9999") {
+        //        $("#li-unit").show();
+        //    } else {
+        //        $("#li-unit").hide();
+        //    }
+        //});
+        $("#hospital").on("change", function () {
+            if ($("#hospital").val() == "9999") {
+                $("#li-unit").show();
+            } else {
+                $("#li-unit").hide();
+            }
+        })
+
+        $("#department").on("change", function () {
+            if ($("#department").val() == "9999") {
+                $("#li-department").show();
+            } else {
+                $("#li-department").hide();
+            }
+        });
+
+
+
+
+
+        //发送验证码
+        var isSend = 0;
+        $("#btn-send").click(function () {
+            //(isSend);
+            var mobile = $("#mobile").val();
+            if (mobile.length != 11) {
+                $("#mobile").focus();
+                layer.msg("请填写正确的联系电话");
+                return false;
+            }
+            if (isSend == 0) {
+                $.post("/mobile/ajax/SendCode", { mobile: $("#mobile").val() }, function (data) {
+                    if (data == "1") {
+                        layer.msg('验证码已发送到您的手机');
+                    } else {
+                        layer.msg('网络异常！');
+                    }
+                });
+                isSend = 1;
+                $("#btn-send").css("background", "#ccc");
+                fresh();
+            } else {
+                layer.msg('请稍后重发');
+            }
+        });
+
+
+
+        //提交
+        $('#btn-signup').bind('click', function () {
+            var mobile = $("#mobile").val();
+            if (mobile.length != 11) {
+                $("#mobile").focus();
+                layer.msg("请填写正确的手机号码");
+                return false;
+            }
+            if ($('#pincode').val().length == 0) {
+                $('#pincode').addClass('require').focus();
+                layer.msg('请输入验证码');
+                return false;
+            }
+
+            $.post("/mobile/ajax/SignUp", $("#formsignin").serialize(), function (data) {
+                if (data.Status) {
+                    layer.msg('您的信息已提交。', {
+                        icon: 1,
+                        time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                    }, function () {
+                        //$("#btn-reset").click();
+                        location.href = '/mobile/ajax/welcome?openid=@ViewBag.openID';
+                    });
+                } else {
+                    layer.alert(data.Error);
+                }
+            });
+        });
+    });
+
+    var i = 0;
+    var sheng;
+    var AnswerTime = 0;;
+    var sheng_time = 10 * 6; // todo:10 * 60 10 分钟
+    var sh;
+
+    function fresh() {
+        sheng_time--;
+        AnswerTime++;
+        sheng = parseInt(sheng_time / 3600) + ":" + parseInt((sheng_time % 3600) / 60) + ":" + (sheng_time % 3600) % 60;
+        $("#btn-send").val(sheng_time + '秒以后重发');
+        sh = setTimeout("fresh()", 1000);
+        if (sheng_time == 0) {
+            isSend = 0;
+            $("#btn-send").val('获取验证码');
+            $("#btn-send").css("background", "");
+            $("#btn-send").css("background", "#ccc");
+            clearTimeout(sh);
+            sheng_time = 10 * 6;
+        }
+    }
+</script>

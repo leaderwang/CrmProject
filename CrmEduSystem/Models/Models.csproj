@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A7430F49-AB43-438E-8A37-1093A7AD4BC7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Models</RootNamespace>
+    <AssemblyName>Models</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\Article.cs" />
+    <Compile Include="Entity\AutoGenerator\Area.cs" />
+    <Compile Include="Entity\AutoGenerator\Article.cs" />
+    <Compile Include="Entity\AutoGenerator\ArticleKind.cs" />
+    <Compile Include="Entity\AutoGenerator\Attachment.cs" />
+    <Compile Include="Entity\AutoGenerator\CustomPage.cs" />
+    <Compile Include="Entity\AutoGenerator\Dictionary.cs" />
+    <Compile Include="Entity\AutoGenerator\DictionaryType.cs" />
+    <Compile Include="Entity\AutoGenerator\MailSetting.cs" />
+    <Compile Include="Entity\AutoGenerator\Member.cs" />
+    <Compile Include="Entity\AutoGenerator\Menu.cs" />
+    <Compile Include="Entity\AutoGenerator\PermissionData.cs" />
+    <Compile Include="Entity\AutoGenerator\PermissionMap.cs" />
+    <Compile Include="Entity\AutoGenerator\Role.cs" />
+    <Compile Include="Entity\AutoGenerator\Site.cs" />
+    <Compile Include="Entity\AutoGenerator\ApplyFund.cs" />
+    <Compile Include="Entity\AutoGenerator\ApplyStuff.cs" />
+    <Compile Include="Entity\AutoGenerator\Location.cs" />
+    <Compile Include="Entity\AutoGenerator\ArticleReadLog.cs" />
+    <Compile Include="Entity\AutoGenerator\AccessLog.cs" />
+    <Compile Include="Entity\AutoGenerator\Slider.cs" />
+    <Compile Include="Entity\AutoGenerator\Store.cs" />
+    <Compile Include="Entity\AutoGenerator\StoreTag.cs" />
+    <Compile Include="Entity\AutoGenerator\StoreTag_Record.cs" />
+    <Compile Include="Entity\AutoGenerator\SysLog.cs" />
+    <Compile Include="Entity\AutoGenerator\UserLike.cs" />
+    <Compile Include="Entity\AutoGenerator\QExam.cs" />
+    <Compile Include="Entity\AutoGenerator\QExamRecord.cs" />
+    <Compile Include="Entity\AutoGenerator\QTask.cs" />
+    <Compile Include="Entity\AutoGenerator\Question.cs" />
+    <Compile Include="Entity\AutoGenerator\QuestionItem.cs" />
+    <Compile Include="Entity\AutoGenerator\QuestionRecord.cs" />
+    <Compile Include="Entity\AutoPage.cs" />
+    <Compile Include="Entity\Member.cs" />
+    <Compile Include="Entity\PermissionData.cs" />
+    <Compile Include="Entity\PermissionMap.cs" />
+    <Compile Include="Logic\AreaLogic.cs" />
+    <Compile Include="Logic\ArticleKindLogic.cs" />
+    <Compile Include="Logic\ArticleLogic.cs" />
+    <Compile Include="Logic\CustomPageLogic.cs" />
+    <Compile Include="Logic\DictionaryLogic.cs" />
+    <Compile Include="Logic\DictionaryTypeLogic.cs" />
+    <Compile Include="Logic\MenuLogic.cs" />
+    <Compile Include="Logic\PermissionDataLogic.cs" />
+    <Compile Include="Logic\PermissionMapLogic.cs" />
+    <Compile Include="Logic\SiteLogic.cs" />
+    <Compile Include="Logic\AttachmentLogic.cs" />
+    <Compile Include="Logic\MailSettingLogic.cs" />
+    <Compile Include="Logic\MemberLogic.cs" />
+    <Compile Include="Logic\RoleLogic.cs" />
+    <Compile Include="Logic\ApplyFundLogic.cs" />
+    <Compile Include="Logic\ApplyStuffLogic.cs" />
+    <Compile Include="Logic\LocationLogic.cs" />
+    <Compile Include="Logic\ArticleReadLogLogic.cs" />
+    <Compile Include="Logic\AccessLogLogic.cs" />
+    <Compile Include="Logic\SliderLogic.cs" />
+    <Compile Include="Logic\StoreLogic.cs" />
+    <Compile Include="Logic\StoreTagLogic.cs" />
+    <Compile Include="Logic\StoreTag_RecordLogic.cs" />
+    <Compile Include="Logic\SysLogLogic.cs" />
+    <Compile Include="Logic\UserLikeLogic.cs" />
+    <Compile Include="Logic\QExamLogic.cs" />
+    <Compile Include="Logic\QExamRecordLogic.cs" />
+    <Compile Include="Logic\QTaskLogic.cs" />
+    <Compile Include="Logic\QuestionLogic.cs" />
+    <Compile Include="Logic\QuestionItemLogic.cs" />
+    <Compile Include="Logic\QuestionRecordLogic.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{eefe3d48-a4c7-4664-a131-35c15f893fbb}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DbUtility\DbUtility.csproj">
+      <Project>{978abb6c-bca2-4aed-947a-50fb14058375}</Project>
+      <Name>DbUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Service\AreaService.cs" />
+    <Compile Include="Service\PermissionDataService.cs" />
+    <Compile Include="Service\ArticleService.cs" />
+    <Compile Include="Service\ArticleKindService.cs" />
+    <Compile Include="Service\AttachmentService.cs" />
+    <Compile Include="Service\CustomPageService.cs" />
+    <Compile Include="Service\DictionaryService.cs" />
+    <Compile Include="Service\DictionaryTypeService.cs" />
+    <Compile Include="Service\MailSettingService.cs" />
+    <Compile Include="Service\MemberService.cs" />
+    <Compile Include="Service\MenuService.cs" />
+    <Compile Include="Service\PermissionMapService.cs" />
+    <Compile Include="Service\RoleService.cs" />
+    <Compile Include="Service\SiteService.cs" />
+    <Compile Include="Service\ApplyFundService.cs" />
+    <Compile Include="Service\ApplyStuffService.cs" />
+    <Compile Include="Service\LocationService.cs" />
+    <Compile Include="Service\ArticleReadLogService.cs" />
+    <Compile Include="Service\AccessLogService.cs" />
+    <Compile Include="Service\SliderService.cs" />
+    <Compile Include="Service\StoreService.cs" />
+    <Compile Include="Service\StoreTagService.cs" />
+    <Compile Include="Service\StoreTag_RecordService.cs" />
+    <Compile Include="Service\SysLogService.cs" />
+    <Compile Include="Service\UserLikeService.cs" />
+    <Compile Include="Service\QExamService.cs" />
+    <Compile Include="Service\QExamRecordService.cs" />
+    <Compile Include="Service\QTaskService.cs" />
+    <Compile Include="Service\QuestionService.cs" />
+    <Compile Include="Service\QuestionItemService.cs" />
+    <Compile Include="Service\QuestionRecordService.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

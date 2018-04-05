@@ -1,0 +1,1895 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E4E912D7-64F3-46F7-87E8-FB356E81463F}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web</RootNamespace>
+    <AssemblyName>Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Content\FileResize\CameraSave.aspx.cs">
+      <DependentUpon>CameraSave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Content\FileResize\CameraSave.aspx.designer.cs">
+      <DependentUpon>CameraSave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AjaxController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AreaController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ArticleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ArticleKindController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AttachmentController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ConfigController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CustomPageController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DictionaryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DictionaryTypeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\elFinderController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MemberController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MenuController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PermissionDataController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PermissionMapController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ReportController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RoleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ApplyFundController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StoreController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StoreTagController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StoreTag_RecordController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SysLogController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserLikeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SliderController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QExamController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QExamRecordController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QTaskController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QuestionController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QuestionItemController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QuestionRecordController.cs" />
+    <Compile Include="Areas\Admin\FileResize\CameraSave.aspx.cs">
+      <DependentUpon>CameraSave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\FileResize\CameraSave.aspx.designer.cs">
+      <DependentUpon>CameraSave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Manager\Controllers\AutoGeneratorController.cs" />
+    <Compile Include="Areas\Manager\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Manager\Controllers\DataBaseController.cs" />
+    <Compile Include="Areas\Manager\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Manager\Controllers\TempleManagerController.cs" />
+    <Compile Include="Areas\Manager\Helper\DBColumnTypeEnum.cs" />
+    <Compile Include="Areas\Manager\Helper\DBColumnTypeHelper.cs" />
+    <Compile Include="Areas\Manager\Helper\GeneratorHelper.cs" />
+    <Compile Include="Areas\Manager\Helper\PathHelper.cs" />
+    <Compile Include="Areas\Manager\Helper\ProjectFileHelper.cs" />
+    <Compile Include="Areas\Manager\ManagerAreaRegistration.cs" />
+    <Compile Include="Areas\Mobile\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Mobile\Controllers\AjaxController.cs" />
+    <Compile Include="Areas\Mobile\Controllers\ExpertController.cs" />
+    <Compile Include="Areas\Mobile\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Mobile\Controllers\LoginFlagAttribute.cs" />
+    <Compile Include="Areas\Mobile\MobileAreaRegistration.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Content Include="Areas\Admin\Content\FileResize\CameraSave.aspx" />
+    <Content Include="Areas\Admin\Content\icons\code.png" />
+    <Content Include="Areas\Admin\Content\icons\logo.png" />
+    <Content Include="Areas\Admin\Content\js\ckplayer6.3\ckplayer\ckplayer.js" />
+    <Content Include="Areas\Admin\Content\js\ckplayer6.3\ckplayer\ckplayer.swf" />
+    <Content Include="Areas\Admin\Content\js\ckplayer6.3\ckplayer\ckplayer.xml" />
+    <Content Include="Areas\Admin\Content\js\ckplayer6.3\ckplayer\expressInstall.swf" />
+    <Content Include="Areas\Admin\Content\js\ckplayer6.3\ckplayer\language.xml" />
+    <Content Include="Areas\Admin\Content\js\ckplayer6.3\ckplayer\related.xml" />
+    <Content Include="Areas\Admin\Content\js\ckplayer6.3\ckplayer\share.xml" />
+    <Content Include="Areas\Admin\Content\js\ckplayer6.3\ckplayer\share\feixin.png" />
+    <Content Include="Areas\Admin\Content\js\ckplayer6.3\ckplayer\share\google.png" />
+    <Content Include="Areas\Admin\Content\js\ckplayer6.3\ckplayer\share\kaixin001.png" />
+    <Content Include="Areas\Admin\Content\js\ckplayer6.3\ckplayer\share\msn.png" />
+    <Content Include="Areas\Admin\Content\js\ckplayer6.3\ckplayer\share\qq.png" />
+    <Content Include="Areas\Admin\Content\js\ckplayer6.3\ckplayer\share\qq2.png" />
+    <Content Include="Areas\Admin\Content\js\ckplayer6.3\ckplayer\share\qzone.png" />
+    <Content Include="Areas\Admin\Content\js\ckplayer6.3\ckplayer\share\rr.png" />
+    <Content Include="Areas\Admin\Content\js\ckplayer6.3\ckplayer\share\sina.png" />
+    <Content Include="Areas\Admin\Content\js\ckplayer6.3\ckplayer\share\sohu.png" />
+    <Content Include="Areas\Admin\Content\js\ckplayer6.3\ckplayer\share\tianya.png" />
+    <Content Include="Areas\Admin\Content\js\ckplayer6.3\ckplayer\style.swf" />
+    <Content Include="Areas\Admin\Content\js\grumble\css\grumble.css" />
+    <Content Include="Areas\Admin\Content\js\grumble\css\grumble.min.css" />
+    <Content Include="Areas\Admin\Content\js\grumble\images\bubble-sprite.png" />
+    <Content Include="Areas\Admin\Content\js\grumble\js\Bubble.js" />
+    <Content Include="Areas\Admin\Content\js\grumble\js\jquery.grumble.js" />
+    <Content Include="Areas\Admin\Content\js\grumble\js\jquery.grumble.min.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\build-config.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\ckeditor.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\config.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\contents.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\lang\en.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\lang\zh-cn.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\lang\zh.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\icons.png" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\image\dialog.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\image\editor.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\image\icons.png" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\image\images\border.png" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\image\images\btns.png" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\image\images\cke_fot.gif" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\image\images\cross.png" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\image\images\dialog_sides.gif" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\image\images\dialog_sides.png" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\image\images\dialog_sides_rtl.png" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\image\images\line.png" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\image\images\mini.gif" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\image\images\sprites.png" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\image\images\sprites_ie6.png" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\image\images\toolbar_start.gif" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\image\skin.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\image\templates.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\skins\moono\dialog.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\skins\moono\dialog_opera.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\skins\moono\editor.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\skins\moono\icons.png" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\skins\moono\images\close.png" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\skins\moono\images\mini.png" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\styles.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\css\bootstrap-combined.min.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\css\css\bootstrap-responsive.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\css\css\bootstrap.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\css\css\bootstrap.min.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\css\img\glyphicons-halflings-white.png" />
+    <Content Include="Areas\Admin\Content\js\layoutit\css\img\glyphicons-halflings.png" />
+    <Content Include="Areas\Admin\Content\js\layoutit\css\js\bootstrap.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\css\js\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\css\layoutit.css" />
+    <Content Include="Areas\Admin\Content\js\layoutit\img\1.jpg" />
+    <Content Include="Areas\Admin\Content\js\layoutit\img\2.jpg" />
+    <Content Include="Areas\Admin\Content\js\layoutit\img\3.jpg" />
+    <Content Include="Areas\Admin\Content\js\layoutit\img\a.jpg" />
+    <Content Include="Areas\Admin\Content\js\layoutit\img\a_002.jpg" />
+    <Content Include="Areas\Admin\Content\js\layoutit\img\city.jpg" />
+    <Content Include="Areas\Admin\Content\js\layoutit\img\favicon.png" />
+    <Content Include="Areas\Admin\Content\js\layoutit\img\people.jpg" />
+    <Content Include="Areas\Admin\Content\js\layoutit\img\sports.jpg" />
+    <Content Include="Areas\Admin\Content\js\layoutit\js\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\js\html5shiv.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\js\jquery-2.0.0.min.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\js\jquery-ui.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\js\jquery.htmlClean.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="Areas\Admin\Content\js\layoutit\js\scripts.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\bs.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\cs.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\cy.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\da.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\de.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\el.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\en.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\es.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\et.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\fa.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\fi.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\fr.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\hr.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\hu.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\hy.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\it.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\ja.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\ka.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\ko.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\lt.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\lv.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\nl.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\pl.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\pt_BR.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\ro.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\ru.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\sk.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\sr.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\sv.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\th_TH.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\tr.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\uk_UA.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\i18n\zh_CN.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\jquery.plupload.queue\css\jquery.plupload.queue.css" />
+    <Content Include="Areas\Admin\Content\js\plupload\jquery.plupload.queue\img\backgrounds.gif" />
+    <Content Include="Areas\Admin\Content\js\plupload\jquery.plupload.queue\img\buttons-disabled.png" />
+    <Content Include="Areas\Admin\Content\js\plupload\jquery.plupload.queue\img\buttons.png" />
+    <Content Include="Areas\Admin\Content\js\plupload\jquery.plupload.queue\img\delete.gif" />
+    <Content Include="Areas\Admin\Content\js\plupload\jquery.plupload.queue\img\done.gif" />
+    <Content Include="Areas\Admin\Content\js\plupload\jquery.plupload.queue\img\error.gif" />
+    <Content Include="Areas\Admin\Content\js\plupload\jquery.plupload.queue\img\throbber.gif" />
+    <Content Include="Areas\Admin\Content\js\plupload\jquery.plupload.queue\img\transp50.png" />
+    <Content Include="Areas\Admin\Content\js\plupload\jquery.plupload.queue\jquery.plupload.queue.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\jquery.plupload.queue\jquery.plupload.queue.min.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\jquery.ui.plupload\css\jquery.ui.plupload.css" />
+    <Content Include="Areas\Admin\Content\js\plupload\jquery.ui.plupload\img\loading.gif" />
+    <Content Include="Areas\Admin\Content\js\plupload\jquery.ui.plupload\img\plupload.png" />
+    <Content Include="Areas\Admin\Content\js\plupload\jquery.ui.plupload\jquery.ui.plupload.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\jquery.ui.plupload\jquery.ui.plupload.min.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\moxie.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\moxie.min.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\Moxie.swf" />
+    <Content Include="Areas\Admin\Content\js\plupload\Moxie.xap" />
+    <Content Include="Areas\Admin\Content\js\plupload\plupload.dev.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\plupload.full.min.js" />
+    <Content Include="Areas\Admin\Content\js\plupload\plupload.min.js" />
+    <Content Include="Areas\Manager\Cotnent\css\css.css" />
+    <Content Include="Areas\Manager\Cotnent\img\bg.png" />
+    <Content Include="Areas\Manager\Template\temp1\API.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Manager\Template\temp1\Controller.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Manager\Template\temp1\Create.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Manager\Template\temp1\Detail.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Manager\Template\temp1\Edit.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Manager\Template\temp1\Entity.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Manager\Template\temp1\Index.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Manager\Template\temp1\Logic.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Manager\Template\temp1\Service.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Manager\Template\temp1\_Detail.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Manager\Template\temp1\_Form.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Manager\Template\temp1\_Index.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Mobile\Content\css\bootstrap-theme.css" />
+    <Content Include="Areas\Mobile\Content\css\bootstrap.css" />
+    <Content Include="Areas\Mobile\Content\css\normalize.css" />
+    <Content Include="Areas\Mobile\Content\css\style.css" />
+    <Content Include="Areas\Mobile\Content\css\swiper.min.css" />
+    <Content Include="Areas\Mobile\Content\ico\02.png" />
+    <Content Include="Areas\Mobile\Content\ico\03.png" />
+    <Content Include="Areas\Mobile\Content\ico\20.png" />
+    <Content Include="Areas\Mobile\Content\ico\arrow.png" />
+    <Content Include="Areas\Mobile\Content\ico\arrow2.png" />
+    <Content Include="Areas\Mobile\Content\ico\ico01.png" />
+    <Content Include="Areas\Mobile\Content\ico\icon01.png" />
+    <Content Include="Areas\Mobile\Content\ico\icon02.png" />
+    <Content Include="Areas\Mobile\Content\ico\icon03.png" />
+    <Content Include="Areas\Mobile\Content\ico\icon04.png" />
+    <Content Include="Areas\Mobile\Content\ico\icon05.png" />
+    <Content Include="Areas\Mobile\Content\ico\icon06.png" />
+    <Content Include="Areas\Mobile\Content\ico\icon07.png" />
+    <Content Include="Areas\Mobile\Content\ico\icon08.png" />
+    <Content Include="Areas\Mobile\Content\ico\icon09.png" />
+    <Content Include="Areas\Mobile\Content\ico\icon10.png" />
+    <Content Include="Areas\Mobile\Content\ico\icon101.png" />
+    <Content Include="Areas\Mobile\Content\ico\icon11.png" />
+    <Content Include="Areas\Mobile\Content\ico\icon12.png" />
+    <Content Include="Areas\Mobile\Content\ico\icon13.png" />
+    <Content Include="Areas\Mobile\Content\ico\icon14.png" />
+    <Content Include="Areas\Mobile\Content\ico\icon15.png" />
+    <Content Include="Areas\Mobile\Content\ico\icon16.png" />
+    <Content Include="Areas\Mobile\Content\ico\icon17.png" />
+    <Content Include="Areas\Mobile\Content\ico\icon18.png" />
+    <Content Include="Areas\Mobile\Content\ico\icon19.png" />
+    <Content Include="Areas\Mobile\Content\ico\icon20.png" />
+    <Content Include="Areas\Mobile\Content\images\01.png" />
+    <Content Include="Areas\Mobile\Content\images\02.png" />
+    <Content Include="Areas\Mobile\Content\images\03.png" />
+    <Content Include="Areas\Mobile\Content\images\04.png" />
+    <Content Include="Areas\Mobile\Content\images\05.png" />
+    <Content Include="Areas\Mobile\Content\images\06.png" />
+    <Content Include="Areas\Mobile\Content\images\07.png" />
+    <Content Include="Areas\Mobile\Content\images\08.png" />
+    <Content Include="Areas\Mobile\Content\images\09.png" />
+    <Content Include="Areas\Mobile\Content\images\b1.jpg" />
+    <Content Include="Areas\Mobile\Content\images\b2.jpg" />
+    <Content Include="Areas\Mobile\Content\images\b3.jpg" />
+    <Content Include="Areas\Mobile\Content\images\f1.jpg" />
+    <Content Include="Areas\Mobile\Content\images\f2.jpg" />
+    <Content Include="Areas\Mobile\Content\images\f3.jpg" />
+    <Content Include="Areas\Mobile\Content\images\guide.png" />
+    <Content Include="Areas\Mobile\Content\images\icon_msg.png" />
+    <Content Include="Areas\Mobile\Content\images\icon_timeline.png" />
+    <Content Include="Areas\Mobile\Content\images\img_1.jpg" />
+    <Content Include="Areas\Mobile\Content\images\img_live.jpg" />
+    <Content Include="Areas\Mobile\Content\images\img_live.png" />
+    <Content Include="Areas\Mobile\Content\images\logo1.png" />
+    <Content Include="Areas\Mobile\Content\images\newstop.png" />
+    <Content Include="Areas\Mobile\Content\js\bootstrap.js" />
+    <Content Include="Areas\Mobile\Content\js\bootstrap.min.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\CHANGELOG.txt" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\CONTRIBUTING.txt" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\demos\agenda-views.html" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\demos\background-events.html" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\demos\basic-views.html" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\demos\default.html" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\demos\external-dragging.html" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\demos\gcal.html" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\demos\json.html" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\demos\languages.html" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\demos\selectable.html" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\demos\theme.html" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\demos\timezones.html" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\fullcalendar.css" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\fullcalendar.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\fullcalendar.min.css" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\fullcalendar.min.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\fullcalendar.print.css" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\gcal.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang-all.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\ar-ma.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\ar-sa.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\ar-tn.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\ar.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\bg.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\ca.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\cs.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\da.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\de-at.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\de.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\el.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\en-au.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\en-ca.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\en-gb.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\en-ie.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\en-nz.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\es.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\fa.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\fi.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\fr-ca.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\fr-ch.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\fr.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\he.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\hi.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\hr.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\hu.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\id.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\is.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\it.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\ja.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\ko.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\lt.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\lv.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\nb.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\nl.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\pl.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\pt-br.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\pt.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\ro.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\ru.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\sk.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\sl.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\sr-cyrl.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\sr.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\sv.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\th.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\tr.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\uk.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\vi.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\zh-cn.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lang\zh-tw.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lib\cupertino\images\animated-overlay.gif" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lib\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lib\cupertino\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lib\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lib\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lib\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lib\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lib\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lib\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lib\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lib\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lib\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lib\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lib\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lib\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lib\cupertino\jquery-ui.min.css" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lib\jquery-ui.custom.min.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lib\jquery.min.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\lib\moment.min.js" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\LICENSE.txt" />
+    <Content Include="Areas\Mobile\Content\js\jquery-ui\AUTHORS.txt" />
+    <Content Include="Areas\Mobile\Content\js\jquery-ui\external\jquery\jquery.js" />
+    <Content Include="Areas\Mobile\Content\js\jquery-ui\images\ui-icons_444444_256x240.png" />
+    <Content Include="Areas\Mobile\Content\js\jquery-ui\images\ui-icons_555555_256x240.png" />
+    <Content Include="Areas\Mobile\Content\js\jquery-ui\images\ui-icons_777620_256x240.png" />
+    <Content Include="Areas\Mobile\Content\js\jquery-ui\images\ui-icons_777777_256x240.png" />
+    <Content Include="Areas\Mobile\Content\js\jquery-ui\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Areas\Mobile\Content\js\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Areas\Mobile\Content\js\jquery-ui\index.html" />
+    <Content Include="Areas\Mobile\Content\js\jquery-ui\jquery-ui.css" />
+    <Content Include="Areas\Mobile\Content\js\jquery-ui\jquery-ui.js" />
+    <Content Include="Areas\Mobile\Content\js\jquery-ui\jquery-ui.min.css" />
+    <Content Include="Areas\Mobile\Content\js\jquery-ui\jquery-ui.min.js" />
+    <Content Include="Areas\Mobile\Content\js\jquery-ui\jquery-ui.structure.css" />
+    <Content Include="Areas\Mobile\Content\js\jquery-ui\jquery-ui.structure.min.css" />
+    <Content Include="Areas\Mobile\Content\js\jquery-ui\jquery-ui.theme.css" />
+    <Content Include="Areas\Mobile\Content\js\jquery-ui\jquery-ui.theme.min.css" />
+    <Content Include="Areas\Mobile\Content\js\jquery-ui\LICENSE.txt" />
+    <Content Include="Areas\Mobile\Content\js\jquery.min.js" />
+    <Content Include="Areas\Mobile\Content\js\layer\layer.js" />
+    <Content Include="Areas\Mobile\Content\js\layer\skin\default\icon-ext.png" />
+    <Content Include="Areas\Mobile\Content\js\layer\skin\default\icon.png" />
+    <Content Include="Areas\Mobile\Content\js\layer\skin\default\loading-0.gif" />
+    <Content Include="Areas\Mobile\Content\js\layer\skin\default\loading-1.gif" />
+    <Content Include="Areas\Mobile\Content\js\layer\skin\default\loading-2.gif" />
+    <Content Include="Areas\Mobile\Content\js\layer\skin\layer.css" />
+    <Content Include="Areas\Mobile\Content\js\moment.js" />
+    <Content Include="Areas\Mobile\Content\js\swiper.min.js" />
+    <Content Include="Areas\Mobile\Content\js\wechatapi.js" />
+    <Content Include="Content\css\css.css" />
+    <Content Include="Content\images\bg.png" />
+    <Content Include="Content\images\cloud.png" />
+    <Content Include="Content\images\img1.jpg" />
+    <Content Include="Content\images\img2.jpg" />
+    <Content Include="Content\images\img3.jpg" />
+    <Content Include="Content\images\img4.jpg" />
+    <Content Include="Content\images\img5.jpg" />
+    <Content Include="Content\images\img6.jpg" />
+    <Content Include="Content\images\video.mp4" />
+    <Content Include="Content\images\video.png" />
+    <Content Include="Content\js\Cookie.js" />
+    <Content Include="Content\js\s3Slider.js" />
+    <Content Include="DBScripts\字段描述.sql" />
+    <Content Include="DBScripts\分页.sql" />
+    <Content Include="DBScripts\收缩数据库日志.sql" />
+    <Content Include="DBScripts\游标.sql" />
+    <Content Include="DBScripts\经纬度.sql" />
+    <Content Include="DBScripts\获取汉字拼音.sql" />
+    <Content Include="DBScripts\获取汉字拼音首字母.sql" />
+    <Content Include="DBScripts\行转列.sql" />
+    <Content Include="DBScripts\表主键.sql" />
+    <Content Include="DBScripts\查询所有表及字段.sql" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\CurrentMember.cs" />
+    <Compile Include="Lib\CurrentSite.cs" />
+    <Compile Include="Lib\HtmlHelperExtention.cs" />
+    <Compile Include="Lib\MemberHelper.cs" />
+    <Compile Include="Lib\PermissionHelper.cs" />
+    <Compile Include="Lib\PermissionFilter.cs" />
+    <Compile Include="Lib\SiteHelper.cs" />
+    <Compile Include="Lib\StaticFileWriteFilterAttribute.cs" />
+    <Compile Include="Lib\SystemErrorFilter.cs" />
+    <Compile Include="Lib\TemplateHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Areas\Admin\Content\common.css" />
+    <Content Include="Areas\Admin\Content\css.css" />
+    <Content Include="Areas\Admin\Content\error.min.css" />
+    <Content Include="Areas\Admin\Content\FileResize\Avatar.aspx" />
+    <Content Include="Areas\Admin\Content\FileResize\FileResize.swf" />
+    <Content Include="Areas\Admin\Content\icons\icons.css" />
+    <Content Include="Areas\Admin\Content\icons\icos-dark.png" />
+    <Content Include="Areas\Admin\Content\icons\icos-white.png" />
+    <Content Include="Areas\Admin\Content\icons\key.png" />
+    <Content Include="Areas\Admin\Content\icons\left.png" />
+    <Content Include="Areas\Admin\Content\icons\loading\1.gif" />
+    <Content Include="Areas\Admin\Content\icons\loading\10.gif" />
+    <Content Include="Areas\Admin\Content\icons\loading\11.gif" />
+    <Content Include="Areas\Admin\Content\icons\loading\12.gif" />
+    <Content Include="Areas\Admin\Content\icons\loading\13.gif" />
+    <Content Include="Areas\Admin\Content\icons\loading\14.gif" />
+    <Content Include="Areas\Admin\Content\icons\loading\15.gif" />
+    <Content Include="Areas\Admin\Content\icons\loading\16.gif" />
+    <Content Include="Areas\Admin\Content\icons\loading\17.gif" />
+    <Content Include="Areas\Admin\Content\icons\loading\2.gif" />
+    <Content Include="Areas\Admin\Content\icons\loading\3.gif" />
+    <Content Include="Areas\Admin\Content\icons\loading\4.gif" />
+    <Content Include="Areas\Admin\Content\icons\loading\5.gif" />
+    <Content Include="Areas\Admin\Content\icons\loading\6.gif" />
+    <Content Include="Areas\Admin\Content\icons\loading\7.gif" />
+    <Content Include="Areas\Admin\Content\icons\loading\8.gif" />
+    <Content Include="Areas\Admin\Content\icons\loading\9.gif" />
+    <Content Include="Areas\Admin\Content\icons\loading\loading.gif" />
+    <Content Include="Areas\Admin\Content\icons\right.png" />
+    <Content Include="Areas\Admin\Content\icons\sprite.png" />
+    <Content Include="Areas\Admin\Content\icons\user.png" />
+    <Content Include="Areas\Admin\Content\ie6_7.css" />
+    <Content Include="Areas\Admin\Content\img\a.png" />
+    <Content Include="Areas\Admin\Content\img\avatar.png" />
+    <Content Include="Areas\Admin\Content\img\dt\sort.png" />
+    <Content Include="Areas\Admin\Content\img\dt\sort_asc.png" />
+    <Content Include="Areas\Admin\Content\img\dt\sort_desc.png" />
+    <Content Include="Areas\Admin\Content\img\exp-userhead.jpg" />
+    <Content Include="Areas\Admin\Content\img\ext\asf.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\asp.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\asx.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\blank.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\blank.png" />
+    <Content Include="Areas\Admin\Content\img\ext\bmp.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\chm.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\csv.png" />
+    <Content Include="Areas\Admin\Content\img\ext\dir.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\do.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\do.png" />
+    <Content Include="Areas\Admin\Content\img\ext\doc.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\doc.png" />
+    <Content Include="Areas\Admin\Content\img\ext\dot.png" />
+    <Content Include="Areas\Admin\Content\img\ext\exe.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\flv.png" />
+    <Content Include="Areas\Admin\Content\img\ext\gif.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\hlp.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\htm.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\html.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\jpeg.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\jpg.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\js.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\mdb.png" />
+    <Content Include="Areas\Admin\Content\img\ext\mid.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\midi.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\mp3.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\mpeg.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\mpg.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\other.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\pdf.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\pdf.png" />
+    <Content Include="Areas\Admin\Content\img\ext\php.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\png.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\ppt.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\ppt.png" />
+    <Content Include="Areas\Admin\Content\img\ext\psd.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\rar.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\rar.png" />
+    <Content Include="Areas\Admin\Content\img\ext\rm.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\rmvb.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\rtf.png" />
+    <Content Include="Areas\Admin\Content\img\ext\shtml.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\swf.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\tif.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\txt.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\txt.png" />
+    <Content Include="Areas\Admin\Content\img\ext\wav.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\xls.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\xls.png" />
+    <Content Include="Areas\Admin\Content\img\ext\xml.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\zip.gif" />
+    <Content Include="Areas\Admin\Content\img\ext\zip.png" />
+    <Content Include="Areas\Admin\Content\img\filter.jpg" />
+    <Content Include="Areas\Admin\Content\img\folder-closed.gif" />
+    <Content Include="Areas\Admin\Content\img\folder.gif" />
+    <Content Include="Areas\Admin\Content\img\icon.png" />
+    <Content Include="Areas\Admin\Content\img\icon2.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\arches.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\blu_stripes.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\bright_squares.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\brushed_alu.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\circles.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\climpek.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\connect.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\corrugation.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\cubes.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\diagonal-noise.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\diagonal_striped_brick.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\diamonds.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\diamond_upholstery.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\escheresque.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\fabric_plaid.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\furley_bg.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\gplaypattern.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\gradient_squares.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\grey.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\grilled.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\hexellence.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\lghtmesh.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\light_alu.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\light_checkered_tiles.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\light_honeycomb.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\littleknobs.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\nistri.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\noise_lines.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\noise_pattern_with_crosslines.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\noisy_grid.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\norwegian_rose.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\pineapplecut.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\pinstripe.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\project_papper.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\ravenna.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\reticular_tissue.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\retina_wood.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\rockywall.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\roughcloth.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\shattered.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\silver_scales.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\skelatal_weave.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\small-crackle-bright.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\small_tiles.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\square_bg.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\struckaxiom.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\subtle_stripes.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\vichy.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\washi.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\wavecut.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\weave.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\whitey.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\white_brick_wall.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\white_tiles.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\wood_pattern.png" />
+    <Content Include="Areas\Admin\Content\img\layout\bg\worn_dots.png" />
+    <Content Include="Areas\Admin\Content\img\layout\content-bg-plain-gt1200.png" />
+    <Content Include="Areas\Admin\Content\img\layout\mail-stripes.png" />
+    <Content Include="Areas\Admin\Content\img\logo.png" />
+    <Content Include="Areas\Admin\Content\img\main_top_shadow.png" />
+    <Content Include="Areas\Admin\Content\img\msg_bg.png" />
+    <Content Include="Areas\Admin\Content\img\nav-icons-sc78da228f0.png" />
+    <Content Include="Areas\Admin\Content\img\pointer.jpg" />
+    <Content Include="Areas\Admin\Content\img\sort.png" />
+    <Content Include="Areas\Admin\Content\img\takeda.png" />
+    <Content Include="Areas\Admin\Content\img\tan.jpg" />
+    <Content Include="Areas\Admin\Content\img\tobg.png" />
+    <Content Include="Areas\Admin\Content\img\upload-pic.png" />
+    <Content Include="Areas\Admin\Content\img\user-arrow.png" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\css\demo.css" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\css\fonts\BebasNeue-webfont.svg" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\css\fonts\Dharma Type Font License.txt" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\css\style.css" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\images\1.jpg" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\images\10.jpg" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\images\11.jpg" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\images\12.jpg" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\images\2.jpg" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\images\3.jpg" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\images\4.jpg" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\images\5.jpg" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\images\6.jpg" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\images\7.jpg" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\images\8.jpg" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\images\9.jpg" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\images\arrows.png" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\images\bg.jpg" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\images\browser.png" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\images\ImageAttribution.txt" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\index.html" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\index2.html" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\index3.html" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\js\jquery.gallery.js" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\js\modernizr.custom.53451.js" />
+    <Content Include="Areas\Admin\Content\js\area.js" />
+    <Content Include="Areas\Admin\Content\js\artDialog\artDialog.js" />
+    <Content Include="Areas\Admin\Content\js\artDialog\artDialog.source.js" />
+    <Content Include="Areas\Admin\Content\js\artDialog\artDialogInit.js" />
+    <Content Include="Areas\Admin\Content\js\artDialog\jquery.artDialog.js" />
+    <Content Include="Areas\Admin\Content\js\artDialog\jquery.artDialog.source.js" />
+    <Content Include="Areas\Admin\Content\js\artDialog\plugins\iframeTools.js" />
+    <Content Include="Areas\Admin\Content\js\artDialog\plugins\iframeTools.source.js" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\aero.css" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\aero\aero_s.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\aero\aero_s2.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\aero\ie6\aui_close.hover.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\aero\ie6\aui_close.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\aero\ie6\aui_e.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\aero\ie6\aui_n.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\aero\ie6\aui_ne.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\aero\ie6\aui_nw.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\aero\ie6\aui_s.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\aero\ie6\aui_se.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\aero\ie6\aui_sw.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\aero\ie6\aui_title_icon.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\aero\ie6\aui_w.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\black.css" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\black\bg.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\black\bg2.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\black\bg_css3.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\black\bg_css3_2.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\black\ie6\close.hover.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\black\ie6\close.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\black\ie6\e.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\black\ie6\n.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\black\ie6\ne.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\black\ie6\nw.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\black\ie6\s.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\black\ie6\se.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\black\ie6\sw.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\black\ie6\w.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\blue.css" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\blue\bg.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\blue\bg2.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\blue\bg_css3.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\blue\bg_css3_2.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\blue\ie6\close.hover.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\blue\ie6\close.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\blue\ie6\e.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\blue\ie6\n.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\blue\ie6\ne.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\blue\ie6\nw.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\blue\ie6\s.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\blue\ie6\se.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\blue\ie6\sw.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\blue\ie6\w.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\chrome.css" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\chrome\border.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\chrome\chrome_s.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\default.css" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\green.css" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\green\bg.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\green\bg2.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\green\bg_css3.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\green\bg_css3_2.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\green\color_bg.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\green\ie6\close.hover.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\green\ie6\close.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\green\ie6\e.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\green\ie6\n.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\green\ie6\ne.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\green\ie6\nw.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\green\ie6\s.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\green\ie6\se.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\green\ie6\sw.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\green\ie6\w.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\icons\error.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\icons\face-sad.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\icons\face-smile.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\icons\load.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\icons\loading.gif" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\icons\question.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\icons\succeed.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\icons\warning.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\idialog.css" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\idialog\idialog_s.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\idialog\idialog_s2.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\idialog\ie6\aui_close.hover.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\idialog\ie6\aui_close.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\idialog\ie6\aui_e.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\idialog\ie6\aui_n.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\idialog\ie6\aui_ne.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\idialog\ie6\aui_nw.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\idialog\ie6\aui_s.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\idialog\ie6\aui_se.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\idialog\ie6\aui_sw.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\idialog\ie6\aui_w.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\opera.css" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\opera\ie6\aui_close.hover.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\opera\ie6\aui_close.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\opera\ie6\aui_e.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\opera\ie6\aui_n.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\opera\ie6\aui_ne.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\opera\ie6\aui_nw.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\opera\ie6\aui_s.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\opera\ie6\aui_se.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\opera\ie6\aui_sw.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\opera\ie6\aui_w.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\opera\s1.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\opera\s2.png" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\simple.css" />
+    <Content Include="Areas\Admin\Content\js\artDialog\skins\twitter.css" />
+    <Content Include="Areas\Admin\Content\js\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Areas\Admin\Content\js\bootstrap\css\bootstrap.css" />
+    <Content Include="Areas\Admin\Content\js\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Areas\Admin\Content\js\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Areas\Admin\Content\js\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Areas\Admin\Content\js\bootstrap\js\bootstrap.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\adapters\jquery.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\ckeditor.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\ckeditor_basic.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\config.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\contents.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\images\spacer.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\en-au.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\en.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\zh-cn.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\zh.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\_languages.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\lang\en.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\lang\he.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\attachment\dialogs\mydialog.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\attachment\dialogs\plugin.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\attachment\plugin.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\autogrow\plugin.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\div\dialogs\div.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\find\dialogs\find.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\forms\dialogs\button.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\forms\dialogs\form.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\forms\dialogs\select.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\iframedialog\plugin.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\link\images\anchor.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\liststyle\plugin.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\pastetext\dialogs\pastetext.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\images\heart.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\styles\styles\default.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\tableresize\plugin.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\templates\templates\default.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\uicolor\dialogs\uicolor.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\uicolor\lang\en.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\uicolor\plugin.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\uicolor\uicolor.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\uicolor\yui\assets\hue_bg.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\uicolor\yui\assets\hue_thumb.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\uicolor\yui\assets\picker_mask.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\uicolor\yui\assets\picker_thumb.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\uicolor\yui\assets\yui.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\uicolor\yui\yui.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\kama\dialog.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\kama\editor.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\kama\icons.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\kama\images\border.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\kama\images\btns.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\kama\images\cke_fot.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\kama\images\cross.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\kama\images\dialog_sides.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\kama\images\dialog_sides.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\kama\images\dialog_sides_rtl.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\kama\images\line.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\kama\images\mini.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\kama\images\noimage.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\kama\images\sprites.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\kama\images\sprites_ie6.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\kama\images\toolbar_start.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\kama\skin.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\kama\templates.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\themes\default\theme.js" />
+    <Content Include="Areas\Admin\Content\js\colorbox\colorbox.css" />
+    <Content Include="Areas\Admin\Content\js\colorbox\images\border.png" />
+    <Content Include="Areas\Admin\Content\js\colorbox\images\controls.png" />
+    <Content Include="Areas\Admin\Content\js\colorbox\images\loading.gif" />
+    <Content Include="Areas\Admin\Content\js\colorbox\images\loading_background.png" />
+    <Content Include="Areas\Admin\Content\js\colorbox\images\overlay.png" />
+    <Content Include="Areas\Admin\Content\js\colorbox\jquery.colorbox-min.js" />
+    <Content Include="Areas\Admin\Content\js\colorbox\jquery.colorbox.js" />
+    <Content Include="Areas\Admin\Content\js\colorpicker.js" />
+    <Content Include="Areas\Admin\Content\js\contactlist\contactlist.css" />
+    <Content Include="Areas\Admin\Content\js\contactlist\contactlist.min.js" />
+    <Content Include="Areas\Admin\Content\js\content_addtop.js" />
+    <Content Include="Areas\Admin\Content\js\crop\images\Main.swf" />
+    <Content Include="Areas\Admin\Content\js\crop\images\playerProductInstall.swf" />
+    <Content Include="Areas\Admin\Content\js\crop\swfobject.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\css\elfinder.full.css" />
+    <Content Include="Areas\Admin\Content\js\elfinder\css\elfinder.min.css" />
+    <Content Include="Areas\Admin\Content\js\elfinder\css\theme.css" />
+    <Content Include="Areas\Admin\Content\js\elfinder\img\arrows-active.png" />
+    <Content Include="Areas\Admin\Content\js\elfinder\img\arrows-normal.png" />
+    <Content Include="Areas\Admin\Content\js\elfinder\img\crop.gif" />
+    <Content Include="Areas\Admin\Content\js\elfinder\img\dialogs.png" />
+    <Content Include="Areas\Admin\Content\js\elfinder\img\icons-big.png" />
+    <Content Include="Areas\Admin\Content\js\elfinder\img\icons-small.png" />
+    <Content Include="Areas\Admin\Content\js\elfinder\img\logo.png" />
+    <Content Include="Areas\Admin\Content\js\elfinder\img\progress.gif" />
+    <Content Include="Areas\Admin\Content\js\elfinder\img\quicklook-bg.png" />
+    <Content Include="Areas\Admin\Content\js\elfinder\img\quicklook-icons.png" />
+    <Content Include="Areas\Admin\Content\js\elfinder\img\resize.png" />
+    <Content Include="Areas\Admin\Content\js\elfinder\img\spinner-mini.gif" />
+    <Content Include="Areas\Admin\Content\js\elfinder\img\toolbar.png" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\elfinder.full.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\elfinder.min.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.ar.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.bg.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.ca.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.cs.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.de.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.el.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.es.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.fa.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.fr.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.hu.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.it.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.jp.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.ko.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.LANG.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.nl.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.no.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.pl.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.pt_BR.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.ru.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.tr.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.vi.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\js\i18n\elfinder.zh_CN.js" />
+    <Content Include="Areas\Admin\Content\js\elfinder\mimeTypes.txt" />
+    <Content Include="Areas\Admin\Content\js\elfinder\sounds\rm.wav" />
+    <Content Include="Areas\Admin\Content\js\format.multi.js" />
+    <Content Include="Areas\Admin\Content\js\formvalidator\formvalidator.css" />
+    <Content Include="Areas\Admin\Content\js\formvalidator\formvalidator.js" />
+    <Content Include="Areas\Admin\Content\js\formvalidator\formvalidatorregex.js" />
+    <Content Include="Areas\Admin\Content\js\formvalidator\img\msg_bg.png" />
+    <Content Include="Areas\Admin\Content\js\fullcalendar\fullcalendar.css" />
+    <Content Include="Areas\Admin\Content\js\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Areas\Admin\Content\js\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Areas\Admin\Content\js\fullcalendar\gcal.js" />
+    <Content Include="Areas\Admin\Content\js\html5.js" />
+    <Content Include="Areas\Admin\Content\js\html5shiv.js" />
+    <Content Include="Areas\Admin\Content\js\ibutton\grip.png" />
+    <Content Include="Areas\Admin\Content\js\ibutton\jquery.ibutton.css" />
+    <Content Include="Areas\Admin\Content\js\ibutton\jquery.ibutton.min.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.min.js" />
+    <Content Include="Areas\Admin\Content\js\jquery-ui\img\ui-datepicker-circle.png" />
+    <Content Include="Areas\Admin\Content\js\jquery-ui\img\ui-datepicker-table-bg.png" />
+    <Content Include="Areas\Admin\Content\js\jquery-ui\img\ui-icons.png" />
+    <Content Include="Areas\Admin\Content\js\jquery-ui\img\ui-slider-bg.png" />
+    <Content Include="Areas\Admin\Content\js\jquery-ui\img\ui-slider-handle-v.png" />
+    <Content Include="Areas\Admin\Content\js\jquery-ui\img\ui-slider-handle.png" />
+    <Content Include="Areas\Admin\Content\js\jquery-ui\img\ui-slider-range-h.png" />
+    <Content Include="Areas\Admin\Content\js\jquery-ui\img\ui-slider-range-v.png" />
+    <Content Include="Areas\Admin\Content\js\jquery-ui\jquery-ui.css" />
+    <Content Include="Areas\Admin\Content\js\jquery-ui\jquery-ui.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.city\city.png" />
+    <Content Include="Areas\Admin\Content\js\jquery.city\citySelector-min.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.city\citySelector.css" />
+    <Content Include="Areas\Admin\Content\js\jquery.city\citySelector.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.city\Demo.htm" />
+    <Content Include="Areas\Admin\Content\js\jquery.city\Demo1.htm" />
+    <Content Include="Areas\Admin\Content\js\jquery.cookie.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.imgpreview.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.placeholder.min.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.sGallery.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-af.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-bg.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-ca.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-cs.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-da.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-de.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-el.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-es.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-et.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-eu.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-fi.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-fr.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-gl.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-he.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-hr.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-hu.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-id.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-it.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-ja.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-ko.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-lt.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-nl.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-no.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-pl.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-pt-BR.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-pt.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-ro.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-ru.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-sk.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-sv.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-th.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-tr.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-uk.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-vi.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-zh-CN.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\i18n\jquery-ui-timepicker-zh-TW.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\index.html" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\input_date.png" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\jquery-ui-sliderAccess.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\jquery-ui-timepicker-addon.css" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\jquery-ui-timepicker-addon.js" />
+    <Content Include="Areas\Admin\Content\js\loading.js" />
+    <Content Include="Areas\Admin\Content\js\picklist\picklist.css" />
+    <Content Include="Areas\Admin\Content\js\picklist\picklist.min.js" />
+    <Content Include="Areas\Admin\Content\js\scripts.js" />
+    <Content Include="Areas\Admin\Content\js\select2\select2-spinner.gif" />
+    <Content Include="Areas\Admin\Content\js\select2\select2.css" />
+    <Content Include="Areas\Admin\Content\js\select2\select2.min.js" />
+    <Content Include="Areas\Admin\Content\js\select2\select2.png" />
+    <Content Include="Areas\Admin\Content\js\sheepit\jquery.sheepit.js" />
+    <Content Include="Areas\Admin\Content\js\sidebar.js" />
+    <Content Include="Areas\Admin\Content\js\swfupload\fileprogress.js" />
+    <Content Include="Areas\Admin\Content\js\swfupload\FileResize.swf" />
+    <Content Include="Areas\Admin\Content\js\swfupload\handlers.js" />
+    <Content Include="Areas\Admin\Content\js\swfupload\images\cross.png" />
+    <Content Include="Areas\Admin\Content\js\swfupload\images\swfBnt.png" />
+    <Content Include="Areas\Admin\Content\js\swfupload\swf2ckeditor.js" />
+    <Content Include="Areas\Admin\Content\js\swfupload\swfupload.css" />
+    <Content Include="Areas\Admin\Content\js\swfupload\swfupload.js" />
+    <Content Include="Areas\Admin\Content\js\swfupload\swfupload.swf" />
+    <Content Include="Areas\Admin\Content\js\swfupload\swfuploadbutton.swf" />
+    <Content Include="Areas\Admin\Content\js\swfupload\unpack_swfupload.js" />
+    <Content Include="Areas\Admin\Content\js\treeview\images\ajax-loader.gif" />
+    <Content Include="Areas\Admin\Content\js\treeview\images\file.gif" />
+    <Content Include="Areas\Admin\Content\js\treeview\images\folder-closed.gif" />
+    <Content Include="Areas\Admin\Content\js\treeview\images\folder.gif" />
+    <Content Include="Areas\Admin\Content\js\treeview\images\minus.gif" />
+    <Content Include="Areas\Admin\Content\js\treeview\images\plus.gif" />
+    <Content Include="Areas\Admin\Content\js\treeview\images\treeview-black-line.gif" />
+    <Content Include="Areas\Admin\Content\js\treeview\images\treeview-black.gif" />
+    <Content Include="Areas\Admin\Content\js\treeview\images\treeview-default-line.gif" />
+    <Content Include="Areas\Admin\Content\js\treeview\images\treeview-default.gif" />
+    <Content Include="Areas\Admin\Content\js\treeview\images\treeview-famfamfam-line.gif" />
+    <Content Include="Areas\Admin\Content\js\treeview\images\treeview-famfamfam.gif" />
+    <Content Include="Areas\Admin\Content\js\treeview\images\treeview-gray-line.gif" />
+    <Content Include="Areas\Admin\Content\js\treeview\images\treeview-gray.gif" />
+    <Content Include="Areas\Admin\Content\js\treeview\images\treeview-red-line.gif" />
+    <Content Include="Areas\Admin\Content\js\treeview\images\treeview-red.gif" />
+    <Content Include="Areas\Admin\Content\js\treeview\jquery.treeview.css" />
+    <Content Include="Areas\Admin\Content\js\treeview\jquery.treeview.js" />
+    <Content Include="Areas\Admin\Content\js\uniform\css\uniform.default.css" />
+    <Content Include="Areas\Admin\Content\js\uniform\images\sprite.png" />
+    <Content Include="Areas\Admin\Content\js\uniform\jquery.uniform.min.js" />
+    <Content Include="Areas\Admin\Content\js\wizard\jquery.form.min.js" />
+    <Content Include="Areas\Admin\Content\js\wizard\wizard-nav.png" />
+    <Content Include="Areas\Admin\Content\js\wizard\wizard.css" />
+    <Content Include="Areas\Admin\Content\js\wizard\wizard.min.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\kindeditor.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\lang\ar.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\lang\en.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\lang\ko.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\lang\zh_CN.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\lang\zh_TW.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\anchor\anchor.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\autoheight\autoheight.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\baidumap\baidumap.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\baidumap\index.html" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\baidumap\map.html" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\clearhtml\clearhtml.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\code\code.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\code\prettify.css" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\code\prettify.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\emoticons.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\0.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\1.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\10.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\100.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\101.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\102.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\103.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\104.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\105.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\106.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\107.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\108.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\109.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\11.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\110.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\111.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\112.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\113.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\114.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\115.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\116.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\117.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\118.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\119.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\12.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\120.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\121.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\122.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\123.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\124.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\125.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\126.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\127.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\128.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\129.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\13.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\130.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\131.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\132.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\133.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\134.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\14.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\15.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\16.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\17.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\18.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\19.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\2.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\20.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\21.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\22.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\23.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\24.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\25.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\26.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\27.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\28.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\29.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\3.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\30.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\31.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\32.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\33.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\34.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\35.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\36.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\37.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\38.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\39.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\4.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\40.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\41.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\42.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\43.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\44.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\45.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\46.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\47.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\48.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\49.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\5.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\50.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\51.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\52.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\53.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\54.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\55.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\56.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\57.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\58.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\59.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\6.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\60.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\61.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\62.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\63.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\64.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\65.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\66.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\67.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\68.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\69.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\7.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\70.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\71.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\72.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\73.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\74.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\75.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\76.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\77.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\78.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\79.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\8.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\80.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\81.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\82.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\83.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\84.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\85.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\86.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\87.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\88.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\89.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\9.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\90.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\91.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\92.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\93.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\94.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\95.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\96.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\97.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\98.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\99.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\emoticons\images\static.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\filemanager\filemanager.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\filemanager\images\file-16.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\filemanager\images\file-64.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\filemanager\images\folder-16.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\filemanager\images\folder-64.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\filemanager\images\go-up.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\flash\flash.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\image\image.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\image\images\align_left.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\image\images\align_right.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\image\images\align_top.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\image\images\refresh.png" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\insertfile\insertfile.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\lineheight\lineheight.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\link\link.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\map\map.html" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\map\map.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\media\media.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\multiimage\images\fileprogress.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\multiimage\images\FileResize.swf" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\multiimage\images\handlers.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\multiimage\images\image.png" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\multiimage\images\images\cross.png" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\multiimage\images\images\swfBnt.png" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\multiimage\images\select-files-en.png" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\multiimage\images\select-files-zh_CN.png" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\multiimage\images\swf2ckeditor.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\multiimage\images\swfupload.css" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\multiimage\images\swfupload.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\multiimage\images\swfupload.swf" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\multiimage\images\swfuploadbutton.swf" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\multiimage\images\unpack_swfupload.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\multiimage\multiimage.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\pagebreak\pagebreak.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\plainpaste\plainpaste.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\preview\preview.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\quickformat\quickformat.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\table\table.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\template\html\1.html" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\template\html\2.html" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\template\html\3.html" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\template\template.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\plugins\wordpaste\wordpaste.js" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\themes\common\anchor.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\themes\common\blank.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\themes\common\flash.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\themes\common\loading.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\themes\common\media.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\themes\common\rm.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\themes\default\background.png" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\themes\default\default.css" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\themes\default\default.png" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\themes\qq\editor.gif" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\themes\qq\qq.css" />
+    <Content Include="Areas\Admin\Content\js\kindeditor-4.1.9\themes\simple\simple.css" />
+    <Content Include="Areas\Admin\Content\login.min.css" />
+    <Content Include="Areas\Admin\Content\print.css" />
+    <Content Include="Areas\Admin\FileResize\Avatar.aspx" />
+    <Content Include="Areas\Admin\FileResize\CameraSave.aspx" />
+    <Content Include="DBScripts\DataBase.sql" />
+    <Content Include="DBScripts\md5.sql" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Lib\mimeTypes.txt" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\fakeobjects\images\" />
+    <Folder Include="Areas\Manager\Cotnent\js\" />
+    <Folder Include="Areas\Mobile\Models\" />
+    <Folder Include="Upload\Attached\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{eefe3d48-a4c7-4664-a131-35c15f893fbb}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DbUtility\DbUtility.csproj">
+      <Project>{978abb6c-bca2-4aed-947a-50fb14058375}</Project>
+      <Name>DbUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{a7430f49-ab43-438e-8a37-1093a7ad4bc7}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Content\img\ext\ext.php" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\css\fonts\BebasNeue-webfont.eot" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\css\fonts\BebasNeue-webfont.ttf" />
+    <Content Include="Areas\Admin\Content\js\3Dgallery\css\fonts\BebasNeue-webfont.woff" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\component.json" />
+    <Content Include="Areas\Admin\Content\js\jquery.timepicker.addon\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Account\Avatar.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\ForgetPwd.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\LogOn.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\Personal.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\ReSetPwd.cshtml" />
+    <Content Include="Areas\Admin\Views\Attachment\AlbumDir.cshtml" />
+    <Content Include="Areas\Admin\Views\Attachment\AlbumList.cshtml" />
+    <Content Include="Areas\Admin\Views\Attachment\CropPic.cshtml" />
+    <Content Include="Areas\Admin\Views\Attachment\Dir.cshtml" />
+    <Content Include="Areas\Admin\Views\Attachment\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Attachment\SwfUpload.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\Mail.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\Site.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\Work.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Role\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Role\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Role\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Role\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\Role\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Months.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_TableHead.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="_Documents\01.开发文档.doc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\ArticleKind\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ArticleKind\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\ArticleKind\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ArticleKind\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ArticleKind\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\ArticleKind\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\ArticleKind\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\_Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="file_manager_json.ashx" />
+    <Content Include="upload_json.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Article\TreeView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\CustomPage\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomPage\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomPage\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomPage\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomPage\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomPage\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomPage\_Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\LICENSE.md" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\scayt\README.md" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\wsc\README.md" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\README.md" />
+    <Content Include="Areas\Admin\Content\js\layoutit\ckeditor\skins\moono\readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\CustomPage\LayoutIt.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\PermissionData\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\PermissionData\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\PermissionData\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\PermissionData\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PermissionData\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\PermissionData\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\PermissionData\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PermissionMap\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\PermissionMap\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\PermissionMap\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\PermissionMap\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PermissionMap\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\PermissionMap\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\PermissionMap\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PermissionMap\_Treeview.cshtml" />
+    <Content Include="Areas\Manager\Views\Web.config" />
+    <Content Include="Areas\Manager\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Manager\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Manager\Views\AutoGenerator\Index.cshtml" />
+    <Content Include="Areas\Manager\Views\DataBase\Index.cshtml" />
+    <Content Include="Areas\Manager\Views\DataBase\List.cshtml" />
+    <Content Include="Areas\Manager\Views\DataBase\EditTable.cshtml" />
+    <Content Include="Areas\Manager\Views\DataBase\_Index.cshtml" />
+    <Content Include="Areas\Manager\Views\DataBase\_Form.cshtml" />
+    <Content Include="Areas\Manager\Views\DataBase\_List.cshtml" />
+    <Content Include="Areas\Manager\Views\DataBase\CreateTable.cshtml" />
+    <Content Include="Areas\Manager\Views\DataBase\CreateRecord.cshtml" />
+    <Content Include="Areas\Manager\Views\DataBase\EditRecord.cshtml" />
+    <Content Include="Areas\Manager\Views\DataBase\_RecordForm.cshtml" />
+    <Content Include="Areas\Manager\Views\TempleManager\Index.cshtml" />
+    <Content Include="Areas\Manager\Views\TempleManager\_Index.cshtml" />
+    <Content Include="Areas\Manager\Views\TempleManager\Create.cshtml" />
+    <Content Include="Areas\Manager\Views\TempleManager\Edit.cshtml" />
+    <Content Include="Areas\Manager\Views\TempleManager\_Form.cshtml" />
+    <Content Include="Areas\Manager\Views\DataBase\ExcuteSQL.cshtml" />
+    <Content Include="Areas\Admin\Views\DictionaryType\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\DictionaryType\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\DictionaryType\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DictionaryType\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DictionaryType\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\DictionaryType\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\DictionaryType\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Dictionary\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Dictionary\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Dictionary\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Dictionary\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Dictionary\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Dictionary\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\Dictionary\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Area\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Area\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Area\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Area\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Area\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Area\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\Area\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ApplyFund\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ApplyFund\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ApplyFund\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ApplyFund\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ApplyFund\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\ApplyFund\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\ApplyFund\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Store\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Store\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Store\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Store\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Store\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\Store\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Store\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\StoreTag\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\StoreTag\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\StoreTag\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\StoreTag\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\StoreTag\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\StoreTag\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\StoreTag\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\StoreTag_Record\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\StoreTag_Record\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\StoreTag_Record\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\StoreTag_Record\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\StoreTag_Record\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\StoreTag_Record\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\StoreTag_Record\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\SysLog\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SysLog\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SysLog\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\SysLog\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\SysLog\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\SysLog\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\SysLog\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\UserLike\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\UserLike\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\UserLike\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\UserLike\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\UserLike\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\UserLike\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\UserLike\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\QExam\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QExam\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QExam\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\QExam\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\QExam\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\QExam\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\QExam\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\QExamRecord\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QExamRecord\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QExamRecord\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\QExamRecord\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\QExamRecord\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\QExamRecord\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\QExamRecord\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\QTask\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QTask\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QTask\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\QTask\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\QTask\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\QTask\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\QTask\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Question\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Question\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Question\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Question\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Question\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\Question\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Question\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\QuestionItem\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QuestionItem\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QuestionItem\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\QuestionItem\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\QuestionItem\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\QuestionItem\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\QuestionItem\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\QuestionRecord\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QuestionRecord\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QuestionRecord\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\QuestionRecord\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\QuestionRecord\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\QuestionRecord\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\QuestionRecord\_Detail.cshtml" />
+    <Content Include="Areas\Mobile\Views\Web.config" />
+    <Content Include="Views\Shared\_AtuoLayout.cshtml" />
+    <Content Include="_Documents\项目结构图例.pdf" />
+    <Content Include="Views\Shared\_DemoLayoutPage.cshtml" />
+    <Content Include="Views\Home\Demo.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Mobile\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Mobile\Views\Shared\_Footer.cshtml" />
+    <Content Include="Areas\Mobile\Views\Shared\_Header.cshtml" />
+    <Content Include="Areas\Mobile\Views\Home\Menu.cshtml" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\demos\json\events.json" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\demos\php\get-events.php" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\demos\php\get-timezones.php" />
+    <Content Include="Areas\Mobile\Content\js\fullcalendar-2.7.1\demos\php\utils.php" />
+    <Content Include="Areas\Mobile\Content\js\jquery-ui\package.json" />
+    <Content Include="Areas\Mobile\Views\Ajax\SignIn.cshtml" />
+    <Content Include="Areas\Mobile\Content\css\style.less" />
+    <Content Include="Areas\Mobile\Views\Ajax\Welcome.cshtml" />
+    <Content Include="Areas\Mobile\Views\Shared\_LayoutInfo.cshtml" />
+    <Content Include="Areas\Mobile\Views\Expert\Conversation.cshtml" />
+    <Content Include="Areas\Mobile\Views\Shared\_LayoutExpert.cshtml" />
+    <Content Include="Areas\Mobile\Views\Expert\Interview.cshtml" />
+    <Content Include="Areas\Mobile\Views\Shared\_LayoutAccount.cshtml" />
+    <Content Include="Areas\Mobile\Views\Shared\_LayoutQuestion.cshtml" />
+    <Content Include="Areas\Mobile\Views\Expert\Detail.cshtml" />
+    <Content Include="Areas\Mobile\Views\Account\Rule.cshtml" />
+    <Content Include="Areas\Mobile\Views\Expert\DetailConversation.cshtml" />
+    <Content Include="Areas\Mobile\Views\Expert\InterviewDetail.cshtml" />
+    <Content Include="Areas\Mobile\Views\Account\About.cshtml" />
+    <None Include="Properties\PublishProfiles\web.pubxml" />
+    <None Include="Properties\PublishProfiles\web1.pubxml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>32133</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

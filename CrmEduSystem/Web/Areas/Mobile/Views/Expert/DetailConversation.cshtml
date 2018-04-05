@@ -1,0 +1,42 @@
+﻿@using Models
+@{
+    Layout = "~/Areas/Mobile/Views/Shared/_LayoutExpert.cshtml";
+    Article article = Model;
+}
+
+
+<nav class="head-box">
+    <div class="navbar-brand " href="#">
+        <strong>
+            <img class="answer2" alt="Brand" src="/Areas/Mobile/Content/ico/icon20.png" />@ViewBag.Nav</strong>
+        <span></span>
+    </div>
+</nav>
+<div class="expert-foruma">
+    <div class="title">
+        <strong>@article.Title</strong>
+        <p>@article.Summary</p>
+    </div>
+
+
+    <div class="expert">
+        <div class="picture">
+            <img src="@article.Thumbs" />
+        </div>
+        <div class="text">
+            <strong>@article.ExpertName<i>教授</i></strong>
+            <span>@article.ExpertTiitle</span>
+            <br />
+        </div>
+
+        <div class="pp">
+            <p>@Html.Raw(article.ExpertRemark)</p>
+        </div>
+    </div>
+
+
+
+</div>
+<div class="article-box">
+    @Html.Raw(article.Content)
+</div>

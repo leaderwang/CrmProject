@@ -1,0 +1,9 @@
+﻿@using Common;
+@using Models;
+@model SysLog
+<div class="control-group"><label class="control-label">ID</label><div class="controls"><input id="ID" name ="ID" type="text" value ="@Model.ID" required readonly="readonly" /></div></div>
+<div class="control-group"><label class="control-label">RequestNo</label><div class="controls"><input id="RequestNo" name ="RequestNo" type="text" value ="@Model.RequestNo" required /></div></div>
+<div class="control-group"><label class="control-label">OpenID</label><div class="controls"><input id="OpenID" name ="OpenID" type="text" value ="@Model.OpenID" /></div></div>
+<div class="control-group"><label class="control-label">Title</label><div class="controls"><textarea id="Title" name ="Title">@Model.Title</textarea></div></div>
+<div class="control-group"><label class="control-label">Content</label><div class="controls"><input id="Content" name ="Content" type="text" value ="@Model.Content" /></div></div>
+<div class="control-group"><label class="control-label">LogLevel</label><div class="controls"><input id="LogLevel" name ="LogLevel" type="text" value ="@Model.LogLevel" style="width:30px;"/></div></div>

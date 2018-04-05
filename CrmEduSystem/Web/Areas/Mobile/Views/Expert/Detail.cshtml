@@ -1,0 +1,25 @@
+﻿@using Models
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Mobile/Views/Shared/_LayoutExpert.cshtml";
+    Article article = Model;
+}
+<nav class="head-box">
+    <div class="navbar-brand " href="#">
+        <strong>
+            <img alt="Brand" src="/Areas/Mobile/Content/ico/icon06.png">@ViewBag.Nav</strong>
+        <span></span>
+    </div>
+</nav>
+
+
+<div class="col-sm-8 blog-main">
+    <div class="blog-post">
+        <h3 class="blog-post-title">@article.Title</h3>
+        <p class="blog-post-meta">
+            @article.ReleaseDate.Value.ToLongDateString()
+        </p>
+        @Html.Raw(article.Content)
+    </div>
+</div>
+

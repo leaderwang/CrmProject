@@ -1,0 +1,63 @@
+﻿@using Common;
+@using MvcPager;
+@using Lib;
+@using Models;
+@model PagedList<Store>
+<table class="table table-striped">
+    <thead>
+        <tr>
+          <th class="checkbox-column">
+                <input type="checkbox" name="checkall" onchange="selectall(this,'ID')" />
+            </th>
+                           <th class="sorting" data-sort="ID">ID</th>
+               <th class="sorting" data-sort="StoreNo">StoreNo</th>
+               <th class="sorting" data-sort="StoreName">StoreName</th>
+               <th class="sorting" data-sort="KId">KId</th>
+               <th class="sorting" data-sort="Summary">Summary</th>
+               <th class="sorting" data-sort="Content">Content</th>
+               <th class="sorting" data-sort="Address">Address</th>
+               <th class="sorting" data-sort="Status">Status</th>
+               <th class="sorting" data-sort="Remark">Remark</th>
+
+            <th class="btns-column">
+                操作
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+               <td class="checkbox-column"><input type="checkbox" name="ID" value="@item.ID"/></td>
+                               <td>@item.ID</td>
+               <td>@item.StoreNo</td>
+               <td>@item.StoreName</td>
+               <td>@item.KId</td>
+               <td>@item.Summary</td>
+               <td>@item.Content</td>
+               <td>@item.Address</td>
+               <td>@item.Status</td>
+               <td>@item.Remark</td>
+
+                <td class="btns-column">
+					@Html.ViewButton("详细", "/admin/Store/Detail", new { href = "/admin/Store/Detail?id=" + item.ID })
+					@Html.EditButton("编辑", "/admin/Store/Edit", new { href = "/admin/Store/Edit?id=" + item.ID })
+					@Html.DeleteButton("删除", "/admin/Store/Delete", new { href = "javascript:void(0);", onclick = "Delete('/admin/Store/Delete/" + item.ID + "',this,'one');" })
+				</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="dt_footer fixed">
+    <div class="row-fluid">
+        <div class="span4">
+            <div class="dataTables_info" id="DataTables_Table_0_info">
+                @Model.CurrentPageIndex/@Model.TotalPageCount 页, 共@(Model.TotalItemCount)条记录
+            </div>
+        </div>
+        <div class="span8">
+            <div class="pagination">@Html.Pager(Model)</div>
+        </div>
+    </div>
+</div>
+@Html.PermissionValideScript()

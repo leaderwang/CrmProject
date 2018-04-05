@@ -1,0 +1,106 @@
+﻿@{
+    Layout = "~/Areas/Mobile/Views/Shared/_LayoutAccount.cshtml";
+}
+<style>
+    th {
+        text-align: center;
+    }
+
+
+    ul {
+        list-style: circle;
+        padding: 0 0 0 20px;
+    }
+
+        ul li {
+            list-style: circle;
+        }
+
+    .tips-box {
+        background-color: #fff;
+        border-radius: 3px;
+        padding: 5px;
+        margin: 0 0 30px 0;
+    }
+
+    .line-box {
+        height: 2px;
+        background-color: #000;
+        margin: 0 30px 10px 30px;
+    }
+</style>
+<nav class="head-box">
+    <div class="navbar-brand " href="#">
+        <strong>
+            <img class="img" alt="Brand" src="/areas/mobile/content/ico/icon17.png">积分规则</strong>
+        <span></span>
+    </div>
+</nav>
+<div style="padding: 10px 10px 0 10px;">
+    @Html.Raw(ViewBag.Rule)
+</div>
+<!--
+<table class="table table-striped table-bordered text-center">
+    <tr>
+        <th>积分</th>
+        <th>要求</th>
+        <th>项目</th>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>首次</td>
+        <td>实名注册</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>每题</td>
+        <td>参与“知识挑战”（重复答题不累计）</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>首次</td>
+        <td>从公众号底部菜单进入[学术地带]，<br />
+            阅读“学术会议”中的内容</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>首次</td>
+        <td>从公众号底部菜单进入[学术地带]，<br />
+            阅读“学术资讯”中的内容</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>首次</td>
+        <td>从公众号底部菜单进入[专家视角]，<br />
+            观看“专家访谈”中的内容</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>首次</td>
+        <td>从公众号底部菜单进入[专家视角]，<br />
+            阅读“专家笔谈”中的内容</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>首次</td>
+        <td>注册用户分享转发</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>每条</td>
+        <td>注册用户精选留言</td>
+    </tr>
+</table>
+<div class="tips-box">
+    <p class="text-center">用户积分与礼品兑换说明</p>
+    <div class="line-box"></div>
+    <strong>积分使用</strong>
+
+    <ul>
+        <li>用户积分可以通过“积分规则”中的方式累积</li>
+        <li>用户每季度有一次兑换机会，可兑换一本书籍</li>
+        <li>用户积分在成功兑换礼品后，会扣除相应分值</li>
+    </ul>
+    <p style="padding: 0 20px;">*用户积分永久有效</p>
+</div>
+-->

@@ -1,0 +1,6 @@
+﻿@using Common;
+@using Models;
+@model ArticleKind
+<div class="control-group"><label class="control-label">ID</label><div class="controls"><input id="ID" name ="ID" type="text" value ="@Model.ID" required readonly="readonly" /></div></div>
+<div class="control-group"><label class="control-label">KindName</label><div class="controls"><textarea id="KindName" name ="KindName" required>@Model.KindName</textarea></div></div>
+<div class="control-group"><label class="control-label">Remark</label><div class="controls"><textarea id="Remark" name ="Remark">@Model.Remark</textarea></div></div>

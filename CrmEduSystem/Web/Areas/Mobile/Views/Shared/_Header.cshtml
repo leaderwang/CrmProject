@@ -1,0 +1,25 @@
+﻿<title>@(ViewBag.Title == null ? Lib.CurrentSite.Title : ViewBag.Title)</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="Edge mode" />
+<meta http-equiv="Window-Target" content="_top" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+
+<link href="~/Areas/Mobile/Content/css/normalize.css" rel="stylesheet" />
+<link href="~/Areas/Mobile/Content/css/bootstrap.css" rel="stylesheet" />
+<link href="~/Areas/Mobile/Content/css/swiper.min.css" rel="stylesheet" />
+<link href="~/Areas/Mobile/Content/css/style.css" rel="stylesheet" />
+
+<script src="~/Areas/Mobile/Content/js/jquery.min.js"></script>
+<script src="~/Areas/Mobile/Content/js/bootstrap.min.js"></script>
+<script src="~/Areas/Mobile/Content/js/layer/layer.js"></script>
+<script src="~/Areas/Mobile/Content/js/moment.js"></script>
+<script src="~/Areas/Mobile/Content/js/swiper.min.js"></script>
+<script src="/areas/mobile/content/js/wechatapi.js"></script>
+
+
+<!--[if lt IE 9]>
+        <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+        <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+@Html.Raw(Lib.CurrentSite.BaiduJS)

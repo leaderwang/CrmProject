@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @Html.Partial("_Header")
+    <script type='text/javascript'>
+        wx.ready(function () {
+            share();
+        });
+    </script>
+</head>
+<body>
+    <div class="main">
+        @RenderBody()
+    </div>
+    @Html.Partial("_Footer")
+</body>
+</html>
