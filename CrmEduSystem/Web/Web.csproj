@@ -1534,6 +1534,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Lib\mimeTypes.txt" />
+    <Content Include="Upload\Attached\2_w70_h70.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1550,7 +1551,6 @@
     <Folder Include="Areas\Admin\Content\js\layoutit\ckeditor\plugins\fakeobjects\images\" />
     <Folder Include="Areas\Manager\Cotnent\js\" />
     <Folder Include="Areas\Mobile\Models\" />
-    <Folder Include="Upload\Attached\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

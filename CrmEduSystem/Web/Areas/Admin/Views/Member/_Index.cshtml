@@ -10,15 +10,9 @@
             </th>
             <th class="sorting" data-sort="ID">#</th>
             <th class="sorting" data-sort="UserName">用户名</th>
-            <th class="sorting" data-sort="OpenID">OpenID</th>
-            <th class="sorting" data-sort="NickName">昵称</th>
             <th class="sorting" data-sort="RealName">姓名</th>
             <th class="sorting" data-sort="Mobile">手机</th>
-            <th class="sorting" data-sort="Province">省份</th>
-            <th class="sorting" data-sort="City">城市</th>
-            <th class="sorting" data-sort="Country">地区</th>
-            <th class="sorting" data-sort="Hospital">医院</th>
-            <th class="sorting" data-sort="Department">科室</th>
+            <th class="sorting" data-sort="Email">邮箱</th>
             <th class="btns-column">操作
             </th>
         </tr>
@@ -34,16 +28,9 @@
                     <input type="checkbox" name="ID" value="@item.ID"/></td>
                 <td>@item.ID</td>
                 <td>@item.UserName</td>
-                <td>@item.OpenID</td>
-                <td>@item.NickName</td>
                 <td>@item.RealName</td>
-                @*   <td>@rt.RoleName</td>*@
                 <td>@item.Mobile</td>
-                <td>@item.Province</td>
-                <td>@item.City</td>
-                <td>@item.Country</td>
-                <td>@item.Hospital</td>
-                <td>@item.Department</td>
+                <td>@item.Email</td>
                 <td class="btns-column">
                     @Html.EditButton("编辑", "/admin/Member/Edit", new { href = "/admin/Member/Edit?id=" + item.ID })
                     @if (item.RoleID != 1)
