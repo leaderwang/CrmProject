@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\Article.cs" />
+    <Compile Include="Entity\AutoGenerator\AccessLog.cs" />
     <Compile Include="Entity\AutoGenerator\Area.cs" />
     <Compile Include="Entity\AutoGenerator\Article.cs" />
     <Compile Include="Entity\AutoGenerator\ArticleKind.cs" />
@@ -62,7 +63,6 @@
     <Compile Include="Entity\AutoGenerator\ApplyStuff.cs" />
     <Compile Include="Entity\AutoGenerator\Location.cs" />
     <Compile Include="Entity\AutoGenerator\ArticleReadLog.cs" />
-    <Compile Include="Entity\AutoGenerator\AccessLog.cs" />
     <Compile Include="Entity\AutoGenerator\Slider.cs" />
     <Compile Include="Entity\AutoGenerator\Store.cs" />
     <Compile Include="Entity\AutoGenerator\StoreTag.cs" />
