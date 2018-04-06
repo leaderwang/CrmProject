@@ -12,24 +12,6 @@ namespace Models
 {
     public partial class MemberLogic
     {
-        ArticleReadLogLogic articleReadLog = new ArticleReadLogLogic();
-        DBContext dbContext = new DBContext();
-        public bool GetReadLog(ArticleReadLog log)
-        {
-            if (articleReadLog.GetArticleReadLogs(new ArticleReadLog() { AID = log.AID, OpenID = log.OpenID }).Count == 0)
-            {
-                if (articleReadLog.Add(log))
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            return false;
-        }
-
 
         //public bool GetHeader(Member member)
         //{

@@ -65,8 +65,6 @@ namespace Web.Areas.Mobile.Controllers
         public ActionResult InterviewDetail(int id, string openID)
         {
             Article article = articleLogic.GetArticle(id);
-            //阅读记录
-            memberLogic.GetReadLog(new ArticleReadLog() { AID = article.ID, KID = article.KID, OpenID = openID });
             string title = articleKindLogic.GetArticleKind(article.KID).Name;
 
             if (article != null)
@@ -84,8 +82,6 @@ namespace Web.Areas.Mobile.Controllers
         public ActionResult DetailConversation(int id, string openID)
         {
             Article article = articleLogic.GetArticle(id);
-            //阅读记录
-            memberLogic.GetReadLog(new ArticleReadLog() { AID = article.ID, KID = article.KID, OpenID = openID });
             
             string title = articleKindLogic.GetArticleKind(article.KID).Name;
 

@@ -49,7 +49,6 @@ namespace Common
         }
         #endregion
 
-
         #region 一记录一文件
         public static void ErrorLog(string info)
         {

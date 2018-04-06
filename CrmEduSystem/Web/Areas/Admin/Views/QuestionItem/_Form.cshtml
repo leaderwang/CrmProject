@@ -1,8 +1,0 @@
-﻿@using Common;
-@using Models;
-@model QuestionItem
-<div class="control-group"><label class="control-label">ID</label><div class="controls"><input id="ID" name ="ID" type="text" value ="@Model.ID" required readonly="readonly" /></div></div>
-<div class="control-group"><label class="control-label">QuestionID</label><div class="controls"><input id="QuestionID" name ="QuestionID" type="text" value ="@Model.QuestionID" style="width:30px;" required/></div></div>
-<div class="control-group"><label class="control-label">Name</label><div class="controls"><textarea id="Name" name ="Name" required>@Model.Name</textarea></div></div>
-<div class="control-group"><label class="control-label">IsTrue</label><div class="controls"><select id="IsTrue" name ="IsTrue" val="@Model.IsTrue"><option value="">请选择..</option><option value="True">是</option><option value="False">否</option></select></div></div>
-<div class="control-group"><label class="control-label">Tag</label><div class="controls"><input id="Tag" name ="Tag" type="text" value ="@Model.Tag" /></div></div>
