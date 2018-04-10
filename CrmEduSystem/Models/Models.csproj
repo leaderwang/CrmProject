@@ -61,6 +61,16 @@
     <Compile Include="Entity\AutoGenerator\Location.cs" />
     <Compile Include="Entity\AutoGenerator\Slider.cs" />
     <Compile Include="Entity\AutoGenerator\SysLog.cs" />
+    <Compile Include="Entity\AutoGenerator\Course.cs" />
+    <Compile Include="Entity\AutoGenerator\CourseLearnRecord.cs" />
+    <Compile Include="Entity\AutoGenerator\CourseSchedule.cs" />
+    <Compile Include="Entity\AutoGenerator\Customer.cs" />
+    <Compile Include="Entity\AutoGenerator\Grade.cs" />
+    <Compile Include="Entity\AutoGenerator\GradeStudent.cs" />
+    <Compile Include="Entity\AutoGenerator\Materiel.cs" />
+    <Compile Include="Entity\AutoGenerator\MaterielRecord.cs" />
+    <Compile Include="Entity\AutoGenerator\School.cs" />
+    <Compile Include="Entity\AutoGenerator\Student.cs" />
     <Compile Include="Entity\AutoPage.cs" />
     <Compile Include="Entity\Member.cs" />
     <Compile Include="Entity\PermissionData.cs" />
@@ -82,6 +92,16 @@
     <Compile Include="Logic\LocationLogic.cs" />
     <Compile Include="Logic\SliderLogic.cs" />
     <Compile Include="Logic\SysLogLogic.cs" />
+    <Compile Include="Logic\CourseLogic.cs" />
+    <Compile Include="Logic\CourseLearnRecordLogic.cs" />
+    <Compile Include="Logic\CourseScheduleLogic.cs" />
+    <Compile Include="Logic\CustomerLogic.cs" />
+    <Compile Include="Logic\GradeLogic.cs" />
+    <Compile Include="Logic\GradeStudentLogic.cs" />
+    <Compile Include="Logic\MaterielLogic.cs" />
+    <Compile Include="Logic\MaterielRecordLogic.cs" />
+    <Compile Include="Logic\SchoolLogic.cs" />
+    <Compile Include="Logic\StudentLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +132,16 @@
     <Compile Include="Service\LocationService.cs" />
     <Compile Include="Service\SliderService.cs" />
     <Compile Include="Service\SysLogService.cs" />
+    <Compile Include="Service\CourseService.cs" />
+    <Compile Include="Service\CourseLearnRecordService.cs" />
+    <Compile Include="Service\CourseScheduleService.cs" />
+    <Compile Include="Service\CustomerService.cs" />
+    <Compile Include="Service\GradeService.cs" />
+    <Compile Include="Service\GradeStudentService.cs" />
+    <Compile Include="Service\MaterielService.cs" />
+    <Compile Include="Service\MaterielRecordService.cs" />
+    <Compile Include="Service\SchoolService.cs" />
+    <Compile Include="Service\StudentService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

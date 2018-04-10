@@ -48,7 +48,7 @@ namespace Web.Areas.Admin.Controllers
             {
                 ViewData["GetParentOption"] = GetParentOption(0, 0);
                 ArticleLogic ml = new ArticleLogic();
-                Article obj = new Article() { Author = "NutriciaELN", CreateDate = DateTime.Now, CreateUserID = ID, IsDeleted = false, Thumbs = formCollection["Thumbs"], Files = (Session["upaddress"] == null ? "" : Session["upaddress"].ToString()) };
+                Article obj = new Article() { CreateDate = DateTime.Now, CreateUserID = ID, IsDeleted = false, Thumbs = formCollection["Thumbs"], Files = (Session["upaddress"] == null ? "" : Session["upaddress"].ToString()) };
                 UpdateModel(obj);
                 obj.Files = string.IsNullOrEmpty(formCollection["upaddress"]) ? string.Empty : formCollection["upaddress"];
                 bool result = ml.Add(obj);

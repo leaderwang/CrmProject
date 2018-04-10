@@ -72,6 +72,50 @@ namespace Models
 
 
         /// <summary>
+        ///SortID
+        /// </summary>
+        private Int32? _SortID;
+        /// <summary>
+        ///SortID
+        /// </summary>
+        [ColumnAttribute("SortID", false, false, true)]
+        public Int32? SortID { get { return _SortID;} set{_SortID = value;OnPropertyChanged("SortID");} } 
+
+
+        /// <summary>
+        ///ClassID
+        /// </summary>
+        private Int32? _ClassID;
+        /// <summary>
+        ///ClassID
+        /// </summary>
+        [ColumnAttribute("ClassID", false, false, true)]
+        public Int32? ClassID { get { return _ClassID;} set{_ClassID = value;OnPropertyChanged("ClassID");} } 
+
+
+        /// <summary>
+        ///KeyWords
+        /// </summary>
+        private String _KeyWords;
+        /// <summary>
+        ///KeyWords
+        /// </summary>
+        [ColumnAttribute("KeyWords", false, false, true)]
+        public String KeyWords { get { return _KeyWords;} set{_KeyWords = value;OnPropertyChanged("KeyWords");} } 
+
+
+        /// <summary>
+        ///Quote
+        /// </summary>
+        private String _Quote;
+        /// <summary>
+        ///Quote
+        /// </summary>
+        [ColumnAttribute("Quote", false, false, true)]
+        public String Quote { get { return _Quote;} set{_Quote = value;OnPropertyChanged("Quote");} } 
+
+
+        /// <summary>
         ///Title
         /// </summary>
         private String _Title;
@@ -79,18 +123,7 @@ namespace Models
         ///Title
         /// </summary>
         [ColumnAttribute("Title", false, false, false)]
-        public String Title { get { return _Title;} set{_Title = value;OnPropertyChanged("Title");} }
-
-
-        /// <summary>
-        ///Author
-        /// </summary>
-        private String _Author;
-        /// <summary>
-        ///Author
-        /// </summary>
-        [ColumnAttribute("Author", false, false, false)]
-        public String Author { get { return _Author; } set { _Author = value; OnPropertyChanged("Author"); } }
+        public String Title { get { return _Title;} set{_Title = value;OnPropertyChanged("Title");} } 
 
 
         /// <summary>
@@ -112,29 +145,7 @@ namespace Models
         ///Content
         /// </summary>
         [ColumnAttribute("Content", false, false, true)]
-        public String Content { get { return _Content;} set{_Content = value;OnPropertyChanged("Content");} }
-
-
-        /// <summary>
-        ///Files
-        /// </summary>
-        private String _Files;
-        /// <summary>
-        ///Files
-        /// </summary>
-        [ColumnAttribute("Files", false, false, true)]
-        public String Files { get { return _Files; } set { _Files = value; OnPropertyChanged("Files"); } }
-
-
-        /// <summary>
-        ///Thumbs
-        /// </summary>
-        private String _Thumbs;
-        /// <summary>
-        ///Thumbs
-        /// </summary>
-        [ColumnAttribute("Thumbs", false, false, true)]
-        public String Thumbs { get { return _Thumbs; } set { _Thumbs = value; OnPropertyChanged("Thumbs"); } }
+        public String Content { get { return _Content;} set{_Content = value;OnPropertyChanged("Content");} } 
 
 
         /// <summary>
@@ -156,7 +167,7 @@ namespace Models
         ///Status
         /// </summary>
         [ColumnAttribute("Status", false, false, false)]
-        public Int32 Status { get { return _Status;} set{_Status = value;OnPropertyChanged("Status");} }
+        public Int32 Status { get { return _Status;} set{_Status = value;OnPropertyChanged("Status");} } 
 
 
         /// <summary>
@@ -167,7 +178,29 @@ namespace Models
         ///ReleaseDate
         /// </summary>
         [ColumnAttribute("ReleaseDate", false, false, true)]
-        public DateTime? ReleaseDate { get { return _ReleaseDate; } set { _ReleaseDate = value; OnPropertyChanged("ReleaseDate"); } }
+        public DateTime? ReleaseDate { get { return _ReleaseDate;} set{_ReleaseDate = value;OnPropertyChanged("ReleaseDate");} } 
+
+
+        /// <summary>
+        ///Thumbs
+        /// </summary>
+        private String _Thumbs;
+        /// <summary>
+        ///Thumbs
+        /// </summary>
+        [ColumnAttribute("Thumbs", false, false, true)]
+        public String Thumbs { get { return _Thumbs;} set{_Thumbs = value;OnPropertyChanged("Thumbs");} } 
+
+
+        /// <summary>
+        ///Files
+        /// </summary>
+        private String _Files;
+        /// <summary>
+        ///Files
+        /// </summary>
+        [ColumnAttribute("Files", false, false, true)]
+        public String Files { get { return _Files;} set{_Files = value;OnPropertyChanged("Files");} } 
 
 
         /// <summary>
