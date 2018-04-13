@@ -2,7 +2,7 @@
 @using MvcPager;
 @using Lib;
 @using Models;
-@model PagedList<Student>
+@model PagedList<Employee>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -10,8 +10,8 @@
                 <input type="checkbox" name="checkall" onchange="selectall(this,'ID')" />
             </th>
                            <th class="sorting" data-sort="ID">ID</th>
-               <th class="sorting" data-sort="StudentNo">学员编号</th>
-               <th class="sorting" data-sort="UserName">姓名</th>
+               <th class="sorting" data-sort="EmployeeNo">员工编号</th>
+               <th class="sorting" data-sort="UserName">员工姓名</th>
                <th class="sorting" data-sort="EnglishName">英文名</th>
                <th class="sorting" data-sort="Status">状态</th>
                <th class="sorting" data-sort="IDcard">身份证</th>
@@ -34,7 +34,7 @@
             <tr>
                <td class="checkbox-column"><input type="checkbox" name="ID" value="@item.ID"/></td>
                                <td>@item.ID</td>
-               <td>@item.StudentNo</td>
+               <td>@item.EmployeeNo</td>
                <td>@item.UserName</td>
                <td>@item.EnglishName</td>
                <td>@item.Status</td>
@@ -48,9 +48,9 @@
                <td>@item.WeiXin</td>
 
                 <td class="btns-column">
-					@Html.ViewButton("详细", "/admin/Student/Detail", new { href = "/admin/Student/Detail?id=" + item.ID })
-					@Html.EditButton("编辑", "/admin/Student/Edit", new { href = "/admin/Student/Edit?id=" + item.ID })
-					@Html.DeleteButton("删除", "/admin/Student/Delete", new { href = "javascript:void(0);", onclick = "Delete('/admin/Student/Delete/" + item.ID + "',this,'one');" })
+					@Html.ViewButton("详细", "/admin/Employee/Detail", new { href = "/admin/Employee/Detail?id=" + item.ID })
+					@Html.EditButton("编辑", "/admin/Employee/Edit", new { href = "/admin/Employee/Edit?id=" + item.ID })
+					@Html.DeleteButton("删除", "/admin/Employee/Delete", new { href = "javascript:void(0);", onclick = "Delete('/admin/Employee/Delete/" + item.ID + "',this,'one');" })
 				</td>
             </tr>
         }

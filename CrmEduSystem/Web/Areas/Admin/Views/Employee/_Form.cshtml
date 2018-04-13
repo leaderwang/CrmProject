@@ -1,9 +1,9 @@
 ﻿@using Common;
 @using Models;
-@model Student
+@model Employee
 <div class="control-group"><label class="control-label">ID</label><div class="controls"><input id="ID" name ="ID" type="text" value ="@Model.ID" required readonly="readonly" /></div></div>
-<div class="control-group"><label class="control-label">学员编号</label><div class="controls"><input id="StudentNo" name ="StudentNo" type="text" value ="@Model.StudentNo" required /></div></div>
-<div class="control-group"><label class="control-label">姓名</label><div class="controls"><input id="UserName" name ="UserName" type="text" value ="@Model.UserName" required /></div></div>
+<div class="control-group"><label class="control-label">员工编号</label><div class="controls"><input id="EmployeeNo" name ="EmployeeNo" type="text" value ="@Model.EmployeeNo" required /></div></div>
+<div class="control-group"><label class="control-label">员工姓名</label><div class="controls"><input id="UserName" name ="UserName" type="text" value ="@Model.UserName" required /></div></div>
 <div class="control-group"><label class="control-label">英文名</label><div class="controls"><input id="EnglishName" name ="EnglishName" type="text" value ="@Model.EnglishName" /></div></div>
 <div class="control-group"><label class="control-label">状态</label><div class="controls"><input id="Status" name ="Status" type="text" value ="@Model.Status" style="width:30px;"/></div></div>
 <div class="control-group"><label class="control-label">身份证</label><div class="controls"><input id="IDcard" name ="IDcard" type="text" value ="@Model.IDcard" /></div></div>

@@ -9,7 +9,7 @@ using MvcPager;
 namespace Models
 {
 	#region 实体模型
-    public partial class Student:INotifyPropertyChanged
+    public partial class Employee:INotifyPropertyChanged
     {
 
 		        /// <summary>
@@ -50,22 +50,22 @@ namespace Models
 
 
         /// <summary>
-        ///学员编号
+        ///员工编号
         /// </summary>
-        private String _StudentNo;
+        private String _EmployeeNo;
         /// <summary>
-        ///学员编号
+        ///员工编号
         /// </summary>
-        [ColumnAttribute("StudentNo", false, false, false)]
-        public String StudentNo { get { return _StudentNo;} set{_StudentNo = value;OnPropertyChanged("StudentNo");} } 
+        [ColumnAttribute("EmployeeNo", false, false, false)]
+        public String EmployeeNo { get { return _EmployeeNo;} set{_EmployeeNo = value;OnPropertyChanged("EmployeeNo");} } 
 
 
         /// <summary>
-        ///姓名
+        ///员工姓名
         /// </summary>
         private String _UserName;
         /// <summary>
-        ///姓名
+        ///员工姓名
         /// </summary>
         [ColumnAttribute("UserName", false, false, false)]
         public String UserName { get { return _UserName;} set{_UserName = value;OnPropertyChanged("UserName");} } 
@@ -241,16 +241,16 @@ namespace Models
     }
 	#endregion
 	#region 基本业务
-    public partial class StudentLogic
+    public partial class EmployeeLogic
     {
         /// <summary>
-        /// Student数据操作对象
+        /// Employee数据操作对象
         /// </summary>
-        private StudentService os = new StudentService();
+        private EmployeeService os = new EmployeeService();
         /// <summary>
         /// 构造函数
         /// </summary>
-        public StudentLogic()
+        public EmployeeLogic()
         {
             
         }
@@ -258,16 +258,16 @@ namespace Models
         /// 构造函数
         /// </summary>
         /// <param name="obj">操作数据库对象</param>
-        public StudentLogic(DBContext obj)
+        public EmployeeLogic(DBContext obj)
         {
-            os = new StudentService(obj);
+            os = new EmployeeService(obj);
         }
         /// <summary>
-        /// 添加Student
+        /// 添加Employee
         /// </summary>
         /// <param name="obj">添加对象</param>
         /// <returns>成功True失败False</returns>
-        public bool Add(Student obj)
+        public bool Add(Employee obj)
         {
             try
             {
@@ -283,18 +283,18 @@ namespace Models
             }
         }
 		/// <summary>
-        /// 添加Student
+        /// 添加Employee
         /// </summary>
         /// <param name="obj">添加对象</param>
         /// <returns>返回ID</returns>
-        public int Create(Student obj)
+        public int Create(Employee obj)
         {
             try
             {
 			    if (obj.ID > 0) throw new Exception("数据库已存在此数据");
                 string result = os.Add(obj);
                 os.Save(result);
-                return Convert.ToInt32(new DBContext().ExecuteScalarSql("select max(id) from [Student]"));
+                return Convert.ToInt32(new DBContext().ExecuteScalarSql("select max(id) from [Employee]"));
             }
             catch (Exception ex)
             {
@@ -304,13 +304,13 @@ namespace Models
 		/// <summary>
         /// 批量添加
         /// </summary>
-        public bool Add(List<Student> obj)
+        public bool Add(List<Employee> obj)
         {
             try
             {
                 List<string> result = new List<string>();
 
-                foreach (Student item in obj)
+                foreach (Employee item in obj)
                 {
                     if (item.ID == 0)
                     {
@@ -327,11 +327,11 @@ namespace Models
             }
         }
         /// <summary>
-        /// 修改Student
+        /// 修改Employee
         /// </summary>
         /// <param name="obj">修改对象</param>
         /// <returns>成功True失败False</returns>
-        public bool Update(Student obj)
+        public bool Update(Employee obj)
         {
             try
             {
@@ -349,7 +349,7 @@ namespace Models
         /// </summary>
         /// <param name="olts"></param>
         /// <returns></returns>
-        public bool Update(List<Student> olts)
+        public bool Update(List<Employee> olts)
         {
             try
             {
@@ -366,7 +366,7 @@ namespace Models
             }
         }
 		/// <summary>
-        /// 根据编号删除Student，此处为逻辑删除，实为更新IsDelete字段
+        /// 根据编号删除Employee，此处为逻辑删除，实为更新IsDelete字段
         /// </summary>
         /// <param name="id">编号</param>
         /// <returns>成功True失败False</returns>
@@ -374,7 +374,7 @@ namespace Models
         {
             try
             {
-                string result = os.Update(new Student { ID = id, IsDeleted = true });
+                string result = os.Update(new Employee { ID = id, IsDeleted = true });
 
                 return os.Save(result);
             }
@@ -384,16 +384,16 @@ namespace Models
             }
         }
 		/// <summary>
-        /// 删除Student，此处为逻辑删除，实为更新IsDelete字段
+        /// 删除Employee，此处为逻辑删除，实为更新IsDelete字段
         /// </summary>
         /// <param name="obj">删除对象</param>
         /// <returns>成功True失败False</returns>
-        public bool Delete(Student obj)
+        public bool Delete(Employee obj)
         {
             string sql = "";
             try
             {
-                var olts = os.GetObjects<Student>(obj);
+                var olts = os.GetObjects<Employee>(obj);
                 if (olts != null)
                 {
                     foreach (var item in olts)
@@ -414,11 +414,11 @@ namespace Models
             return false;
         }
 		/// <summary>
-        /// 删除Student集合，此处为逻辑删除，实为更新IsDelete字段
+        /// 删除Employee集合，此处为逻辑删除，实为更新IsDelete字段
         /// </summary>
         /// <param name="objs">删除对象集合</param>
         /// <returns>成功True失败False</returns>
-        public bool Delete(IList<Student> objs)
+        public bool Delete(IList<Employee> objs)
         {
             try
             {
@@ -447,7 +447,7 @@ namespace Models
         }
 
 		/// <summary>
-        /// 根据编号删除Student，物理删除
+        /// 根据编号删除Employee，物理删除
         /// </summary>
         /// <param name="id">编号</param>
         /// <returns>成功True失败False</returns>
@@ -455,7 +455,7 @@ namespace Models
         {
             try
             {
-                string result = os.Delete(new Student { ID = id }, false);
+                string result = os.Delete(new Employee { ID = id }, false);
 
                 return os.Save(result);
             }
@@ -465,11 +465,11 @@ namespace Models
             }
         }
 		/// <summary>
-        /// 根据编号删除Student，物理删除
+        /// 根据编号删除Employee，物理删除
         /// </summary>
         /// <param name="obj">查询条件对象</param>
         /// <returns>成功True失败False</returns>
-        public bool Remove(Student obj)
+        public bool Remove(Employee obj)
         {
             try
             {
@@ -483,11 +483,11 @@ namespace Models
             }
         }
 		/// <summary>
-        /// 根据编号删除Student，物理删除
+        /// 根据编号删除Employee，物理删除
         /// </summary>
         /// <param name="obj">查询条件对象</param>
         /// <returns>成功True失败False</returns>
-        public bool Remove(IList<Student> objs)
+        public bool Remove(IList<Employee> objs)
         {
             try
             {
@@ -509,181 +509,181 @@ namespace Models
         }
 
         /// <summary>
-        /// 获取Student集合
+        /// 获取Employee集合
         /// </summary>
-        /// <returns>返回Student集合</returns>
-        public List<Student> GetStudents()
+        /// <returns>返回Employee集合</returns>
+        public List<Employee> GetEmployees()
         {
-            List<Student> objs = os.GetObjects<Student>(new Student() { IsDeleted = false });
+            List<Employee> objs = os.GetObjects<Employee>(new Employee() { IsDeleted = false });
 
             return objs;
         }
         /// <summary>
-        /// 获取Student集合
+        /// 获取Employee集合
         /// </summary>
         /// <param name="obj">查询条件</param>
-        /// <returns>返回Student集合</returns>
-        public List<Student> GetStudents(Student obj)
+        /// <returns>返回Employee集合</returns>
+        public List<Employee> GetEmployees(Employee obj)
         {
             obj.IsDeleted = false;
 
-            List<Student> objs = os.GetObjects(obj);
+            List<Employee> objs = os.GetObjects(obj);
 
             return objs;
         }
 		 /// <summary>
-        /// 获取Student集合
+        /// 获取Employee集合
         /// </summary>
         /// <param name="obj">查询条件</param>
         /// <param name="where">特殊条件</param>
-        /// <returns>返回Student集合</returns>
-        public List<Student> GetStudents(Student obj, string where)
+        /// <returns>返回Employee集合</returns>
+        public List<Employee> GetEmployees(Employee obj, string where)
         {
             obj.IsDeleted = false;
 
-            List<Student> objs = os.GetObjects(obj, where);
+            List<Employee> objs = os.GetObjects(obj, where);
 
             return objs;
         }
         /// <summary>
-        /// 获取Student集合
+        /// 获取Employee集合
         /// </summary>
         /// <param name="obj">查询条件</param>
         /// <param name="where">特殊条件</param>
         ///  <param name="orderby">排序</param>
-        /// <returns>返回Student集合</returns>
-        public List<Student> GetStudents(Student obj,string where, string order)
+        /// <returns>返回Employee集合</returns>
+        public List<Employee> GetEmployees(Employee obj,string where, string order)
         {
             obj.IsDeleted = false;
 
-            List<Student> objs = os.GetObjects(obj, where, order,string.Empty);
+            List<Employee> objs = os.GetObjects(obj, where, order,string.Empty);
 
             return objs;
         }
 		/// <summary>
-        /// 获取Student集合
+        /// 获取Employee集合
         /// </summary>
         /// <param name="obj">查询条件</param>
         /// <param name="where">特殊条件</param>
         /// <param name="orderby">排序</param>
         /// <param name="orderbyType">排序类型</param>
-        /// <returns>返回Student集合</returns>
-        public List<Student> GetStudents(Student obj, string where,string order,string by)
+        /// <returns>返回Employee集合</returns>
+        public List<Employee> GetEmployees(Employee obj, string where,string order,string by)
         {
             obj.IsDeleted = false;
 
-            List<Student> objs = os.GetObjects(obj, where, order,by);
+            List<Employee> objs = os.GetObjects(obj, where, order,by);
 
             return objs;
         }
         /// <summary>
-        /// 获取Student集合
+        /// 获取Employee集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
-        /// <returns>返回Student集合</returns>
-        public PagedList<Student> GetStudents(int pageIndex, int pageCount)
+        /// <returns>返回Employee集合</returns>
+        public PagedList<Employee> GetEmployees(int pageIndex, int pageCount)
         {
-            PagedList<Student> objs = os.GetObjects(new Student() { IsDeleted = false }, pageIndex, pageCount);
+            PagedList<Employee> objs = os.GetObjects(new Employee() { IsDeleted = false }, pageIndex, pageCount);
 
             return objs;
         }
         /// <summary>
-        /// 获取Student集合
+        /// 获取Employee集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
         /// <param name="obj">查询条件</param>
-        /// <returns>返回Student集合</returns>
-        public PagedList<Student> GetStudents(Student obj, int pageIndex, int pageCount)
+        /// <returns>返回Employee集合</returns>
+        public PagedList<Employee> GetEmployees(Employee obj, int pageIndex, int pageCount)
         {
             obj.IsDeleted = false;
 
-            PagedList<Student> objs = os.GetObjects(obj,pageIndex, pageCount);
+            PagedList<Employee> objs = os.GetObjects(obj,pageIndex, pageCount);
 
             return objs;
         }
 		/// <summary>
-        /// 获取Student集合
+        /// 获取Employee集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
         /// <param name="obj">查询条件</param>
-        /// <returns>返回Student集合</returns>
-        public PagedList<Student> GetStudents(string sql, int pageIndex, int pageCount)
+        /// <returns>返回Employee集合</returns>
+        public PagedList<Employee> GetEmployees(string sql, int pageIndex, int pageCount)
         {
-            PagedList<Student> objs = os.GetObjects<Student>(sql, pageIndex, pageCount);
+            PagedList<Employee> objs = os.GetObjects<Employee>(sql, pageIndex, pageCount);
             return objs;
         }
         /// <summary>
-        /// 获取Student集合
+        /// 获取Employee集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
         /// <param name="obj">查询条件</param>
         ///  <param name="where">自定义查询条件</param>
-        /// <returns>返回Student集合</returns>
-        public PagedList<Student> GetStudents(Student obj, int pageIndex, int pageCount, string where)
+        /// <returns>返回Employee集合</returns>
+        public PagedList<Employee> GetEmployees(Employee obj, int pageIndex, int pageCount, string where)
         {
             obj.IsDeleted = false;
 
-            PagedList<Student> objs = os.GetObjects(obj, pageIndex, pageCount, where);
+            PagedList<Employee> objs = os.GetObjects(obj, pageIndex, pageCount, where);
 
             return objs;
         }
 		 /// <summary>
-        /// 获取Student集合
+        /// 获取Employee集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
         /// <param name="obj">查询条件</param>
         ///  <param name="orderby">排序</param>
-        /// <returns>返回Student集合</returns>
-        public PagedList<Student> GetStudents(Student obj, int pageIndex, int pageCount, string order, string by)
+        /// <returns>返回Employee集合</returns>
+        public PagedList<Employee> GetEmployees(Employee obj, int pageIndex, int pageCount, string order, string by)
         {
             obj.IsDeleted = false;
 
-            PagedList<Student> objs = os.GetObjects(obj, pageIndex, pageCount, string.Empty, order,by);
+            PagedList<Employee> objs = os.GetObjects(obj, pageIndex, pageCount, string.Empty, order,by);
 
             return objs;
         }
 		/// <summary>
-        /// 获取Student集合
+        /// 获取Employee集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
         /// <param name="obj">查询条件</param>
         ///  <param name="orderby">排序</param>
-        /// <returns>返回Student集合</returns>
-        public PagedList<Student> GetStudents(Student obj, int pageIndex, int pageCount,string where, string order, string by)
+        /// <returns>返回Employee集合</returns>
+        public PagedList<Employee> GetEmployees(Employee obj, int pageIndex, int pageCount,string where, string order, string by)
         {
             obj.IsDeleted = false;
 
-            PagedList<Student> objs = os.GetObjects(obj, pageIndex, pageCount, where, order, by);
+            PagedList<Employee> objs = os.GetObjects(obj, pageIndex, pageCount, where, order, by);
 
             return objs;
         }
         /// <summary>
-        /// 获取Student
+        /// 获取Employee
         /// </summary>
         /// <param name="obj">查询条件</param>
-        /// <returns>返回Student</returns>
-        public Student GetStudent(Student obj)
+        /// <returns>返回Employee</returns>
+        public Employee GetEmployee(Employee obj)
         {
 			obj.IsDeleted = false;
 			
-            Student entity = os.GetObject(obj);
+            Employee entity = os.GetObject(obj);
 
             return entity;
         }
         /// <summary>
-        /// 根据编号获取Student
+        /// 根据编号获取Employee
         /// </summary>
         /// <param name="id">编号</param>
-        /// <returns>返回Student</returns>
-        public Student GetStudent(int id)
+        /// <returns>返回Employee</returns>
+        public Employee GetEmployee(int id)
         {
-            Student entity = os.GetObject(new Student { ID = id, IsDeleted = false });
+            Employee entity = os.GetObject(new Employee { ID = id, IsDeleted = false });
 
             return entity;
         }
@@ -692,12 +692,12 @@ namespace Models
 	#endregion
 
 	#region 基本数据库访问
-    internal partial class StudentService : EntityService
+    internal partial class EmployeeService : EntityService
     {
          /// <summary>
         /// 构造函数
         /// </summary>
-        public StudentService()
+        public EmployeeService()
         {
             db = new DBContext();
         }
@@ -705,7 +705,7 @@ namespace Models
         /// 构造函数
         /// </summary>
         /// <param name="obj">操作数据库对象</param>
-        public StudentService(DBContext obj)
+        public EmployeeService(DBContext obj)
         {
             db = obj;
         }

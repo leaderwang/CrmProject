@@ -175,6 +175,7 @@
     <Compile Include="Areas\Admin\Controllers\SchoolController.cs" />
     <Compile Include="Areas\Admin\Controllers\StudentController.cs" />
     <Compile Include="Areas\Admin\Controllers\MaterielRequestController.cs" />
+    <Compile Include="Areas\Admin\Controllers\EmployeeController.cs" />
     <Compile Include="Areas\Admin\FileResize\CameraSave.aspx.cs">
       <DependentUpon>CameraSave.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1819,6 +1820,13 @@
     <Content Include="Areas\Admin\Views\MaterielRequest\_Form.cshtml" />
     <Content Include="Areas\Admin\Views\MaterielRequest\Detail.cshtml" />
     <Content Include="Areas\Admin\Views\MaterielRequest\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Employee\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Employee\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Employee\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Employee\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Employee\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\Employee\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Employee\_Detail.cshtml" />
     <Content Include="Areas\Mobile\Views\Web.config" />
     <Content Include="Views\Shared\_AtuoLayout.cshtml" />
     <Content Include="_Documents\项目结构图例.pdf" />
