@@ -50,66 +50,66 @@ namespace Models
 
 
         /// <summary>
-        ///SchoolNo
+        ///学校编号
         /// </summary>
         private String _SchoolNo;
         /// <summary>
-        ///SchoolNo
+        ///学校编号
         /// </summary>
         [ColumnAttribute("SchoolNo", false, false, false)]
         public String SchoolNo { get { return _SchoolNo;} set{_SchoolNo = value;OnPropertyChanged("SchoolNo");} } 
 
 
         /// <summary>
-        ///Name
+        ///学校名称
         /// </summary>
-        private String _Name;
+        private String _SchoolName;
         /// <summary>
-        ///Name
+        ///学校名称
         /// </summary>
-        [ColumnAttribute("Name", false, false, false)]
-        public String Name { get { return _Name;} set{_Name = value;OnPropertyChanged("Name");} } 
+        [ColumnAttribute("SchoolName", false, false, false)]
+        public String SchoolName { get { return _SchoolName;} set{_SchoolName = value;OnPropertyChanged("SchoolName");} } 
 
 
         /// <summary>
-        ///Abstract
+        ///简介
         /// </summary>
         private String _Abstract;
         /// <summary>
-        ///Abstract
+        ///简介
         /// </summary>
         [ColumnAttribute("Abstract", false, false, false)]
         public String Abstract { get { return _Abstract;} set{_Abstract = value;OnPropertyChanged("Abstract");} } 
 
 
         /// <summary>
-        ///Content
+        ///详情
         /// </summary>
         private String _Content;
         /// <summary>
-        ///Content
+        ///详情
         /// </summary>
         [ColumnAttribute("Content", false, false, false)]
         public String Content { get { return _Content;} set{_Content = value;OnPropertyChanged("Content");} } 
 
 
         /// <summary>
-        ///Type
+        ///类型
         /// </summary>
         private Int32 _Type;
         /// <summary>
-        ///Type
+        ///类型
         /// </summary>
         [ColumnAttribute("Type", false, false, false)]
         public Int32 Type { get { return _Type;} set{_Type = value;OnPropertyChanged("Type");} } 
 
 
         /// <summary>
-        ///Status
+        ///状态
         /// </summary>
         private Int32 _Status;
         /// <summary>
-        ///Status
+        ///状态
         /// </summary>
         [ColumnAttribute("Status", false, false, false)]
         public Int32 Status { get { return _Status;} set{_Status = value;OnPropertyChanged("Status");} } 

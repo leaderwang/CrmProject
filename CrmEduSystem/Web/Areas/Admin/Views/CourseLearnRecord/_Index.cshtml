@@ -10,9 +10,10 @@
                 <input type="checkbox" name="checkall" onchange="selectall(this,'ID')" />
             </th>
                            <th class="sorting" data-sort="ID">ID</th>
-               <th class="sorting" data-sort="ScheduleID">ScheduleID</th>
-               <th class="sorting" data-sort="StudentID">StudentID</th>
-               <th class="sorting" data-sort="Status">Status</th>
+               <th class="sorting" data-sort="ScheduleID">课程ID</th>
+               <th class="sorting" data-sort="StudentID">学员ID</th>
+               <th class="sorting" data-sort="Status">状态</th>
+               <th class="sorting" data-sort="Remark">备注</th>
 
             <th class="btns-column">
                 操作
@@ -28,6 +29,7 @@
                <td>@item.ScheduleID</td>
                <td>@item.StudentID</td>
                <td>@item.Status</td>
+               <td>@item.Remark</td>
 
                 <td class="btns-column">
 					@Html.ViewButton("详细", "/admin/CourseLearnRecord/Detail", new { href = "/admin/CourseLearnRecord/Detail?id=" + item.ID })

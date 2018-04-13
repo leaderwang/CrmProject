@@ -11,10 +11,10 @@
             </th>
                            <th class="sorting" data-sort="ID">ID</th>
                <th class="sorting" data-sort="MaterielID">MaterielID</th>
-               <th class="sorting" data-sort="Stock">Stock</th>
-               <th class="sorting" data-sort="Type">Type</th>
-               <th class="sorting" data-sort="RequestNo">RequestNo</th>
-               <th class="sorting" data-sort="Summary">Summary</th>
+               <th class="sorting" data-sort="Count">出入库数量</th>
+               <th class="sorting" data-sort="Type">类型</th>
+               <th class="sorting" data-sort="RequestNo">申请编号</th>
+               <th class="sorting" data-sort="Summary">简述</th>
 
             <th class="btns-column">
                 操作
@@ -28,7 +28,7 @@
                <td class="checkbox-column"><input type="checkbox" name="ID" value="@item.ID"/></td>
                                <td>@item.ID</td>
                <td>@item.MaterielID</td>
-               <td>@item.Stock</td>
+               <td>@item.Count</td>
                <td>@item.Type</td>
                <td>@item.RequestNo</td>
                <td>@item.Summary</td>

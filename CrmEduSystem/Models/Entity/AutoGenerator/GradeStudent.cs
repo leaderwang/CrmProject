@@ -50,36 +50,47 @@ namespace Models
 
 
         /// <summary>
-        ///GradeID
+        ///班级ID
         /// </summary>
         private Int32 _GradeID;
         /// <summary>
-        ///GradeID
+        ///班级ID
         /// </summary>
         [ColumnAttribute("GradeID", false, false, false)]
         public Int32 GradeID { get { return _GradeID;} set{_GradeID = value;OnPropertyChanged("GradeID");} } 
 
 
         /// <summary>
-        ///StudentID
+        ///学生ID
         /// </summary>
         private Int32 _StudentID;
         /// <summary>
-        ///StudentID
+        ///学生ID
         /// </summary>
         [ColumnAttribute("StudentID", false, false, false)]
         public Int32 StudentID { get { return _StudentID;} set{_StudentID = value;OnPropertyChanged("StudentID");} } 
 
 
         /// <summary>
-        ///Status
+        ///状态
         /// </summary>
         private Int32? _Status;
         /// <summary>
-        ///Status
+        ///状态
         /// </summary>
         [ColumnAttribute("Status", false, false, true)]
         public Int32? Status { get { return _Status;} set{_Status = value;OnPropertyChanged("Status");} } 
+
+
+        /// <summary>
+        ///备注
+        /// </summary>
+        private String _Remark;
+        /// <summary>
+        ///备注
+        /// </summary>
+        [ColumnAttribute("Remark", false, false, true)]
+        public String Remark { get { return _Remark;} set{_Remark = value;OnPropertyChanged("Remark");} } 
 
 
         /// <summary>

@@ -11,11 +11,12 @@
             </th>
                            <th class="sorting" data-sort="ID">ID</th>
                <th class="sorting" data-sort="SchoolID">SchoolID</th>
-               <th class="sorting" data-sort="CourseName">CourseName</th>
-               <th class="sorting" data-sort="MemberID">MemberID</th>
-               <th class="sorting" data-sort="Summary">Summary</th>
-               <th class="sorting" data-sort="Content">Content</th>
-               <th class="sorting" data-sort="Status">Status</th>
+               <th class="sorting" data-sort="CourseNo">课程编码</th>
+               <th class="sorting" data-sort="Title">课程名称</th>
+               <th class="sorting" data-sort="Summary">课程简介</th>
+               <th class="sorting" data-sort="Content">课程内容</th>
+               <th class="sorting" data-sort="Status">状态</th>
+               <th class="sorting" data-sort="TeacherID">授课老师ID</th>
 
             <th class="btns-column">
                 操作
@@ -29,11 +30,12 @@
                <td class="checkbox-column"><input type="checkbox" name="ID" value="@item.ID"/></td>
                                <td>@item.ID</td>
                <td>@item.SchoolID</td>
-               <td>@item.CourseName</td>
-               <td>@item.MemberID</td>
+               <td>@item.CourseNo</td>
+               <td>@item.Title</td>
                <td>@item.Summary</td>
                <td>@item.Content</td>
                <td>@item.Status</td>
+               <td>@item.TeacherID</td>
 
                 <td class="btns-column">
 					@Html.ViewButton("详细", "/admin/Course/Detail", new { href = "/admin/Course/Detail?id=" + item.ID })

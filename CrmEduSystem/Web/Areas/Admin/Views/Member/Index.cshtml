@@ -32,13 +32,6 @@
                             location.href = "/admin/member/export";
                         });
 
-                        //导出知识挑战中每期的得分及用户名单
-                        $("#btn-Question").click(function () {
-                            var qid = $("#qId").val();
-                            var tid = $("#tid").val();
-                            location.href = "/admin/member/ExportQuestion";
-                        });
-
                     });
                 </script>
 
@@ -51,8 +44,6 @@
                                 @*<a class="btn"><span><i class="icol-doc-excel-csv"></i>导出</span> </a>*@
                                 <a class="btn"><span><i class="icol-printer"></i>打印</span></a>
                                 <a class="btn" href="javascript:void(0)" onclick="$('#control_search').slideToggle()"><span><i class="icos-preview"></i>筛选</span></a>
-                                @* <a class="btn" href="javascript:void(0)" onclick="$('#control_Question').slideToggle()"><span><i class="icol-doc-excel-table"></i>导出知识挑战</span></a>*@
-                                <button class="btn skip" type="button" id="btn-Question">导出知识挑战</button>
                             </div>
                         </div>
                         <div class="span6">

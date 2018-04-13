@@ -50,91 +50,91 @@ namespace Models
 
 
         /// <summary>
-        ///UserName
+        ///学员编号
+        /// </summary>
+        private String _StudentNo;
+        /// <summary>
+        ///学员编号
+        /// </summary>
+        [ColumnAttribute("StudentNo", false, false, false)]
+        public String StudentNo { get { return _StudentNo;} set{_StudentNo = value;OnPropertyChanged("StudentNo");} } 
+
+
+        /// <summary>
+        ///姓名
         /// </summary>
         private String _UserName;
         /// <summary>
-        ///UserName
+        ///姓名
         /// </summary>
         [ColumnAttribute("UserName", false, false, false)]
         public String UserName { get { return _UserName;} set{_UserName = value;OnPropertyChanged("UserName");} } 
 
 
         /// <summary>
-        ///RealName
+        ///昵称
         /// </summary>
-        private String _RealName;
+        private String _NickName;
         /// <summary>
-        ///RealName
+        ///昵称
         /// </summary>
-        [ColumnAttribute("RealName", false, false, true)]
-        public String RealName { get { return _RealName;} set{_RealName = value;OnPropertyChanged("RealName");} } 
+        [ColumnAttribute("NickName", false, false, true)]
+        public String NickName { get { return _NickName;} set{_NickName = value;OnPropertyChanged("NickName");} } 
 
 
         /// <summary>
-        ///EnglishName
+        ///英文名
         /// </summary>
         private String _EnglishName;
         /// <summary>
-        ///EnglishName
+        ///英文名
         /// </summary>
         [ColumnAttribute("EnglishName", false, false, true)]
         public String EnglishName { get { return _EnglishName;} set{_EnglishName = value;OnPropertyChanged("EnglishName");} } 
 
 
         /// <summary>
-        ///Status
+        ///状态
         /// </summary>
         private Int32? _Status;
         /// <summary>
-        ///Status
+        ///状态
         /// </summary>
         [ColumnAttribute("Status", false, false, true)]
         public Int32? Status { get { return _Status;} set{_Status = value;OnPropertyChanged("Status");} } 
 
 
         /// <summary>
-        ///IDcard
+        ///身份证
         /// </summary>
         private String _IDcard;
         /// <summary>
-        ///IDcard
+        ///身份证
         /// </summary>
         [ColumnAttribute("IDcard", false, false, true)]
         public String IDcard { get { return _IDcard;} set{_IDcard = value;OnPropertyChanged("IDcard");} } 
 
 
         /// <summary>
-        ///BirthDate
+        ///出生日期
         /// </summary>
         private String _BirthDate;
         /// <summary>
-        ///BirthDate
+        ///出生日期
         /// </summary>
         [ColumnAttribute("BirthDate", false, false, true)]
         public String BirthDate { get { return _BirthDate;} set{_BirthDate = value;OnPropertyChanged("BirthDate");} } 
 
 
         /// <summary>
-        ///Mobile
+        ///联系电话
         /// </summary>
         private String _Mobile;
         /// <summary>
-        ///Mobile
+        ///联系电话
         /// </summary>
         [ColumnAttribute("Mobile", false, false, true)]
         public String Mobile { get { return _Mobile;} set{_Mobile = value;OnPropertyChanged("Mobile");} } 
-
-
-        /// <summary>
-        ///Email
-        /// </summary>
-        private String _Email;
-        /// <summary>
-        ///Email
-        /// </summary>
-        [ColumnAttribute("Email", false, false, true)]
-        public String Email { get { return _Email;} set{_Email = value;OnPropertyChanged("Email");} } 
 
 
         /// <summary>
@@ -149,14 +149,25 @@ namespace Models
 
 
         /// <summary>
-        ///Address
+        ///地址
         /// </summary>
         private String _Address;
         /// <summary>
-        ///Address
+        ///地址
         /// </summary>
         [ColumnAttribute("Address", false, false, true)]
         public String Address { get { return _Address;} set{_Address = value;OnPropertyChanged("Address");} } 
+
+
+        /// <summary>
+        ///Email
+        /// </summary>
+        private String _Email;
+        /// <summary>
+        ///Email
+        /// </summary>
+        [ColumnAttribute("Email", false, false, true)]
+        public String Email { get { return _Email;} set{_Email = value;OnPropertyChanged("Email");} } 
 
 
         /// <summary>

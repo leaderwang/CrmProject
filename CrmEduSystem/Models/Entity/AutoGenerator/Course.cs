@@ -61,58 +61,69 @@ namespace Models
 
 
         /// <summary>
-        ///CourseName
+        ///课程编码
         /// </summary>
-        private String _CourseName;
+        private String _CourseNo;
         /// <summary>
-        ///CourseName
+        ///课程编码
         /// </summary>
-        [ColumnAttribute("CourseName", false, false, false)]
-        public String CourseName { get { return _CourseName;} set{_CourseName = value;OnPropertyChanged("CourseName");} } 
+        [ColumnAttribute("CourseNo", false, false, false)]
+        public String CourseNo { get { return _CourseNo;} set{_CourseNo = value;OnPropertyChanged("CourseNo");} } 
 
 
         /// <summary>
-        ///MemberID
+        ///课程名称
         /// </summary>
-        private Int32 _MemberID;
+        private String _Title;
         /// <summary>
-        ///MemberID
+        ///课程名称
         /// </summary>
-        [ColumnAttribute("MemberID", false, false, false)]
-        public Int32 MemberID { get { return _MemberID;} set{_MemberID = value;OnPropertyChanged("MemberID");} } 
+        [ColumnAttribute("Title", false, false, false)]
+        public String Title { get { return _Title;} set{_Title = value;OnPropertyChanged("Title");} } 
 
 
         /// <summary>
-        ///Summary
+        ///课程简介
         /// </summary>
         private String _Summary;
         /// <summary>
-        ///Summary
+        ///课程简介
         /// </summary>
         [ColumnAttribute("Summary", false, false, true)]
         public String Summary { get { return _Summary;} set{_Summary = value;OnPropertyChanged("Summary");} } 
 
 
         /// <summary>
-        ///Content
+        ///课程内容
         /// </summary>
         private String _Content;
         /// <summary>
-        ///Content
+        ///课程内容
         /// </summary>
         [ColumnAttribute("Content", false, false, true)]
         public String Content { get { return _Content;} set{_Content = value;OnPropertyChanged("Content");} } 
 
 
         /// <summary>
-        ///Status
+        ///状态
         /// </summary>
         private Int32? _Status;
         /// <summary>
-        ///Status
+        ///状态
         /// </summary>
         [ColumnAttribute("Status", false, false, true)]
         public Int32? Status { get { return _Status;} set{_Status = value;OnPropertyChanged("Status");} } 
+
+
+        /// <summary>
+        ///授课老师ID
+        /// </summary>
+        private Int32 _TeacherID;
+        /// <summary>
+        ///授课老师ID
+        /// </summary>
+        [ColumnAttribute("TeacherID", false, false, false)]
+        public Int32 TeacherID { get { return _TeacherID;} set{_TeacherID = value;OnPropertyChanged("TeacherID");} } 
 
 
         /// <summary>

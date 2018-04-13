@@ -50,66 +50,66 @@ namespace Models
 
 
         /// <summary>
-        ///CourseID
+        ///课程ID
         /// </summary>
         private Int32 _CourseID;
         /// <summary>
-        ///CourseID
+        ///课程ID
         /// </summary>
         [ColumnAttribute("CourseID", false, false, false)]
         public Int32 CourseID { get { return _CourseID;} set{_CourseID = value;OnPropertyChanged("CourseID");} } 
 
 
         /// <summary>
-        ///Summary
+        ///简介
         /// </summary>
         private String _Summary;
         /// <summary>
-        ///Summary
+        ///简介
         /// </summary>
         [ColumnAttribute("Summary", false, false, true)]
         public String Summary { get { return _Summary;} set{_Summary = value;OnPropertyChanged("Summary");} } 
 
 
         /// <summary>
-        ///TeachDate
+        ///授课时间
         /// </summary>
         private String _TeachDate;
         /// <summary>
-        ///TeachDate
+        ///授课时间
         /// </summary>
         [ColumnAttribute("TeachDate", false, false, true)]
         public String TeachDate { get { return _TeachDate;} set{_TeachDate = value;OnPropertyChanged("TeachDate");} } 
 
 
         /// <summary>
-        ///StartTime
+        ///开始时间
         /// </summary>
         private String _StartTime;
         /// <summary>
-        ///StartTime
+        ///开始时间
         /// </summary>
         [ColumnAttribute("StartTime", false, false, true)]
         public String StartTime { get { return _StartTime;} set{_StartTime = value;OnPropertyChanged("StartTime");} } 
 
 
         /// <summary>
-        ///EndTime
+        ///结束时间
         /// </summary>
         private String _EndTime;
         /// <summary>
-        ///EndTime
+        ///结束时间
         /// </summary>
         [ColumnAttribute("EndTime", false, false, true)]
         public String EndTime { get { return _EndTime;} set{_EndTime = value;OnPropertyChanged("EndTime");} } 
 
 
         /// <summary>
-        ///Status
+        ///状态
         /// </summary>
         private Int32? _Status;
         /// <summary>
-        ///Status
+        ///状态
         /// </summary>
         [ColumnAttribute("Status", false, false, true)]
         public Int32? Status { get { return _Status;} set{_Status = value;OnPropertyChanged("Status");} } 

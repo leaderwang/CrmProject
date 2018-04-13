@@ -2,9 +2,9 @@
 @using Models;
 @model School
 <div class="control-group"><label class="control-label">ID</label><div class="controls"><input id="ID" name ="ID" type="text" value ="@Model.ID" required readonly="readonly" /></div></div>
-<div class="control-group"><label class="control-label">SchoolNo</label><div class="controls"><textarea id="SchoolNo" name ="SchoolNo" required>@Model.SchoolNo</textarea></div></div>
-<div class="control-group"><label class="control-label">Name</label><div class="controls"><textarea id="Name" name ="Name" required>@Model.Name</textarea></div></div>
-<div class="control-group"><label class="control-label">Abstract</label><div class="controls"><textarea id="Abstract" name ="Abstract" required>@Model.Abstract</textarea></div></div>
-<div class="control-group"><label class="control-label">Content</label><div class="controls"><input id="Content" name ="Content" type="text" value ="@Model.Content" required /></div></div>
-<div class="control-group"><label class="control-label">Type</label><div class="controls"><input id="Type" name ="Type" type="text" value ="@Model.Type" style="width:30px;" required/></div></div>
-<div class="control-group"><label class="control-label">Status</label><div class="controls"><input id="Status" name ="Status" type="text" value ="@Model.Status" style="width:30px;" required/></div></div>
+<div class="control-group"><label class="control-label">学校编号</label><div class="controls"><input id="SchoolNo" name ="SchoolNo" type="text" value ="@Model.SchoolNo" required /></div></div>
+<div class="control-group"><label class="control-label">学校名称</label><div class="controls"><textarea id="SchoolName" name ="SchoolName" required>@Model.SchoolName</textarea></div></div>
+<div class="control-group"><label class="control-label">简介</label><div class="controls"><textarea id="Abstract" name ="Abstract" required>@Model.Abstract</textarea></div></div>
+<div class="control-group"><label class="control-label">详情</label><div class="controls"><input id="Content" name ="Content" type="text" value ="@Model.Content" required /></div></div>
+<div class="control-group"><label class="control-label">类型</label><div class="controls"><input id="Type" name ="Type" type="text" value ="@Model.Type" style="width:30px;" required/></div></div>
+<div class="control-group"><label class="control-label">状态</label><div class="controls"><input id="Status" name ="Status" type="text" value ="@Model.Status" style="width:30px;" required/></div></div>

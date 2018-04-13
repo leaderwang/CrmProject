@@ -61,55 +61,55 @@ namespace Models
 
 
         /// <summary>
-        ///GradeName
+        ///班级名称
         /// </summary>
         private String _GradeName;
         /// <summary>
-        ///GradeName
+        ///班级名称
         /// </summary>
         [ColumnAttribute("GradeName", false, false, false)]
         public String GradeName { get { return _GradeName;} set{_GradeName = value;OnPropertyChanged("GradeName");} } 
 
 
         /// <summary>
-        ///MemberID
+        ///班主任ID
         /// </summary>
-        private Int32 _MemberID;
+        private Int32 _HeadmasterID;
         /// <summary>
-        ///MemberID
+        ///班主任ID
         /// </summary>
-        [ColumnAttribute("MemberID", false, false, false)]
-        public Int32 MemberID { get { return _MemberID;} set{_MemberID = value;OnPropertyChanged("MemberID");} } 
+        [ColumnAttribute("HeadmasterID", false, false, false)]
+        public Int32 HeadmasterID { get { return _HeadmasterID;} set{_HeadmasterID = value;OnPropertyChanged("HeadmasterID");} } 
 
 
         /// <summary>
-        ///Summary
+        ///简介
         /// </summary>
         private String _Summary;
         /// <summary>
-        ///Summary
+        ///简介
         /// </summary>
         [ColumnAttribute("Summary", false, false, true)]
         public String Summary { get { return _Summary;} set{_Summary = value;OnPropertyChanged("Summary");} } 
 
 
         /// <summary>
-        ///Content
+        ///详情
         /// </summary>
         private String _Content;
         /// <summary>
-        ///Content
+        ///详情
         /// </summary>
         [ColumnAttribute("Content", false, false, true)]
         public String Content { get { return _Content;} set{_Content = value;OnPropertyChanged("Content");} } 
 
 
         /// <summary>
-        ///Status
+        ///状态
         /// </summary>
         private Int32? _Status;
         /// <summary>
-        ///Status
+        ///状态
         /// </summary>
         [ColumnAttribute("Status", false, false, true)]
         public Int32? Status { get { return _Status;} set{_Status = value;OnPropertyChanged("Status");} } 

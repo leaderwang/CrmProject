@@ -61,44 +61,44 @@ namespace Models
 
 
         /// <summary>
-        ///Stock
+        ///出入库数量
         /// </summary>
-        private Int32 _Stock;
+        private Int32 _Count;
         /// <summary>
-        ///Stock
+        ///出入库数量
         /// </summary>
-        [ColumnAttribute("Stock", false, false, false)]
-        public Int32 Stock { get { return _Stock;} set{_Stock = value;OnPropertyChanged("Stock");} } 
+        [ColumnAttribute("Count", false, false, false)]
+        public Int32 Count { get { return _Count;} set{_Count = value;OnPropertyChanged("Count");} } 
 
 
         /// <summary>
-        ///Type
+        ///类型
         /// </summary>
         private Int32 _Type;
         /// <summary>
-        ///Type
+        ///类型
         /// </summary>
         [ColumnAttribute("Type", false, false, false)]
         public Int32 Type { get { return _Type;} set{_Type = value;OnPropertyChanged("Type");} } 
 
 
         /// <summary>
-        ///RequestNo
+        ///申请编号
         /// </summary>
         private String _RequestNo;
         /// <summary>
-        ///RequestNo
+        ///申请编号
         /// </summary>
         [ColumnAttribute("RequestNo", false, false, true)]
         public String RequestNo { get { return _RequestNo;} set{_RequestNo = value;OnPropertyChanged("RequestNo");} } 
 
 
         /// <summary>
-        ///Summary
+        ///简述
         /// </summary>
         private String _Summary;
         /// <summary>
-        ///Summary
+        ///简述
         /// </summary>
         [ColumnAttribute("Summary", false, false, true)]
         public String Summary { get { return _Summary;} set{_Summary = value;OnPropertyChanged("Summary");} } 

@@ -3,8 +3,8 @@
 @model Grade
 <div class="control-group"><label class="control-label">ID</label><div class="controls"><input id="ID" name ="ID" type="text" value ="@Model.ID" required readonly="readonly" /></div></div>
 <div class="control-group"><label class="control-label">SchoolID</label><div class="controls"><input id="SchoolID" name ="SchoolID" type="text" value ="@Model.SchoolID" style="width:30px;" required/></div></div>
-<div class="control-group"><label class="control-label">GradeName</label><div class="controls"><input id="GradeName" name ="GradeName" type="text" value ="@Model.GradeName" required /></div></div>
-<div class="control-group"><label class="control-label">MemberID</label><div class="controls"><input id="MemberID" name ="MemberID" type="text" value ="@Model.MemberID" style="width:30px;" required/></div></div>
-<div class="control-group"><label class="control-label">Summary</label><div class="controls"><input id="Summary" name ="Summary" type="text" value ="@Model.Summary" /></div></div>
-<div class="control-group"><label class="control-label">Content</label><div class="controls"><textarea id="Content" name ="Content">@Model.Content</textarea></div></div>
-<div class="control-group"><label class="control-label">Status</label><div class="controls"><input id="Status" name ="Status" type="text" value ="@Model.Status" style="width:30px;"/></div></div>
+<div class="control-group"><label class="control-label">班级名称</label><div class="controls"><input id="GradeName" name ="GradeName" type="text" value ="@Model.GradeName" required /></div></div>
+<div class="control-group"><label class="control-label">班主任ID</label><div class="controls"><input id="HeadmasterID" name ="HeadmasterID" type="text" value ="@Model.HeadmasterID" style="width:30px;" required/></div></div>
+<div class="control-group"><label class="control-label">简介</label><div class="controls"><input id="Summary" name ="Summary" type="text" value ="@Model.Summary" /></div></div>
+<div class="control-group"><label class="control-label">详情</label><div class="controls"><textarea id="Content" name ="Content">@Model.Content</textarea></div></div>
+<div class="control-group"><label class="control-label">状态</label><div class="controls"><input id="Status" name ="Status" type="text" value ="@Model.Status" style="width:30px;"/></div></div>

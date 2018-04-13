@@ -2,6 +2,7 @@
 @using Models;
 @model GradeStudent
 <div class="control-group"><label class="control-label">ID</label><div class="controls"><input id="ID" name ="ID" type="text" value ="@Model.ID" required readonly="readonly" /></div></div>
-<div class="control-group"><label class="control-label">GradeID</label><div class="controls"><input id="GradeID" name ="GradeID" type="text" value ="@Model.GradeID" style="width:30px;" required/></div></div>
-<div class="control-group"><label class="control-label">StudentID</label><div class="controls"><input id="StudentID" name ="StudentID" type="text" value ="@Model.StudentID" style="width:30px;" required/></div></div>
-<div class="control-group"><label class="control-label">Status</label><div class="controls"><input id="Status" name ="Status" type="text" value ="@Model.Status" style="width:30px;"/></div></div>
+<div class="control-group"><label class="control-label">班级ID</label><div class="controls"><input id="GradeID" name ="GradeID" type="text" value ="@Model.GradeID" style="width:30px;" required/></div></div>
+<div class="control-group"><label class="control-label">学生ID</label><div class="controls"><input id="StudentID" name ="StudentID" type="text" value ="@Model.StudentID" style="width:30px;" required/></div></div>
+<div class="control-group"><label class="control-label">状态</label><div class="controls"><input id="Status" name ="Status" type="text" value ="@Model.Status" style="width:30px;"/></div></div>
+<div class="control-group"><label class="control-label">备注</label><div class="controls"><textarea id="Remark" name ="Remark">@Model.Remark</textarea></div></div>

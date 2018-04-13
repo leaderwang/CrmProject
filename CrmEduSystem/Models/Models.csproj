@@ -71,6 +71,7 @@
     <Compile Include="Entity\AutoGenerator\MaterielRecord.cs" />
     <Compile Include="Entity\AutoGenerator\School.cs" />
     <Compile Include="Entity\AutoGenerator\Student.cs" />
+    <Compile Include="Entity\AutoGenerator\MaterielRequest.cs" />
     <Compile Include="Entity\AutoPage.cs" />
     <Compile Include="Entity\Member.cs" />
     <Compile Include="Entity\PermissionData.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Logic\MaterielRecordLogic.cs" />
     <Compile Include="Logic\SchoolLogic.cs" />
     <Compile Include="Logic\StudentLogic.cs" />
+    <Compile Include="Logic\MaterielRequestLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +144,7 @@
     <Compile Include="Service\MaterielRecordService.cs" />
     <Compile Include="Service\SchoolService.cs" />
     <Compile Include="Service\StudentService.cs" />
+    <Compile Include="Service\MaterielRequestService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

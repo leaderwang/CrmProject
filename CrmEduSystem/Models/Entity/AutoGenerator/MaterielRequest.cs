@@ -9,7 +9,7 @@ using MvcPager;
 namespace Models
 {
 	#region 实体模型
-    public partial class CourseLearnRecord:INotifyPropertyChanged
+    public partial class MaterielRequest:INotifyPropertyChanged
     {
 
 		        /// <summary>
@@ -50,47 +50,58 @@ namespace Models
 
 
         /// <summary>
-        ///课程ID
+        ///SchoolID
         /// </summary>
-        private Int32 _ScheduleID;
+        private Int32 _SchoolID;
         /// <summary>
-        ///课程ID
+        ///SchoolID
         /// </summary>
-        [ColumnAttribute("ScheduleID", false, false, false)]
-        public Int32 ScheduleID { get { return _ScheduleID;} set{_ScheduleID = value;OnPropertyChanged("ScheduleID");} } 
+        [ColumnAttribute("SchoolID", false, false, false)]
+        public Int32 SchoolID { get { return _SchoolID;} set{_SchoolID = value;OnPropertyChanged("SchoolID");} } 
 
 
         /// <summary>
-        ///学员ID
+        ///申请编号
         /// </summary>
-        private Int32 _StudentID;
+        private String _RequestNo;
         /// <summary>
-        ///学员ID
+        ///申请编号
         /// </summary>
-        [ColumnAttribute("StudentID", false, false, false)]
-        public Int32 StudentID { get { return _StudentID;} set{_StudentID = value;OnPropertyChanged("StudentID");} } 
+        [ColumnAttribute("RequestNo", false, false, false)]
+        public String RequestNo { get { return _RequestNo;} set{_RequestNo = value;OnPropertyChanged("RequestNo");} } 
+
+
+        /// <summary>
+        ///申请标题
+        /// </summary>
+        private String _Title;
+        /// <summary>
+        ///申请标题
+        /// </summary>
+        [ColumnAttribute("Title", false, false, false)]
+        public String Title { get { return _Title;} set{_Title = value;OnPropertyChanged("Title");} } 
+
+
+        /// <summary>
+        ///内容概述
+        /// </summary>
+        private String _Summary;
+        /// <summary>
+        ///内容概述
+        /// </summary>
+        [ColumnAttribute("Summary", false, false, true)]
+        public String Summary { get { return _Summary;} set{_Summary = value;OnPropertyChanged("Summary");} } 
 
 
         /// <summary>
         ///状态
         /// </summary>
-        private Int32? _Status;
+        private Int32 _Status;
         /// <summary>
         ///状态
         /// </summary>
-        [ColumnAttribute("Status", false, false, true)]
-        public Int32? Status { get { return _Status;} set{_Status = value;OnPropertyChanged("Status");} } 
-
-
-        /// <summary>
-        ///备注
-        /// </summary>
-        private String _Remark;
-        /// <summary>
-        ///备注
-        /// </summary>
-        [ColumnAttribute("Remark", false, false, true)]
-        public String Remark { get { return _Remark;} set{_Remark = value;OnPropertyChanged("Remark");} } 
+        [ColumnAttribute("Status", false, false, false)]
+        public Int32 Status { get { return _Status;} set{_Status = value;OnPropertyChanged("Status");} } 
 
 
         /// <summary>
@@ -140,12 +151,12 @@ namespace Models
         /// <summary>
         ///IsDeleted
         /// </summary>
-        private Boolean _IsDeleted;
+        private Boolean? _IsDeleted;
         /// <summary>
         ///IsDeleted
         /// </summary>
-        [ColumnAttribute("IsDeleted", false, false, false)]
-        public Boolean IsDeleted { get { return _IsDeleted;} set{_IsDeleted = value;OnPropertyChanged("IsDeleted");} } 
+        [ColumnAttribute("IsDeleted", false, false, true)]
+        public Boolean? IsDeleted { get { return _IsDeleted;} set{_IsDeleted = value;OnPropertyChanged("IsDeleted");} } 
 
 
 
@@ -153,16 +164,16 @@ namespace Models
     }
 	#endregion
 	#region 基本业务
-    public partial class CourseLearnRecordLogic
+    public partial class MaterielRequestLogic
     {
         /// <summary>
-        /// CourseLearnRecord数据操作对象
+        /// MaterielRequest数据操作对象
         /// </summary>
-        private CourseLearnRecordService os = new CourseLearnRecordService();
+        private MaterielRequestService os = new MaterielRequestService();
         /// <summary>
         /// 构造函数
         /// </summary>
-        public CourseLearnRecordLogic()
+        public MaterielRequestLogic()
         {
             
         }
@@ -170,16 +181,16 @@ namespace Models
         /// 构造函数
         /// </summary>
         /// <param name="obj">操作数据库对象</param>
-        public CourseLearnRecordLogic(DBContext obj)
+        public MaterielRequestLogic(DBContext obj)
         {
-            os = new CourseLearnRecordService(obj);
+            os = new MaterielRequestService(obj);
         }
         /// <summary>
-        /// 添加CourseLearnRecord
+        /// 添加MaterielRequest
         /// </summary>
         /// <param name="obj">添加对象</param>
         /// <returns>成功True失败False</returns>
-        public bool Add(CourseLearnRecord obj)
+        public bool Add(MaterielRequest obj)
         {
             try
             {
@@ -195,18 +206,18 @@ namespace Models
             }
         }
 		/// <summary>
-        /// 添加CourseLearnRecord
+        /// 添加MaterielRequest
         /// </summary>
         /// <param name="obj">添加对象</param>
         /// <returns>返回ID</returns>
-        public int Create(CourseLearnRecord obj)
+        public int Create(MaterielRequest obj)
         {
             try
             {
 			    if (obj.ID > 0) throw new Exception("数据库已存在此数据");
                 string result = os.Add(obj);
                 os.Save(result);
-                return Convert.ToInt32(new DBContext().ExecuteScalarSql("select max(id) from [CourseLearnRecord]"));
+                return Convert.ToInt32(new DBContext().ExecuteScalarSql("select max(id) from [MaterielRequest]"));
             }
             catch (Exception ex)
             {
@@ -216,13 +227,13 @@ namespace Models
 		/// <summary>
         /// 批量添加
         /// </summary>
-        public bool Add(List<CourseLearnRecord> obj)
+        public bool Add(List<MaterielRequest> obj)
         {
             try
             {
                 List<string> result = new List<string>();
 
-                foreach (CourseLearnRecord item in obj)
+                foreach (MaterielRequest item in obj)
                 {
                     if (item.ID == 0)
                     {
@@ -239,11 +250,11 @@ namespace Models
             }
         }
         /// <summary>
-        /// 修改CourseLearnRecord
+        /// 修改MaterielRequest
         /// </summary>
         /// <param name="obj">修改对象</param>
         /// <returns>成功True失败False</returns>
-        public bool Update(CourseLearnRecord obj)
+        public bool Update(MaterielRequest obj)
         {
             try
             {
@@ -261,7 +272,7 @@ namespace Models
         /// </summary>
         /// <param name="olts"></param>
         /// <returns></returns>
-        public bool Update(List<CourseLearnRecord> olts)
+        public bool Update(List<MaterielRequest> olts)
         {
             try
             {
@@ -278,7 +289,7 @@ namespace Models
             }
         }
 		/// <summary>
-        /// 根据编号删除CourseLearnRecord，此处为逻辑删除，实为更新IsDelete字段
+        /// 根据编号删除MaterielRequest，此处为逻辑删除，实为更新IsDelete字段
         /// </summary>
         /// <param name="id">编号</param>
         /// <returns>成功True失败False</returns>
@@ -286,7 +297,7 @@ namespace Models
         {
             try
             {
-                string result = os.Update(new CourseLearnRecord { ID = id, IsDeleted = true });
+                string result = os.Update(new MaterielRequest { ID = id, IsDeleted = true });
 
                 return os.Save(result);
             }
@@ -296,16 +307,16 @@ namespace Models
             }
         }
 		/// <summary>
-        /// 删除CourseLearnRecord，此处为逻辑删除，实为更新IsDelete字段
+        /// 删除MaterielRequest，此处为逻辑删除，实为更新IsDelete字段
         /// </summary>
         /// <param name="obj">删除对象</param>
         /// <returns>成功True失败False</returns>
-        public bool Delete(CourseLearnRecord obj)
+        public bool Delete(MaterielRequest obj)
         {
             string sql = "";
             try
             {
-                var olts = os.GetObjects<CourseLearnRecord>(obj);
+                var olts = os.GetObjects<MaterielRequest>(obj);
                 if (olts != null)
                 {
                     foreach (var item in olts)
@@ -326,11 +337,11 @@ namespace Models
             return false;
         }
 		/// <summary>
-        /// 删除CourseLearnRecord集合，此处为逻辑删除，实为更新IsDelete字段
+        /// 删除MaterielRequest集合，此处为逻辑删除，实为更新IsDelete字段
         /// </summary>
         /// <param name="objs">删除对象集合</param>
         /// <returns>成功True失败False</returns>
-        public bool Delete(IList<CourseLearnRecord> objs)
+        public bool Delete(IList<MaterielRequest> objs)
         {
             try
             {
@@ -359,7 +370,7 @@ namespace Models
         }
 
 		/// <summary>
-        /// 根据编号删除CourseLearnRecord，物理删除
+        /// 根据编号删除MaterielRequest，物理删除
         /// </summary>
         /// <param name="id">编号</param>
         /// <returns>成功True失败False</returns>
@@ -367,7 +378,7 @@ namespace Models
         {
             try
             {
-                string result = os.Delete(new CourseLearnRecord { ID = id }, false);
+                string result = os.Delete(new MaterielRequest { ID = id }, false);
 
                 return os.Save(result);
             }
@@ -377,11 +388,11 @@ namespace Models
             }
         }
 		/// <summary>
-        /// 根据编号删除CourseLearnRecord，物理删除
+        /// 根据编号删除MaterielRequest，物理删除
         /// </summary>
         /// <param name="obj">查询条件对象</param>
         /// <returns>成功True失败False</returns>
-        public bool Remove(CourseLearnRecord obj)
+        public bool Remove(MaterielRequest obj)
         {
             try
             {
@@ -395,11 +406,11 @@ namespace Models
             }
         }
 		/// <summary>
-        /// 根据编号删除CourseLearnRecord，物理删除
+        /// 根据编号删除MaterielRequest，物理删除
         /// </summary>
         /// <param name="obj">查询条件对象</param>
         /// <returns>成功True失败False</returns>
-        public bool Remove(IList<CourseLearnRecord> objs)
+        public bool Remove(IList<MaterielRequest> objs)
         {
             try
             {
@@ -421,181 +432,181 @@ namespace Models
         }
 
         /// <summary>
-        /// 获取CourseLearnRecord集合
+        /// 获取MaterielRequest集合
         /// </summary>
-        /// <returns>返回CourseLearnRecord集合</returns>
-        public List<CourseLearnRecord> GetCourseLearnRecords()
+        /// <returns>返回MaterielRequest集合</returns>
+        public List<MaterielRequest> GetMaterielRequests()
         {
-            List<CourseLearnRecord> objs = os.GetObjects<CourseLearnRecord>(new CourseLearnRecord() { IsDeleted = false });
+            List<MaterielRequest> objs = os.GetObjects<MaterielRequest>(new MaterielRequest() { IsDeleted = false });
 
             return objs;
         }
         /// <summary>
-        /// 获取CourseLearnRecord集合
+        /// 获取MaterielRequest集合
         /// </summary>
         /// <param name="obj">查询条件</param>
-        /// <returns>返回CourseLearnRecord集合</returns>
-        public List<CourseLearnRecord> GetCourseLearnRecords(CourseLearnRecord obj)
+        /// <returns>返回MaterielRequest集合</returns>
+        public List<MaterielRequest> GetMaterielRequests(MaterielRequest obj)
         {
             obj.IsDeleted = false;
 
-            List<CourseLearnRecord> objs = os.GetObjects(obj);
+            List<MaterielRequest> objs = os.GetObjects(obj);
 
             return objs;
         }
 		 /// <summary>
-        /// 获取CourseLearnRecord集合
+        /// 获取MaterielRequest集合
         /// </summary>
         /// <param name="obj">查询条件</param>
         /// <param name="where">特殊条件</param>
-        /// <returns>返回CourseLearnRecord集合</returns>
-        public List<CourseLearnRecord> GetCourseLearnRecords(CourseLearnRecord obj, string where)
+        /// <returns>返回MaterielRequest集合</returns>
+        public List<MaterielRequest> GetMaterielRequests(MaterielRequest obj, string where)
         {
             obj.IsDeleted = false;
 
-            List<CourseLearnRecord> objs = os.GetObjects(obj, where);
+            List<MaterielRequest> objs = os.GetObjects(obj, where);
 
             return objs;
         }
         /// <summary>
-        /// 获取CourseLearnRecord集合
+        /// 获取MaterielRequest集合
         /// </summary>
         /// <param name="obj">查询条件</param>
         /// <param name="where">特殊条件</param>
         ///  <param name="orderby">排序</param>
-        /// <returns>返回CourseLearnRecord集合</returns>
-        public List<CourseLearnRecord> GetCourseLearnRecords(CourseLearnRecord obj,string where, string order)
+        /// <returns>返回MaterielRequest集合</returns>
+        public List<MaterielRequest> GetMaterielRequests(MaterielRequest obj,string where, string order)
         {
             obj.IsDeleted = false;
 
-            List<CourseLearnRecord> objs = os.GetObjects(obj, where, order,string.Empty);
+            List<MaterielRequest> objs = os.GetObjects(obj, where, order,string.Empty);
 
             return objs;
         }
 		/// <summary>
-        /// 获取CourseLearnRecord集合
+        /// 获取MaterielRequest集合
         /// </summary>
         /// <param name="obj">查询条件</param>
         /// <param name="where">特殊条件</param>
         /// <param name="orderby">排序</param>
         /// <param name="orderbyType">排序类型</param>
-        /// <returns>返回CourseLearnRecord集合</returns>
-        public List<CourseLearnRecord> GetCourseLearnRecords(CourseLearnRecord obj, string where,string order,string by)
+        /// <returns>返回MaterielRequest集合</returns>
+        public List<MaterielRequest> GetMaterielRequests(MaterielRequest obj, string where,string order,string by)
         {
             obj.IsDeleted = false;
 
-            List<CourseLearnRecord> objs = os.GetObjects(obj, where, order,by);
+            List<MaterielRequest> objs = os.GetObjects(obj, where, order,by);
 
             return objs;
         }
         /// <summary>
-        /// 获取CourseLearnRecord集合
+        /// 获取MaterielRequest集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
-        /// <returns>返回CourseLearnRecord集合</returns>
-        public PagedList<CourseLearnRecord> GetCourseLearnRecords(int pageIndex, int pageCount)
+        /// <returns>返回MaterielRequest集合</returns>
+        public PagedList<MaterielRequest> GetMaterielRequests(int pageIndex, int pageCount)
         {
-            PagedList<CourseLearnRecord> objs = os.GetObjects(new CourseLearnRecord() { IsDeleted = false }, pageIndex, pageCount);
+            PagedList<MaterielRequest> objs = os.GetObjects(new MaterielRequest() { IsDeleted = false }, pageIndex, pageCount);
 
             return objs;
         }
         /// <summary>
-        /// 获取CourseLearnRecord集合
+        /// 获取MaterielRequest集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
         /// <param name="obj">查询条件</param>
-        /// <returns>返回CourseLearnRecord集合</returns>
-        public PagedList<CourseLearnRecord> GetCourseLearnRecords(CourseLearnRecord obj, int pageIndex, int pageCount)
+        /// <returns>返回MaterielRequest集合</returns>
+        public PagedList<MaterielRequest> GetMaterielRequests(MaterielRequest obj, int pageIndex, int pageCount)
         {
             obj.IsDeleted = false;
 
-            PagedList<CourseLearnRecord> objs = os.GetObjects(obj,pageIndex, pageCount);
+            PagedList<MaterielRequest> objs = os.GetObjects(obj,pageIndex, pageCount);
 
             return objs;
         }
 		/// <summary>
-        /// 获取CourseLearnRecord集合
+        /// 获取MaterielRequest集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
         /// <param name="obj">查询条件</param>
-        /// <returns>返回CourseLearnRecord集合</returns>
-        public PagedList<CourseLearnRecord> GetCourseLearnRecords(string sql, int pageIndex, int pageCount)
+        /// <returns>返回MaterielRequest集合</returns>
+        public PagedList<MaterielRequest> GetMaterielRequests(string sql, int pageIndex, int pageCount)
         {
-            PagedList<CourseLearnRecord> objs = os.GetObjects<CourseLearnRecord>(sql, pageIndex, pageCount);
+            PagedList<MaterielRequest> objs = os.GetObjects<MaterielRequest>(sql, pageIndex, pageCount);
             return objs;
         }
         /// <summary>
-        /// 获取CourseLearnRecord集合
+        /// 获取MaterielRequest集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
         /// <param name="obj">查询条件</param>
         ///  <param name="where">自定义查询条件</param>
-        /// <returns>返回CourseLearnRecord集合</returns>
-        public PagedList<CourseLearnRecord> GetCourseLearnRecords(CourseLearnRecord obj, int pageIndex, int pageCount, string where)
+        /// <returns>返回MaterielRequest集合</returns>
+        public PagedList<MaterielRequest> GetMaterielRequests(MaterielRequest obj, int pageIndex, int pageCount, string where)
         {
             obj.IsDeleted = false;
 
-            PagedList<CourseLearnRecord> objs = os.GetObjects(obj, pageIndex, pageCount, where);
+            PagedList<MaterielRequest> objs = os.GetObjects(obj, pageIndex, pageCount, where);
 
             return objs;
         }
 		 /// <summary>
-        /// 获取CourseLearnRecord集合
+        /// 获取MaterielRequest集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
         /// <param name="obj">查询条件</param>
         ///  <param name="orderby">排序</param>
-        /// <returns>返回CourseLearnRecord集合</returns>
-        public PagedList<CourseLearnRecord> GetCourseLearnRecords(CourseLearnRecord obj, int pageIndex, int pageCount, string order, string by)
+        /// <returns>返回MaterielRequest集合</returns>
+        public PagedList<MaterielRequest> GetMaterielRequests(MaterielRequest obj, int pageIndex, int pageCount, string order, string by)
         {
             obj.IsDeleted = false;
 
-            PagedList<CourseLearnRecord> objs = os.GetObjects(obj, pageIndex, pageCount, string.Empty, order,by);
+            PagedList<MaterielRequest> objs = os.GetObjects(obj, pageIndex, pageCount, string.Empty, order,by);
 
             return objs;
         }
 		/// <summary>
-        /// 获取CourseLearnRecord集合
+        /// 获取MaterielRequest集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
         /// <param name="obj">查询条件</param>
         ///  <param name="orderby">排序</param>
-        /// <returns>返回CourseLearnRecord集合</returns>
-        public PagedList<CourseLearnRecord> GetCourseLearnRecords(CourseLearnRecord obj, int pageIndex, int pageCount,string where, string order, string by)
+        /// <returns>返回MaterielRequest集合</returns>
+        public PagedList<MaterielRequest> GetMaterielRequests(MaterielRequest obj, int pageIndex, int pageCount,string where, string order, string by)
         {
             obj.IsDeleted = false;
 
-            PagedList<CourseLearnRecord> objs = os.GetObjects(obj, pageIndex, pageCount, where, order, by);
+            PagedList<MaterielRequest> objs = os.GetObjects(obj, pageIndex, pageCount, where, order, by);
 
             return objs;
         }
         /// <summary>
-        /// 获取CourseLearnRecord
+        /// 获取MaterielRequest
         /// </summary>
         /// <param name="obj">查询条件</param>
-        /// <returns>返回CourseLearnRecord</returns>
-        public CourseLearnRecord GetCourseLearnRecord(CourseLearnRecord obj)
+        /// <returns>返回MaterielRequest</returns>
+        public MaterielRequest GetMaterielRequest(MaterielRequest obj)
         {
 			obj.IsDeleted = false;
 			
-            CourseLearnRecord entity = os.GetObject(obj);
+            MaterielRequest entity = os.GetObject(obj);
 
             return entity;
         }
         /// <summary>
-        /// 根据编号获取CourseLearnRecord
+        /// 根据编号获取MaterielRequest
         /// </summary>
         /// <param name="id">编号</param>
-        /// <returns>返回CourseLearnRecord</returns>
-        public CourseLearnRecord GetCourseLearnRecord(int id)
+        /// <returns>返回MaterielRequest</returns>
+        public MaterielRequest GetMaterielRequest(int id)
         {
-            CourseLearnRecord entity = os.GetObject(new CourseLearnRecord { ID = id, IsDeleted = false });
+            MaterielRequest entity = os.GetObject(new MaterielRequest { ID = id, IsDeleted = false });
 
             return entity;
         }
@@ -604,12 +615,12 @@ namespace Models
 	#endregion
 
 	#region 基本数据库访问
-    internal partial class CourseLearnRecordService : EntityService
+    internal partial class MaterielRequestService : EntityService
     {
          /// <summary>
         /// 构造函数
         /// </summary>
-        public CourseLearnRecordService()
+        public MaterielRequestService()
         {
             db = new DBContext();
         }
@@ -617,7 +628,7 @@ namespace Models
         /// 构造函数
         /// </summary>
         /// <param name="obj">操作数据库对象</param>
-        public CourseLearnRecordService(DBContext obj)
+        public MaterielRequestService(DBContext obj)
         {
             db = obj;
         }

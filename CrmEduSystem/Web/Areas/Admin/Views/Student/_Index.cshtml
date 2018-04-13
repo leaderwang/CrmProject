@@ -10,16 +10,17 @@
                 <input type="checkbox" name="checkall" onchange="selectall(this,'ID')" />
             </th>
                            <th class="sorting" data-sort="ID">ID</th>
-               <th class="sorting" data-sort="UserName">UserName</th>
-               <th class="sorting" data-sort="RealName">RealName</th>
-               <th class="sorting" data-sort="EnglishName">EnglishName</th>
-               <th class="sorting" data-sort="Status">Status</th>
-               <th class="sorting" data-sort="IDcard">IDcard</th>
-               <th class="sorting" data-sort="BirthDate">BirthDate</th>
-               <th class="sorting" data-sort="Mobile">Mobile</th>
-               <th class="sorting" data-sort="Email">Email</th>
+               <th class="sorting" data-sort="StudentNo">学员编号</th>
+               <th class="sorting" data-sort="UserName">姓名</th>
+               <th class="sorting" data-sort="NickName">昵称</th>
+               <th class="sorting" data-sort="EnglishName">英文名</th>
+               <th class="sorting" data-sort="Status">状态</th>
+               <th class="sorting" data-sort="IDcard">身份证</th>
+               <th class="sorting" data-sort="BirthDate">出生日期</th>
+               <th class="sorting" data-sort="Mobile">联系电话</th>
                <th class="sorting" data-sort="Avatar">Avatar</th>
-               <th class="sorting" data-sort="Address">Address</th>
+               <th class="sorting" data-sort="Address">地址</th>
+               <th class="sorting" data-sort="Email">Email</th>
                <th class="sorting" data-sort="QQ">QQ</th>
                <th class="sorting" data-sort="WeiXin">WeiXin</th>
 
@@ -34,16 +35,17 @@
             <tr>
                <td class="checkbox-column"><input type="checkbox" name="ID" value="@item.ID"/></td>
                                <td>@item.ID</td>
+               <td>@item.StudentNo</td>
                <td>@item.UserName</td>
-               <td>@item.RealName</td>
+               <td>@item.NickName</td>
                <td>@item.EnglishName</td>
                <td>@item.Status</td>
                <td>@item.IDcard</td>
                <td>@item.BirthDate</td>
                <td>@item.Mobile</td>
-               <td>@item.Email</td>
                <td>@item.Avatar</td>
                <td>@item.Address</td>
+               <td>@item.Email</td>
                <td>@item.QQ</td>
                <td>@item.WeiXin</td>
 

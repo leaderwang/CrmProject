@@ -61,55 +61,55 @@ namespace Models
 
 
         /// <summary>
-        ///Title
+        ///物料名称
         /// </summary>
         private String _Title;
         /// <summary>
-        ///Title
+        ///物料名称
         /// </summary>
         [ColumnAttribute("Title", false, false, false)]
         public String Title { get { return _Title;} set{_Title = value;OnPropertyChanged("Title");} } 
 
 
         /// <summary>
-        ///Summary
+        ///简介
         /// </summary>
         private String _Summary;
         /// <summary>
-        ///Summary
+        ///简介
         /// </summary>
         [ColumnAttribute("Summary", false, false, true)]
         public String Summary { get { return _Summary;} set{_Summary = value;OnPropertyChanged("Summary");} } 
 
 
         /// <summary>
-        ///Stock
+        ///当前库存
         /// </summary>
         private Int32 _Stock;
         /// <summary>
-        ///Stock
+        ///当前库存
         /// </summary>
         [ColumnAttribute("Stock", false, false, false)]
         public Int32 Stock { get { return _Stock;} set{_Stock = value;OnPropertyChanged("Stock");} } 
 
 
         /// <summary>
-        ///Status
+        ///状态
         /// </summary>
         private Int32 _Status;
         /// <summary>
-        ///Status
+        ///状态
         /// </summary>
         [ColumnAttribute("Status", false, false, false)]
         public Int32 Status { get { return _Status;} set{_Status = value;OnPropertyChanged("Status");} } 
 
 
         /// <summary>
-        ///Thumbs
+        ///缩略图
         /// </summary>
         private String _Thumbs;
         /// <summary>
-        ///Thumbs
+        ///缩略图
         /// </summary>
         [ColumnAttribute("Thumbs", false, false, true)]
         public String Thumbs { get { return _Thumbs;} set{_Thumbs = value;OnPropertyChanged("Thumbs");} } 

@@ -10,12 +10,12 @@
                 <input type="checkbox" name="checkall" onchange="selectall(this,'ID')" />
             </th>
                            <th class="sorting" data-sort="ID">ID</th>
-               <th class="sorting" data-sort="SchoolNo">SchoolNo</th>
-               <th class="sorting" data-sort="Name">Name</th>
-               <th class="sorting" data-sort="Abstract">Abstract</th>
-               <th class="sorting" data-sort="Content">Content</th>
-               <th class="sorting" data-sort="Type">Type</th>
-               <th class="sorting" data-sort="Status">Status</th>
+               <th class="sorting" data-sort="SchoolNo">学校编号</th>
+               <th class="sorting" data-sort="SchoolName">学校名称</th>
+               <th class="sorting" data-sort="Abstract">简介</th>
+               <th class="sorting" data-sort="Content">详情</th>
+               <th class="sorting" data-sort="Type">类型</th>
+               <th class="sorting" data-sort="Status">状态</th>
 
             <th class="btns-column">
                 操作
@@ -29,7 +29,7 @@
                <td class="checkbox-column"><input type="checkbox" name="ID" value="@item.ID"/></td>
                                <td>@item.ID</td>
                <td>@item.SchoolNo</td>
-               <td>@item.Name</td>
+               <td>@item.SchoolName</td>
                <td>@item.Abstract</td>
                <td>@item.Content</td>
                <td>@item.Type</td>

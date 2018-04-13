@@ -2,7 +2,7 @@
 @using MvcPager;
 @using Lib;
 @using Models;
-@model PagedList<GradeStudent>
+@model PagedList<MaterielRequest>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -10,10 +10,11 @@
                 <input type="checkbox" name="checkall" onchange="selectall(this,'ID')" />
             </th>
                            <th class="sorting" data-sort="ID">ID</th>
-               <th class="sorting" data-sort="GradeID">班级ID</th>
-               <th class="sorting" data-sort="StudentID">学生ID</th>
+               <th class="sorting" data-sort="SchoolID">SchoolID</th>
+               <th class="sorting" data-sort="RequestNo">申请编号</th>
+               <th class="sorting" data-sort="Title">申请标题</th>
+               <th class="sorting" data-sort="Summary">内容概述</th>
                <th class="sorting" data-sort="Status">状态</th>
-               <th class="sorting" data-sort="Remark">备注</th>
 
             <th class="btns-column">
                 操作
@@ -26,15 +27,16 @@
             <tr>
                <td class="checkbox-column"><input type="checkbox" name="ID" value="@item.ID"/></td>
                                <td>@item.ID</td>
-               <td>@item.GradeID</td>
-               <td>@item.StudentID</td>
+               <td>@item.SchoolID</td>
+               <td>@item.RequestNo</td>
+               <td>@item.Title</td>
+               <td>@item.Summary</td>
                <td>@item.Status</td>
-               <td>@item.Remark</td>
 
                 <td class="btns-column">
-					@Html.ViewButton("详细", "/admin/GradeStudent/Detail", new { href = "/admin/GradeStudent/Detail?id=" + item.ID })
-					@Html.EditButton("编辑", "/admin/GradeStudent/Edit", new { href = "/admin/GradeStudent/Edit?id=" + item.ID })
-					@Html.DeleteButton("删除", "/admin/GradeStudent/Delete", new { href = "javascript:void(0);", onclick = "Delete('/admin/GradeStudent/Delete/" + item.ID + "',this,'one');" })
+					@Html.ViewButton("详细", "/admin/MaterielRequest/Detail", new { href = "/admin/MaterielRequest/Detail?id=" + item.ID })
+					@Html.EditButton("编辑", "/admin/MaterielRequest/Edit", new { href = "/admin/MaterielRequest/Edit?id=" + item.ID })
+					@Html.DeleteButton("删除", "/admin/MaterielRequest/Delete", new { href = "javascript:void(0);", onclick = "Delete('/admin/MaterielRequest/Delete/" + item.ID + "',this,'one');" })
 				</td>
             </tr>
         }
