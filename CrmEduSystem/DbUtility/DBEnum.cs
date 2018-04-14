@@ -46,6 +46,7 @@ namespace DbUtility
         IsDeleted,
         Sort
     }
+
     /// <summary>
     /// 审核状态
     /// </summary>
@@ -55,6 +56,7 @@ namespace DbUtility
         审核通过 = 2,
         被驳回 = 3
     }
+
     /// <summary>
     /// 数据字典分类
     /// </summary>
@@ -67,6 +69,7 @@ namespace DbUtility
         页面分类 = 5,
         资料库附件类型 = 6
     }
+
     /// <summary>
     /// 页面分类
     /// </summary>
@@ -76,6 +79,7 @@ namespace DbUtility
         表单页 = 36,
         明细页 = 37
     }
+
     /// <summary>
     /// 系统角色
     /// </summary>
@@ -94,4 +98,18 @@ namespace DbUtility
         /// </summary>
         User = 3
     }
+
+    /// <summary>
+    /// 学员状态
+    /// </summary>
+    public enum EnumStudentStatus
+    {
+        无效数据 = 1,
+        有效数据 = 2,
+        已邀约 = 3,
+        已到访 = 4,
+        已报名 = 5,
+        已结业 = 6
+    }
+
 }

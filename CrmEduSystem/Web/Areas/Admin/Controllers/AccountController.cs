@@ -78,6 +78,7 @@ namespace Web.Areas.Admin.Controllers
         {
             return View(CurrentMember.Member);
         }
+
         [HttpPost]
         public ActionResult Personal(FormCollection form)
         {
@@ -93,6 +94,7 @@ namespace Web.Areas.Admin.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult ReSetPwd(FormCollection form)
         {
@@ -109,12 +111,14 @@ namespace Web.Areas.Admin.Controllers
             Session.Remove(Lib.CurrentMember.Prefix + "Member");
             return Content(ContentIcon.Succeed + "|保存成功");
         }
+
         //忘记密码
         [PermissionFilter(false)]
         public ActionResult ForgetPwd()
         {
             return View();
         }
+
         [PermissionFilter(false)]
         [HttpPost]
         public ActionResult ForgetPwd(string email, FormCollection form)
@@ -142,6 +146,7 @@ namespace Web.Areas.Admin.Controllers
                     return Content(ContentIcon.Error + "|无效的邮箱地址");
             }
         }
+
         public ActionResult Avatar()
         {
             return View();

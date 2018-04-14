@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过下列特性集
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("eDoctorBaseFrame")]
-[assembly: AssemblyDescription("eDoctorBaseFrame")]
+[assembly: AssemblyTitle("jimaduoBaseFrame")]
+[assembly: AssemblyDescription("jimaduoBaseFrame")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("eDoctor®")]
-[assembly: AssemblyProduct("eDoctorBaseFrame")]
-[assembly: AssemblyCopyright("eDoctor© 2014")]
+[assembly: AssemblyCompany("jimaduo®")]
+[assembly: AssemblyProduct("jimaduoBaseFrame")]
+[assembly: AssemblyCopyright("jimaduo© 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

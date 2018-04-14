@@ -16,15 +16,13 @@ namespace Lib
         private List<Menu> _Menus;
         private List<PermissionMap> _PermissionMaps;
         private List<PermissionData> _PermissionDatas;
-        private string password = "edoctor";
+        private string password = "jimaduo";
 
-        //
         private string baseFilePath = System.Web.HttpContext.Current.Server.MapPath("/Content/Permission/");
         private string menuFilePath;
         private string permissionMapFilePath;
         private string permissionDataFilePath;
 
-        //
         private static Site site = SiteHelper.Default;
 
         public List<Menu> Menus
@@ -263,11 +261,10 @@ namespace Lib
         {
             if (site.IsValidePermission == true)
             {
-                //
+                
                 //开发者开发时使用此代码,后继发布后因性能优化需要屏蔽下行代码
-                //
                 AutoGenerateMenuAndMap(title, url);
-                //
+                
                 PermissionHelper permission = new PermissionHelper();
                 try
                 {

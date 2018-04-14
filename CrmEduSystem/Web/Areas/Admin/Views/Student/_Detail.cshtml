@@ -1,13 +1,20 @@
 ﻿@model Models.Student
+
+<div class="control-group"><label class="control-label">头像</label><div class="controls padt5">@Model.Avatar</div></div>
 <div class="control-group"><label class="control-label">学员编号</label><div class="controls padt5">@Model.StudentNo</div></div>
 <div class="control-group"><label class="control-label">姓名</label><div class="controls padt5">@Model.UserName</div></div>
 <div class="control-group"><label class="control-label">英文名</label><div class="controls padt5">@Model.EnglishName</div></div>
+<div class="control-group"><label class="control-label">学员类型（0-非学员|1-学员）</label><div class="controls padt5">@Model.Type</div></div>
 <div class="control-group"><label class="control-label">状态</label><div class="controls padt5">@Model.Status</div></div>
 <div class="control-group"><label class="control-label">身份证</label><div class="controls padt5">@Model.IDcard</div></div>
 <div class="control-group"><label class="control-label">出生日期</label><div class="controls padt5">@Model.BirthDate</div></div>
-<div class="control-group"><label class="control-label">联系电话</label><div class="controls padt5">@Model.Mobile</div></div>
-<div class="control-group"><label class="control-label">Avatar</label><div class="controls padt5">@Model.Avatar</div></div>
+<div class="control-group"><label class="control-label">联系方式一</label><div class="controls padt5">@Model.Mobile</div></div>
+<div class="control-group"><label class="control-label">联系方式二</label><div class="controls padt5">@Model.TelePhone</div></div>
+<div class="control-group"><label class="control-label">就读学校ID</label><div class="controls padt5">@Model.AttendSchoolID</div></div>
 <div class="control-group"><label class="control-label">地址</label><div class="controls padt5">@Model.Address</div></div>
+<div class="control-group"><label class="control-label">话务专员ID</label><div class="controls padt5">@Model.TelOfficerID</div></div>
+<div class="control-group"><label class="control-label">市场推广专员ID</label><div class="controls padt5">@Model.MarOfficerID</div></div>
 <div class="control-group"><label class="control-label">Email</label><div class="controls padt5">@Model.Email</div></div>
 <div class="control-group"><label class="control-label">QQ</label><div class="controls padt5">@Model.QQ</div></div>
 <div class="control-group"><label class="control-label">WeiXin</label><div class="controls padt5">@Model.WeiXin</div></div>
+<div class="control-group"><label class="control-label">备注</label><div class="controls padt5">@Model.Remark</div></div>

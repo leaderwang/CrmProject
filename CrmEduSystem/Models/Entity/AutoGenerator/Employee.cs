@@ -50,6 +50,17 @@ namespace Models
 
 
         /// <summary>
+        ///教育机构ID
+        /// </summary>
+        private Int32 _CompanyID;
+        /// <summary>
+        ///教育机构ID
+        /// </summary>
+        [ColumnAttribute("CompanyID", false, false, false)]
+        public Int32 CompanyID { get { return _CompanyID;} set{_CompanyID = value;OnPropertyChanged("CompanyID");} } 
+
+
+        /// <summary>
         ///员工编号
         /// </summary>
         private String _EmployeeNo;
@@ -179,6 +190,17 @@ namespace Models
         /// </summary>
         [ColumnAttribute("WeiXin", false, false, true)]
         public String WeiXin { get { return _WeiXin;} set{_WeiXin = value;OnPropertyChanged("WeiXin");} } 
+
+
+        /// <summary>
+        ///备注
+        /// </summary>
+        private String _Remark;
+        /// <summary>
+        ///备注
+        /// </summary>
+        [ColumnAttribute("Remark", false, false, true)]
+        public String Remark { get { return _Remark;} set{_Remark = value;OnPropertyChanged("Remark");} } 
 
 
         /// <summary>

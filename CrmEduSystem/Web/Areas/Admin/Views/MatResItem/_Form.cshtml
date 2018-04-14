@@ -1,0 +1,7 @@
+﻿@using Common;
+@using Models;
+@model MatResItem
+<div class="control-group"><label class="control-label">ID</label><div class="controls"><input id="ID" name ="ID" type="text" value ="@Model.ID" required readonly="readonly" /></div></div>
+<div class="control-group"><label class="control-label">申请编号</label><div class="controls"><input id="RequestNo" name ="RequestNo" type="text" value ="@Model.RequestNo" required /></div></div>
+<div class="control-group"><label class="control-label">物料ID</label><div class="controls"><input id="MaterielID" name ="MaterielID" type="text" value ="@Model.MaterielID" style="width:30px;" required/></div></div>
+<div class="control-group"><label class="control-label">数量</label><div class="controls"><input id="Count" name ="Count" type="text" value ="@Model.Count" style="width:30px;" required/></div></div>

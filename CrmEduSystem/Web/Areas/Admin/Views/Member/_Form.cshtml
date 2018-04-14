@@ -20,7 +20,7 @@
             </div>
             <div class="control-group">
                 <label class="control-label">角色</label><div class="controls">
-                    @Html.DropDownList("RoleID", "Role", "IsDeleted<>1 and RoleID>="+ @Model.RoleID, string.Empty, "ID", "RoleName", @Model.RoleID, "required")
+                    @Html.DropDownList("RoleID", "Role", "IsDeleted<>1 and ID>="+ @Model.RoleID, string.Empty, "ID", "RoleName", @Model.RoleID, "required")
                 </div>
             </div>
             <div class="control-group">

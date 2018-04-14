@@ -27,6 +27,7 @@ namespace Web.Areas.Admin.Controllers
                 {
                     //读取菜单
                     if (CurrentMember.RoleID == 1) return View();
+
                     PermissionHelper permission = new PermissionHelper();
                     var plts = permission.PermissionDatas.Where(b => b.RID == CurrentMember.RoleID).ToList();
                     List<string> optionNames = new List<string>();

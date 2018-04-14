@@ -16,20 +16,20 @@ namespace Web.Areas.Admin.Controllers
     public class StudentController : BaseController
     {
 
-        public ActionResult Index(int? pageIndex, int? pageSize, Student entity)
+        public ActionResult Index(int? pageIndex, int? pageSize, View_Student entity)
         {
             try
             {
-                StudentLogic ml = new StudentLogic();
-				entity.IsDeleted = false;
-				PagedList<Student> page = ml.GetStudents(entity, pageIndex ?? PageIndex, pageSize ?? PageSize, Order,By);
+                View_StudentLogic ml = new View_StudentLogic();
+                entity.IsDeleted = false;
+                PagedList<View_Student> page = ml.GetView_Students(entity, pageIndex ?? PageIndex, pageSize ?? PageSize, Order, By);
                 if (Request.IsAjaxRequest())
-                    return PartialView("_Index",  page);
+                    return PartialView("_Index", page);
                 return View(page);
             }
             catch (Exception ex)
             {
-                return Content(ContentIcon.Error + "|"+ErrorWirter(RouteData, ex.Message));
+                return Content(ContentIcon.Error + "|" + ErrorWirter(RouteData, ex.Message));
             }
         }
 

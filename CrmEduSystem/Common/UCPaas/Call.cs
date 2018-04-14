@@ -45,7 +45,7 @@ namespace Common.UCPaas
         /// <param name="to"></param>
         /// <param name="param"></param>
         /// <returns></returns>
-        public eDoctor.SDK.UCPaas.Response.SMSVerification SendSMSVerification(string appid, string templateid, string to, string param)
+        public jimaduo.SDK.UCPaas.Response.SMSVerification SendSMSVerification(string appid, string templateid, string to, string param)
         {
             if (string.IsNullOrEmpty(templateid) || string.IsNullOrEmpty(to)) return null;
 
@@ -75,7 +75,7 @@ namespace Common.UCPaas
             req.PostData = PostData.ToString();
             var data = req.Request();
 
-            return (new JavaScriptSerializer()).Deserialize<eDoctor.SDK.UCPaas.Response.SMSVerification>(data);
+            return (new JavaScriptSerializer()).Deserialize<jimaduo.SDK.UCPaas.Response.SMSVerification>(data);
 
         }
     }

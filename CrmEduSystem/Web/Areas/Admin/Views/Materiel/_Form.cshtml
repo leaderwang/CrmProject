@@ -2,7 +2,7 @@
 @using Models;
 @model Materiel
 <div class="control-group"><label class="control-label">ID</label><div class="controls"><input id="ID" name ="ID" type="text" value ="@Model.ID" required readonly="readonly" /></div></div>
-<div class="control-group"><label class="control-label">SchoolID</label><div class="controls"><input id="SchoolID" name ="SchoolID" type="text" value ="@Model.SchoolID" style="width:30px;" required/></div></div>
+<div class="control-group"><label class="control-label">教育机构ID</label><div class="controls"><input id="CompanyID" name ="CompanyID" type="text" value ="@Model.CompanyID" style="width:30px;" required/></div></div>
 <div class="control-group"><label class="control-label">物料名称</label><div class="controls"><input id="Title" name ="Title" type="text" value ="@Model.Title" required /></div></div>
 <div class="control-group"><label class="control-label">简介</label><div class="controls"><textarea id="Summary" name ="Summary">@Model.Summary</textarea></div></div>
 <div class="control-group"><label class="control-label">当前库存</label><div class="controls"><input id="Stock" name ="Stock" type="text" value ="@Model.Stock" style="width:30px;" required/></div></div>

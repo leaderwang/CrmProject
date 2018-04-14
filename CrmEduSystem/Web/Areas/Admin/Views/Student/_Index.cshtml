@@ -2,26 +2,28 @@
 @using MvcPager;
 @using Lib;
 @using Models;
-@model PagedList<Student>
+@model PagedList<View_Student>
 <table class="table table-striped">
     <thead>
         <tr>
-          <th class="checkbox-column">
+            <th class="checkbox-column">
                 <input type="checkbox" name="checkall" onchange="selectall(this,'ID')" />
             </th>
-                           <th class="sorting" data-sort="ID">ID</th>
-               <th class="sorting" data-sort="StudentNo">学员编号</th>
-               <th class="sorting" data-sort="UserName">姓名</th>
-               <th class="sorting" data-sort="EnglishName">英文名</th>
-               <th class="sorting" data-sort="Status">状态</th>
-               <th class="sorting" data-sort="IDcard">身份证</th>
-               <th class="sorting" data-sort="BirthDate">出生日期</th>
-               <th class="sorting" data-sort="Mobile">联系电话</th>
-               <th class="sorting" data-sort="Avatar">Avatar</th>
-               <th class="sorting" data-sort="Address">地址</th>
-               <th class="sorting" data-sort="Email">Email</th>
-               <th class="sorting" data-sort="QQ">QQ</th>
-               <th class="sorting" data-sort="WeiXin">WeiXin</th>
+            <th class="sorting" data-sort="ID">ID</th>
+            <th class="sorting" data-sort="Avatar">头像</th>
+            <th class="sorting" data-sort="StudentNo">编号</th>
+            <th class="sorting" data-sort="UserName">姓名</th>
+            <th class="sorting" data-sort="EnglishName">英文名</th>
+            <th class="sorting" data-sort="Type">类型</th>
+            <th class="sorting" data-sort="Status">状态</th>
+            <th class="sorting" data-sort="IDcard">身份证</th>
+            <th class="sorting" data-sort="BirthDate">出生日期</th>
+            <th class="sorting" data-sort="Mobile">联系方式</th>
+            <th class="sorting" data-sort="SchoolName">就读学校</th>
+            <th class="sorting" data-sort="Address">联系地址</th>
+            <th class="sorting" data-sort="TelOfficerName">话务专员</th>
+            <th class="sorting" data-sort="MarOfficerName">市场专员</th>
+            <th class="sorting" data-sort="Email">Email</th>
 
             <th class="btns-column">
                 操作
@@ -32,26 +34,28 @@
         @foreach (var item in Model)
         {
             <tr>
-               <td class="checkbox-column"><input type="checkbox" name="ID" value="@item.ID"/></td>
-                               <td>@item.ID</td>
-               <td>@item.StudentNo</td>
-               <td>@item.UserName</td>
-               <td>@item.EnglishName</td>
-               <td>@item.Status</td>
-               <td>@item.IDcard</td>
-               <td>@item.BirthDate</td>
-               <td>@item.Mobile</td>
-               <td>@item.Avatar</td>
-               <td>@item.Address</td>
-               <td>@item.Email</td>
-               <td>@item.QQ</td>
-               <td>@item.WeiXin</td>
+                <td class="checkbox-column"><input type="checkbox" name="ID" value="@item.ID" /></td>
+                <td>@item.ID</td>
+                <td>@item.Avatar</td>
+                <td>@item.StudentNo</td>
+                <td>@item.UserName</td>
+                <td>@item.EnglishName</td>
+                <td>@item.Type</td>
+                <td>@item.Status</td>
+                <td>@item.IDcard</td>
+                <td>@item.BirthDate</td>
+                <td>@item.Mobile</td>
+                <td>@item.SchoolName</td>
+                <td>@item.Address</td>
+                <td>@item.TelOfficerName</td>
+                <td>@item.MarOfficerName</td>
+                <td>@item.Email</td>
 
                 <td class="btns-column">
-					@Html.ViewButton("详细", "/admin/Student/Detail", new { href = "/admin/Student/Detail?id=" + item.ID })
-					@Html.EditButton("编辑", "/admin/Student/Edit", new { href = "/admin/Student/Edit?id=" + item.ID })
-					@Html.DeleteButton("删除", "/admin/Student/Delete", new { href = "javascript:void(0);", onclick = "Delete('/admin/Student/Delete/" + item.ID + "',this,'one');" })
-				</td>
+                    @Html.ViewButton("详细", "/admin/Student/Detail", new { href = "/admin/Student/Detail?id=" + item.ID })
+                    @Html.EditButton("编辑", "/admin/Student/Edit", new { href = "/admin/Student/Edit?id=" + item.ID })
+                    @Html.DeleteButton("删除", "/admin/Student/Delete", new { href = "javascript:void(0);", onclick = "Delete('/admin/Student/Delete/" + item.ID + "',this,'one');" })
+                </td>
             </tr>
         }
     </tbody>

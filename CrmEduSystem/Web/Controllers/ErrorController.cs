@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace eDoctorBaseFrame.Controllers
+namespace jimaduoBaseFrame.Controllers
 {
     public class ErrorController : Controller
     {

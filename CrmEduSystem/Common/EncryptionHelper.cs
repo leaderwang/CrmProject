@@ -76,7 +76,7 @@ namespace Common
                 string returnValue;
                 try
                 {
-                    string defaultKey="edoctorBaseFrame";
+                    string defaultKey= "jmdBaseFrame";
                     if (string.IsNullOrEmpty(encryptKey))
                     {
                         encryptKey = defaultKey;
@@ -116,7 +116,7 @@ namespace Common
                 string returnValue;
                 try
                 {
-                    string defaultKey = "edoctorBaseFrame";
+                    string defaultKey = "jmdBaseFrame";
                     if (string.IsNullOrEmpty(decryptKey))
                     {
                         decryptKey = defaultKey;
@@ -229,7 +229,7 @@ namespace Common
                 Rijndael AESProvider = Rijndael.Create();
                 try
                 {
-                    string defaultKey = "edoctorBaseFrameedoctorB";
+                    string defaultKey = "jmdBaseFrameB";
                     if (string.IsNullOrEmpty(encryptKey))
                     {
                         encryptKey = defaultKey;
@@ -271,7 +271,7 @@ namespace Common
                 Rijndael AESProvider = Rijndael.Create();
                 try
                 {
-                    string defaultKey = "edoctorBaseFrameedoctorB";
+                    string defaultKey = "jmdBaseFrameB";
                     if (string.IsNullOrEmpty(decryptKey))
                     {
                         decryptKey = defaultKey;

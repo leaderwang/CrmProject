@@ -252,6 +252,7 @@ namespace Models
 
     }
 	#endregion
+
 	#region 基本业务
     public partial class MemberLogic
     {

@@ -2,7 +2,7 @@
 @using MvcPager;
 @using Lib;
 @using Models;
-@model PagedList<Student>
+@model PagedList<View_Student>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -27,6 +27,7 @@
                         <div class="btn-group pull-left">
 							@Html.DeleteAllButton("删除", "/Admin/Student/Delete", new { href = "javascript:void(0);", onclick = "Delete('/Admin/Student/Delete',this,'all');" })
 							<a class="btn"><span><i class="icol-doc-excel-csv"></i> 导出</span></a>
+                            <a class="btn"><span><i class="icol-doc-excel-csv"></i> 模板导入</span></a>
 							<a class="btn"><span><i class="icol-printer"></i> 打印</span></a>
 							<a class="btn" href="javascript:void(0)" onclick="$('#control_search').slideToggle()"><span><i class="icos-preview"></i>筛选</span></a>
                         </div>

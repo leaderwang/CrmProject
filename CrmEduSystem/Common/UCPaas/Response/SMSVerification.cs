@@ -1,5 +1,5 @@
 ﻿
-namespace eDoctor.SDK.UCPaas.Response
+namespace jimaduo.SDK.UCPaas.Response
 {
     public class SMSVerification
     {

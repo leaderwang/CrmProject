@@ -9,19 +9,19 @@ DBCC SHRINKDATABASE([DB_IBD_v2012])
 
 USE [master]
 GO
-ALTER DATABASE DB_eDoctorBaseFrame SET RECOVERY SIMPLE WITH NO_WAIT
+ALTER DATABASE DB_jimaduoBaseFrame SET RECOVERY SIMPLE WITH NO_WAIT
 GO
-ALTER DATABASE DB_eDoctorBaseFrame SET RECOVERY SIMPLE --简单模式
+ALTER DATABASE DB_jimaduoBaseFrame SET RECOVERY SIMPLE --简单模式
 GO
-USE DB_eDoctorBaseFrame
+USE DB_jimaduoBaseFrame
 GO
 
 
-DBCC SHRINKFILE (N'DB_eDoctorBaseFrame_log' , 11, TRUNCATEONLY)
+DBCC SHRINKFILE (N'DB_jimaduoBaseFrame_log' , 11, TRUNCATEONLY)
 GO
 
 --这里的DNName_Log 如果不知道在sys.database_files里是什么名字的话，可以用以下的语句进行查询
-USE DB_eDoctorBaseFrame
+USE DB_jimaduoBaseFrame
 
 GO
 
@@ -31,7 +31,7 @@ GO
 
 USE [master]
 GO
-ALTER DATABASE DB_eDoctorBaseFrame SET RECOVERY FULL WITH NO_WAIT
+ALTER DATABASE DB_jimaduoBaseFrame SET RECOVERY FULL WITH NO_WAIT
 GO
-ALTER DATABASE DB_eDoctorBaseFrame SET RECOVERY FULL --还原为完全模式
+ALTER DATABASE DB_jimaduoBaseFrame SET RECOVERY FULL --还原为完全模式
 GO

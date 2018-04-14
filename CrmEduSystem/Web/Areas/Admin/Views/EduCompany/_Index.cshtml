@@ -1,0 +1,59 @@
+﻿@using Common;
+@using MvcPager;
+@using Lib;
+@using Models;
+@model PagedList<EduCompany>
+<table class="table table-striped">
+    <thead>
+        <tr>
+          <th class="checkbox-column">
+                <input type="checkbox" name="checkall" onchange="selectall(this,'ID')" />
+            </th>
+                           <th class="sorting" data-sort="ID">ID</th>
+               <th class="sorting" data-sort="CompanyNo">编号</th>
+               <th class="sorting" data-sort="CompanyName">名称</th>
+               <th class="sorting" data-sort="Abstract">简介</th>
+               <th class="sorting" data-sort="Content">详情</th>
+               <th class="sorting" data-sort="Type">类型</th>
+               <th class="sorting" data-sort="Status">状态</th>
+
+            <th class="btns-column">
+                操作
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+               <td class="checkbox-column"><input type="checkbox" name="ID" value="@item.ID"/></td>
+                               <td>@item.ID</td>
+               <td>@item.CompanyNo</td>
+               <td>@item.CompanyName</td>
+               <td>@item.Abstract</td>
+               <td>@item.Content</td>
+               <td>@item.Type</td>
+               <td>@item.Status</td>
+
+                <td class="btns-column">
+					@Html.ViewButton("详细", "/admin/EduCompany/Detail", new { href = "/admin/EduCompany/Detail?id=" + item.ID })
+					@Html.EditButton("编辑", "/admin/EduCompany/Edit", new { href = "/admin/EduCompany/Edit?id=" + item.ID })
+					@Html.DeleteButton("删除", "/admin/EduCompany/Delete", new { href = "javascript:void(0);", onclick = "Delete('/admin/EduCompany/Delete/" + item.ID + "',this,'one');" })
+				</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="dt_footer fixed">
+    <div class="row-fluid">
+        <div class="span4">
+            <div class="dataTables_info" id="DataTables_Table_0_info">
+                @Model.CurrentPageIndex/@Model.TotalPageCount 页, 共@(Model.TotalItemCount)条记录
+            </div>
+        </div>
+        <div class="span8">
+            <div class="pagination">@Html.Pager(Model)</div>
+        </div>
+    </div>
+</div>
+@Html.PermissionValideScript()

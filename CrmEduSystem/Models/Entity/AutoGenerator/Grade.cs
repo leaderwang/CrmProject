@@ -50,14 +50,14 @@ namespace Models
 
 
         /// <summary>
-        ///SchoolID
+        ///教育机构ID
         /// </summary>
-        private Int32 _SchoolID;
+        private Int32 _CompanyID;
         /// <summary>
-        ///SchoolID
+        ///教育机构ID
         /// </summary>
-        [ColumnAttribute("SchoolID", false, false, false)]
-        public Int32 SchoolID { get { return _SchoolID;} set{_SchoolID = value;OnPropertyChanged("SchoolID");} } 
+        [ColumnAttribute("CompanyID", false, false, false)]
+        public Int32 CompanyID { get { return _CompanyID;} set{_CompanyID = value;OnPropertyChanged("CompanyID");} } 
 
 
         /// <summary>

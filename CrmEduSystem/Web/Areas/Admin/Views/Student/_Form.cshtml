@@ -5,12 +5,18 @@
 <div class="control-group"><label class="control-label">学员编号</label><div class="controls"><input id="StudentNo" name ="StudentNo" type="text" value ="@Model.StudentNo" required /></div></div>
 <div class="control-group"><label class="control-label">姓名</label><div class="controls"><input id="UserName" name ="UserName" type="text" value ="@Model.UserName" required /></div></div>
 <div class="control-group"><label class="control-label">英文名</label><div class="controls"><input id="EnglishName" name ="EnglishName" type="text" value ="@Model.EnglishName" /></div></div>
-<div class="control-group"><label class="control-label">状态</label><div class="controls"><input id="Status" name ="Status" type="text" value ="@Model.Status" style="width:30px;"/></div></div>
+<div class="control-group"><label class="control-label">学员类型（0-非学员|1-学员）</label><div class="controls"><input id="Type" name ="Type" type="text" value ="@Model.Type" style="width:30px;" required/></div></div>
+<div class="control-group"><label class="control-label">状态（0-无效数据|1-有效数据|2-已邀约|3-已到访|4-已</label><div class="controls"><input id="Status" name ="Status" type="text" value ="@Model.Status" style="width:30px;" required/></div></div>
 <div class="control-group"><label class="control-label">身份证</label><div class="controls"><input id="IDcard" name ="IDcard" type="text" value ="@Model.IDcard" /></div></div>
 <div class="control-group"><label class="control-label">出生日期</label><div class="controls"><input id="BirthDate" name ="BirthDate" type="text" value ="@Model.BirthDate" /></div></div>
-<div class="control-group"><label class="control-label">联系电话</label><div class="controls"><input id="Mobile" name ="Mobile" type="text" value ="@Model.Mobile" /></div></div>
+<div class="control-group"><label class="control-label">联系方式一</label><div class="controls"><input id="Mobile" name ="Mobile" type="text" value ="@Model.Mobile" /></div></div>
+<div class="control-group"><label class="control-label">联系方式二</label><div class="controls"><input id="TelePhone" name ="TelePhone" type="text" value ="@Model.TelePhone" /></div></div>
+<div class="control-group"><label class="control-label">就读学校ID</label><div class="controls"><input id="AttendSchoolID" name ="AttendSchoolID" type="text" value ="@Model.AttendSchoolID" style="width:30px;"/></div></div>
 <div class="control-group"><label class="control-label">Avatar</label><div class="controls"><input id="Avatar" name ="Avatar" type="text" value ="@Model.Avatar" /></div></div>
 <div class="control-group"><label class="control-label">地址</label><div class="controls"><textarea id="Address" name ="Address">@Model.Address</textarea></div></div>
+<div class="control-group"><label class="control-label">话务专员ID</label><div class="controls"><input id="TelOfficerID" name ="TelOfficerID" type="text" value ="@Model.TelOfficerID" style="width:30px;"/></div></div>
+<div class="control-group"><label class="control-label">市场推广专员ID</label><div class="controls"><input id="MarOfficerID" name ="MarOfficerID" type="text" value ="@Model.MarOfficerID" style="width:30px;"/></div></div>
 <div class="control-group"><label class="control-label">Email</label><div class="controls"><input id="Email" name ="Email" type="text" value ="@Model.Email" /></div></div>
 <div class="control-group"><label class="control-label">QQ</label><div class="controls"><input id="QQ" name ="QQ" type="text" value ="@Model.QQ" /></div></div>
 <div class="control-group"><label class="control-label">WeiXin</label><div class="controls"><input id="WeiXin" name ="WeiXin" type="text" value ="@Model.WeiXin" /></div></div>
+<div class="control-group"><label class="control-label">备注</label><div class="controls"><textarea id="Remark" name ="Remark">@Model.Remark</textarea></div></div>

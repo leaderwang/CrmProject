@@ -10,11 +10,11 @@
                 <input type="checkbox" name="checkall" onchange="selectall(this,'ID')" />
             </th>
                            <th class="sorting" data-sort="ID">ID</th>
-               <th class="sorting" data-sort="RequestNo">RequestNo</th>
-               <th class="sorting" data-sort="OpenID">OpenID</th>
-               <th class="sorting" data-sort="Title">Title</th>
+               <th class="sorting" data-sort="LogNo">LogNo</th>
+               <th class="sorting" data-sort="LogType">LogType</th>
+               <th class="sorting" data-sort="ControllerName">ControllerName</th>
+               <th class="sorting" data-sort="ActionName">ActionName</th>
                <th class="sorting" data-sort="Content">Content</th>
-               <th class="sorting" data-sort="LogLevel">LogLevel</th>
 
             <th class="btns-column">
                 操作
@@ -27,11 +27,11 @@
             <tr>
                <td class="checkbox-column"><input type="checkbox" name="ID" value="@item.ID"/></td>
                                <td>@item.ID</td>
-               <td>@item.RequestNo</td>
-               <td>@item.OpenID</td>
-               <td>@item.Title</td>
+               <td>@item.LogNo</td>
+               <td>@item.LogType</td>
+               <td>@item.ControllerName</td>
+               <td>@item.ActionName</td>
                <td>@item.Content</td>
-               <td>@item.LogLevel</td>
 
                 <td class="btns-column">
 					@Html.ViewButton("详细", "/admin/SysLog/Detail", new { href = "/admin/SysLog/Detail?id=" + item.ID })

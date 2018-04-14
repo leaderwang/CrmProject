@@ -122,18 +122,16 @@ namespace Web.Areas.Admin.Controllers
         {
             try
             {
-                //string controller = RouteData.Values["controller"].ToString().ToLower();
-                //string action = RouteData.Values["action"].ToString().ToLower();
-                //string errorNo = "错误号：" + controller + "-" + action + "-" + DateTime.Now.Ticks + " ";
+                string controller = RouteData.Values["controller"].ToString().ToLower();
+                string action = RouteData.Values["action"].ToString().ToLower();
+                string errorNo = "错误号：" + controller + "-" + action + "-" + DateTime.Now.Ticks + " ";
 
-                ////BSystemLog obj = new BSystemLog { ID = GID.NewGID(), CreateDate = DateTime.Now, ModifyDate = DateTime.Now, CreateUser = CurrentRealName, ModifyUser = CurrentRealName, IsDeleted = false, LogType = LogType.Error.ToString(), ControllerName = controllerName, ActionName = actionName, Content = errorNo + content };
+                Models.SysLog obj = new Models.SysLog { CreateDate = DateTime.Now, CreateUserID = CurrentMember.ID, IsDeleted = false, LogType = 1, ControllerName = controller, ActionName = action, Content = errorNo + content };
+                Models.SysLogLogic sll = new Models.SysLogLogic();
+                sll.Add(obj);
 
-                ////SystemLogLogic sll = new SystemLogLogic();
-
-                ////sll.Add(obj);
-
-                //return errorNo + "-" + content;
-                return content;
+                return errorNo + "-" + content;
+                //return content;
             }
             catch (Exception ex)
             {

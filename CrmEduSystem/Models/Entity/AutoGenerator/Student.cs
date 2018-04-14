@@ -83,14 +83,25 @@ namespace Models
 
 
         /// <summary>
-        ///状态
+        ///学员类型（0-非学员|1-学员）
         /// </summary>
-        private Int32? _Status;
+        private Int32 _Type;
         /// <summary>
-        ///状态
+        ///学员类型（0-非学员|1-学员）
         /// </summary>
-        [ColumnAttribute("Status", false, false, true)]
-        public Int32? Status { get { return _Status;} set{_Status = value;OnPropertyChanged("Status");} } 
+        [ColumnAttribute("Type", false, false, false)]
+        public Int32 Type { get { return _Type;} set{_Type = value;OnPropertyChanged("Type");} } 
+
+
+        /// <summary>
+        ///状态（0-无效数据|1-有效数据|2-已邀约|3-已到访|4-已
+        /// </summary>
+        private Int32 _Status;
+        /// <summary>
+        ///状态（0-无效数据|1-有效数据|2-已邀约|3-已到访|4-已
+        /// </summary>
+        [ColumnAttribute("Status", false, false, false)]
+        public Int32 Status { get { return _Status;} set{_Status = value;OnPropertyChanged("Status");} } 
 
 
         /// <summary>
@@ -116,14 +127,36 @@ namespace Models
 
 
         /// <summary>
-        ///联系电话
+        ///联系方式一
         /// </summary>
         private String _Mobile;
         /// <summary>
-        ///联系电话
+        ///联系方式一
         /// </summary>
         [ColumnAttribute("Mobile", false, false, true)]
         public String Mobile { get { return _Mobile;} set{_Mobile = value;OnPropertyChanged("Mobile");} } 
+
+
+        /// <summary>
+        ///联系方式二
+        /// </summary>
+        private String _TelePhone;
+        /// <summary>
+        ///联系方式二
+        /// </summary>
+        [ColumnAttribute("TelePhone", false, false, true)]
+        public String TelePhone { get { return _TelePhone;} set{_TelePhone = value;OnPropertyChanged("TelePhone");} } 
+
+
+        /// <summary>
+        ///就读学校ID
+        /// </summary>
+        private Int32? _AttendSchoolID;
+        /// <summary>
+        ///就读学校ID
+        /// </summary>
+        [ColumnAttribute("AttendSchoolID", false, false, true)]
+        public Int32? AttendSchoolID { get { return _AttendSchoolID;} set{_AttendSchoolID = value;OnPropertyChanged("AttendSchoolID");} } 
 
 
         /// <summary>
@@ -146,6 +179,28 @@ namespace Models
         /// </summary>
         [ColumnAttribute("Address", false, false, true)]
         public String Address { get { return _Address;} set{_Address = value;OnPropertyChanged("Address");} } 
+
+
+        /// <summary>
+        ///话务专员ID
+        /// </summary>
+        private Int32? _TelOfficerID;
+        /// <summary>
+        ///话务专员ID
+        /// </summary>
+        [ColumnAttribute("TelOfficerID", false, false, true)]
+        public Int32? TelOfficerID { get { return _TelOfficerID;} set{_TelOfficerID = value;OnPropertyChanged("TelOfficerID");} } 
+
+
+        /// <summary>
+        ///市场推广专员ID
+        /// </summary>
+        private Int32? _MarOfficerID;
+        /// <summary>
+        ///市场推广专员ID
+        /// </summary>
+        [ColumnAttribute("MarOfficerID", false, false, true)]
+        public Int32? MarOfficerID { get { return _MarOfficerID;} set{_MarOfficerID = value;OnPropertyChanged("MarOfficerID");} } 
 
 
         /// <summary>
@@ -182,25 +237,36 @@ namespace Models
 
 
         /// <summary>
-        ///CreateDate
+        ///备注
         /// </summary>
-        private DateTime? _CreateDate;
+        private String _Remark;
+        /// <summary>
+        ///备注
+        /// </summary>
+        [ColumnAttribute("Remark", false, false, true)]
+        public String Remark { get { return _Remark;} set{_Remark = value;OnPropertyChanged("Remark");} } 
+
+
         /// <summary>
         ///CreateDate
         /// </summary>
-        [ColumnAttribute("CreateDate", false, false, true)]
-        public DateTime? CreateDate { get { return _CreateDate;} set{_CreateDate = value;OnPropertyChanged("CreateDate");} } 
+        private DateTime _CreateDate;
+        /// <summary>
+        ///CreateDate
+        /// </summary>
+        [ColumnAttribute("CreateDate", false, false, false)]
+        public DateTime CreateDate { get { return _CreateDate;} set{_CreateDate = value;OnPropertyChanged("CreateDate");} } 
 
 
         /// <summary>
         ///CreateUserID
         /// </summary>
-        private Int32? _CreateUserID;
+        private Int32 _CreateUserID;
         /// <summary>
         ///CreateUserID
         /// </summary>
-        [ColumnAttribute("CreateUserID", false, false, true)]
-        public Int32? CreateUserID { get { return _CreateUserID;} set{_CreateUserID = value;OnPropertyChanged("CreateUserID");} } 
+        [ColumnAttribute("CreateUserID", false, false, false)]
+        public Int32 CreateUserID { get { return _CreateUserID;} set{_CreateUserID = value;OnPropertyChanged("CreateUserID");} } 
 
 
         /// <summary>

@@ -50,36 +50,47 @@ namespace Models
 
 
         /// <summary>
-        ///RequestNo
+        ///LogNo
         /// </summary>
-        private String _RequestNo;
+        private String _LogNo;
         /// <summary>
-        ///RequestNo
+        ///LogNo
         /// </summary>
-        [ColumnAttribute("RequestNo", false, false, false)]
-        public String RequestNo { get { return _RequestNo;} set{_RequestNo = value;OnPropertyChanged("RequestNo");} } 
+        [ColumnAttribute("LogNo", false, false, false)]
+        public String LogNo { get { return _LogNo;} set{_LogNo = value;OnPropertyChanged("LogNo");} } 
 
 
         /// <summary>
-        ///OpenID
+        ///LogType
         /// </summary>
-        private String _OpenID;
+        private Int32 _LogType;
         /// <summary>
-        ///OpenID
+        ///LogType
         /// </summary>
-        [ColumnAttribute("OpenID", false, false, true)]
-        public String OpenID { get { return _OpenID;} set{_OpenID = value;OnPropertyChanged("OpenID");} } 
+        [ColumnAttribute("LogType", false, false, false)]
+        public Int32 LogType { get { return _LogType;} set{_LogType = value;OnPropertyChanged("LogType");} } 
 
 
         /// <summary>
-        ///Title
+        ///ControllerName
         /// </summary>
-        private String _Title;
+        private String _ControllerName;
         /// <summary>
-        ///Title
+        ///ControllerName
         /// </summary>
-        [ColumnAttribute("Title", false, false, true)]
-        public String Title { get { return _Title;} set{_Title = value;OnPropertyChanged("Title");} } 
+        [ColumnAttribute("ControllerName", false, false, true)]
+        public String ControllerName { get { return _ControllerName;} set{_ControllerName = value;OnPropertyChanged("ControllerName");} } 
+
+
+        /// <summary>
+        ///ActionName
+        /// </summary>
+        private String _ActionName;
+        /// <summary>
+        ///ActionName
+        /// </summary>
+        [ColumnAttribute("ActionName", false, false, true)]
+        public String ActionName { get { return _ActionName;} set{_ActionName = value;OnPropertyChanged("ActionName");} } 
 
 
         /// <summary>
@@ -91,17 +102,6 @@ namespace Models
         /// </summary>
         [ColumnAttribute("Content", false, false, true)]
         public String Content { get { return _Content;} set{_Content = value;OnPropertyChanged("Content");} } 
-
-
-        /// <summary>
-        ///LogLevel
-        /// </summary>
-        private Int32? _LogLevel;
-        /// <summary>
-        ///LogLevel
-        /// </summary>
-        [ColumnAttribute("LogLevel", false, false, true)]
-        public Int32? LogLevel { get { return _LogLevel;} set{_LogLevel = value;OnPropertyChanged("LogLevel");} } 
 
 
         /// <summary>
