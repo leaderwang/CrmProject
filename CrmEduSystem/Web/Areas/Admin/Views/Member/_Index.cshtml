@@ -8,7 +8,6 @@
             <th class="checkbox-column">
                 <input type="checkbox" name="checkall" onchange="selectall(this,'ID')" />
             </th>
-            <th class="sorting" data-sort="Avatar">头像</th>
             <th class="sorting" data-sort="ID">ID</th>
             <th class="sorting" data-sort="UserNo">编号</th>
             <th class="sorting" data-sort="UserName">用户名</th>
@@ -24,17 +23,10 @@
     <tbody>
         @foreach (var item in Model)
         {
-            var headUrl = "/Areas/Admin/Content/images/avatar.png";
-            if (!string.IsNullOrEmpty(headUrl))
-            {
-                headUrl = item.Avatar;
-            }
-            
             <tr>
                 <td class="checkbox-column">
                     <input type="checkbox" name="ID" value="@item.ID"/>
                 </td>
-                <td><img src="@headUrl" style="height:30px;" /></td>
                 <td>@item.ID</td>
                 <td>@item.UserNo</td>
                 <td>@item.UserName</td>

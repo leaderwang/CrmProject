@@ -10,7 +10,6 @@
                 <input type="checkbox" name="checkall" onchange="selectall(this,'ID')" />
             </th>
             <th class="sorting" data-sort="ID">ID</th>
-            <th class="sorting" data-sort="Avatar">头像</th>
             <th class="sorting" data-sort="StudentNo">编号</th>
             <th class="sorting" data-sort="UserName">姓名</th>
             <th class="sorting" data-sort="EnglishName">英文名</th>
@@ -33,12 +32,6 @@
     <tbody>
         @foreach (var item in Model)
         {
-            var headUrl = "/Areas/Admin/Content/images/avatar.png";
-            if (!string.IsNullOrEmpty(headUrl))
-            {
-                headUrl = item.Avatar;
-            }
-
             var statusStr = "无效数据";
             if (item.Status == 1)
             {
@@ -60,7 +53,6 @@
             <tr>
                 <td class="checkbox-column"><input type="checkbox" name="ID" value="@item.ID" /></td>
                 <td>@item.ID</td>
-                <td><img src="@headUrl" style="height:30px;" /></td>
                 <td>@item.StudentNo</td>
                 <td>@item.UserName</td>
                 <td>@item.EnglishName</td>
