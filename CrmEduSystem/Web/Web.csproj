@@ -167,7 +167,6 @@
     <Compile Include="Areas\Admin\Controllers\CourseController.cs" />
     <Compile Include="Areas\Admin\Controllers\CourseLearnRecordController.cs" />
     <Compile Include="Areas\Admin\Controllers\CourseScheduleController.cs" />
-    <Compile Include="Areas\Admin\Controllers\CustomerController.cs" />
     <Compile Include="Areas\Admin\Controllers\GradeController.cs" />
     <Compile Include="Areas\Admin\Controllers\GradeStudentController.cs" />
     <Compile Include="Areas\Admin\Controllers\MaterielController.cs" />
@@ -175,7 +174,6 @@
     <Compile Include="Areas\Admin\Controllers\SchoolController.cs" />
     <Compile Include="Areas\Admin\Controllers\StudentController.cs" />
     <Compile Include="Areas\Admin\Controllers\MaterielRequestController.cs" />
-    <Compile Include="Areas\Admin\Controllers\EmployeeController.cs" />
     <Compile Include="Areas\Admin\Controllers\AuditionRecordController.cs" />
     <Compile Include="Areas\Admin\Controllers\CommunicateRecordController.cs" />
     <Compile Include="Areas\Admin\Controllers\CompanyController.cs" />
@@ -1769,13 +1767,6 @@
     <Content Include="Areas\Admin\Views\CourseSchedule\_Form.cshtml" />
     <Content Include="Areas\Admin\Views\CourseSchedule\Detail.cshtml" />
     <Content Include="Areas\Admin\Views\CourseSchedule\_Detail.cshtml" />
-    <Content Include="Areas\Admin\Views\Customer\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Customer\_Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Customer\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Customer\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Customer\_Form.cshtml" />
-    <Content Include="Areas\Admin\Views\Customer\Detail.cshtml" />
-    <Content Include="Areas\Admin\Views\Customer\_Detail.cshtml" />
     <Content Include="Areas\Admin\Views\Grade\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Grade\_Index.cshtml" />
     <Content Include="Areas\Admin\Views\Grade\Create.cshtml" />
@@ -1825,13 +1816,6 @@
     <Content Include="Areas\Admin\Views\MaterielRequest\_Form.cshtml" />
     <Content Include="Areas\Admin\Views\MaterielRequest\Detail.cshtml" />
     <Content Include="Areas\Admin\Views\MaterielRequest\_Detail.cshtml" />
-    <Content Include="Areas\Admin\Views\Employee\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Employee\_Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Employee\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Employee\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Employee\_Form.cshtml" />
-    <Content Include="Areas\Admin\Views\Employee\Detail.cshtml" />
-    <Content Include="Areas\Admin\Views\Employee\_Detail.cshtml" />
     <Content Include="Areas\Admin\Views\AuditionRecord\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AuditionRecord\_Index.cshtml" />
     <Content Include="Areas\Admin\Views\AuditionRecord\Create.cshtml" />

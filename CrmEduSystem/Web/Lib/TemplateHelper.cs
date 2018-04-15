@@ -15,8 +15,8 @@ namespace Lib
         /// </summary>
         public static string ReplaceTag(string html)
         {
-            string[] tags = { "{site_title}", "{root_admin}", "{root}", "{root_logon}", "{root_logout}", "{user_id}", "{user_realname}", "{date_now_int}", "{date_now}" };
-            string[] values = { site_title, root_admin, root, root_logon, root_logout, CurrentMember.ID.ToString(), CurrentMember.Member.RealName, Character.DateTimeToInt(DateTime.Now).ToString(), DateTime.Now.ToString("yyyy-MM-dd") };
+            string[] tags = { "{site_title}", "{root_admin}", "{root}", "{root_logon}", "{root_logout}", "{user_id}", "{date_now_int}", "{date_now}" };
+            string[] values = { site_title, root_admin, root, root_logon, root_logout, CurrentMember.ID.ToString(),  Character.DateTimeToInt(DateTime.Now).ToString(), DateTime.Now.ToString("yyyy-MM-dd") };
             for (int i = 0; i < tags.Length; i++)
             {
                 html = html.Replace(tags[i], values[i]);

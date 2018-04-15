@@ -19,7 +19,7 @@
             @*<th class="sorting" data-sort="IDcard">身份证</th>
             <th class="sorting" data-sort="BirthDate">出生日期</th>*@
             <th class="sorting" data-sort="Mobile">联系方式</th>
-            <th class="sorting" data-sort="SchoolName">就读学校</th>
+            @*<th class="sorting" data-sort="SchoolName">就读学校</th>*@
             @*<th class="sorting" data-sort="Address">联系地址</th>*@
             <th class="sorting" data-sort="TelOfficerName">话务专员</th>
             <th class="sorting" data-sort="MarOfficerName">市场专员</th>
@@ -39,6 +39,24 @@
                 headUrl = item.Avatar;
             }
 
+            var statusStr = "无效数据";
+            if (item.Status == 1)
+            {
+                statusStr = "有效数据";
+            }
+            else if (item.Status == 2)
+            {
+                statusStr = "已邀约";
+            }
+            else if (item.Status == 3)
+            {
+                statusStr = "已到访";
+            }
+            else if (item.Status == 4)
+            {
+                statusStr = "已报名";
+            }
+
             <tr>
                 <td class="checkbox-column"><input type="checkbox" name="ID" value="@item.ID" /></td>
                 <td>@item.ID</td>
@@ -47,11 +65,11 @@
                 <td>@item.UserName</td>
                 <td>@item.EnglishName</td>
                 <td>@(item.Type==0? "非学员" : "学员")</td>
-                <td>@item.Status</td>
+                <td>@statusStr</td>
                 @*<td>@item.IDcard</td>
                 <td>@item.BirthDate</td>*@
                 <td>@item.Mobile</td>
-                <td>@item.SchoolName</td>
+                @*<td>@item.SchoolName</td>*@
                 @*<td>@item.Address</td>*@
                 <td>@item.TelOfficerName</td>
                 <td>@item.MarOfficerName</td>

@@ -1,6 +1,6 @@
 ﻿@using MvcPager;
 @using Lib;
-@model PagedList<Models.Member>
+@model PagedList<Models.View_Member>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -55,56 +55,44 @@
                                         <option value="50">50</option>
                                         <option value="100">100</option>
                                     </select>
-                                    条记录每页</label>
+                                    条记录每页
+                                </label>
                             </div>
                         </div>
                     </div>
                     <div class="alert alert-info" id="control_search" style="display: none">
                         <div class="control-group">
-                            <label class="control-label">
-                                UID</label>
+                            <label class="control-label">UserID</label>
                             <div class="controls">
                                 <input id="ID" name="ID" type="text" />
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label">
-                                用户名</label>
+                            <label class="control-label">编号</label>
+                            <div class="controls">
+                                <input id="UserNo" name="UserNo" type="text" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">用户名</label>
                             <div class="controls">
                                 <input id="UserName" name="UserName" type="text" />
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label">
-                                昵称</label>
-                            <div class="controls">
-                                <input id="NickName" name="NickName" type="text" />
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label">
-                                姓名</label>
-                            <div class="controls">
-                                <input id="RealName" name="RealName" type="text" />
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label">
-                                角色</label>
+                            <label class="control-label">角色</label>
                             <div class="controls">
                                 @Html.DropDownList("RoleID", "Role", "IsDeleted<>1", string.Empty, "ID", "RoleName", "", "")
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label">
-                                手机</label>
+                            <label class="control-label">手机</label>
                             <div class="controls">
                                 <input id="Mobile" name="Mobile" type="text" />
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label">
-                                邮箱</label>
+                            <label class="control-label">邮箱</label>
                             <div class="controls">
                                 <input id="Email" name="Email" type="text" />
                                 <button class="btn skip" type="submit"><i class="icos-magnifying-glass"></i>搜 索</button>

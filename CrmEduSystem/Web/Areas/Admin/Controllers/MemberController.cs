@@ -15,13 +15,13 @@ namespace Web.Areas.Admin.Controllers
     public class MemberController : BaseController
     {
 
-        public ActionResult Index(int? pageIndex, int? pageSize, Member entity)
+        public ActionResult Index(int? pageIndex, int? pageSize, View_Member entity)
         {
             try
             {
-                MemberLogic ml = new MemberLogic();
+                View_MemberLogic ml = new View_MemberLogic();
 
-                PagedList<Member> page = ml.GetMembers(entity, pageIndex ?? PageIndex, pageSize ?? PageSize, Order, By);
+                PagedList<View_Member> page = ml.GetView_Members(entity, pageIndex ?? PageIndex, pageSize ?? PageSize, Order, By);
 
                 if (Request.IsAjaxRequest())
 
@@ -37,7 +37,7 @@ namespace Web.Areas.Admin.Controllers
 
         public ActionResult Create()
         {
-            return View(new Member());
+            return View(new Member() { UserNo= Character.GetUniqueCodeString("U") });
         }
 
         [HttpPost]
@@ -47,7 +47,7 @@ namespace Web.Areas.Admin.Controllers
             {
                 MemberLogic ml = new MemberLogic();
 
-                Member obj = new Member() { CreateDate = DateTime.Now, CreateUserID = ID, IsDeleted = false };
+                Member obj = new Member() { CompanyID = CompanyID, CreateDate = DateTime.Now, CreateUserID = ID, IsDeleted = false };
 
                 UpdateModel(obj);
                 obj.Password = Common.Character.EncrytPassword(obj.PwdNotMD5);

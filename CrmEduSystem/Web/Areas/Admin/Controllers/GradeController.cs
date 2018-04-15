@@ -45,7 +45,7 @@ namespace Web.Areas.Admin.Controllers
             {
                 GradeLogic ml = new GradeLogic();
 
-                Grade obj = new Grade() {  CreateDate = DateTime.Now, CreateUserID = ID,  IsDeleted = false };
+                Grade obj = new Grade() { CompanyID = CompanyID, CreateDate = DateTime.Now, CreateUserID = ID,  IsDeleted = false };
 
                 UpdateModel(obj);
 

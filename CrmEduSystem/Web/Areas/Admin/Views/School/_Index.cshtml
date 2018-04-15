@@ -6,17 +6,17 @@
 <table class="table table-striped">
     <thead>
         <tr>
-          <th class="checkbox-column">
+            <th class="checkbox-column">
                 <input type="checkbox" name="checkall" onchange="selectall(this,'ID')" />
             </th>
-                           <th class="sorting" data-sort="ID">ID</th>
-               <th class="sorting" data-sort="CompanyID">教育机构ID</th>
-               <th class="sorting" data-sort="SchoolNo">学校编号</th>
-               <th class="sorting" data-sort="SchoolName">学校名称</th>
-               <th class="sorting" data-sort="Content">简介</th>
-               <th class="sorting" data-sort="Type">类型</th>
-               <th class="sorting" data-sort="Status">状态</th>
-               <th class="sorting" data-sort="Remark">备注</th>
+            <th class="sorting" data-sort="ID">ID</th>
+            <th class="sorting" data-sort="CompanyID">教育机构ID</th>
+            <th class="sorting" data-sort="SchoolNo">学校编号</th>
+            <th class="sorting" data-sort="SchoolName">学校名称</th>
+            <th class="sorting" data-sort="Content">简介</th>
+            <th class="sorting" data-sort="Type">类型</th>
+            <th class="sorting" data-sort="Status">状态</th>
+            <th class="sorting" data-sort="Remark">备注</th>
 
             <th class="btns-column">
                 操作
@@ -27,21 +27,21 @@
         @foreach (var item in Model)
         {
             <tr>
-               <td class="checkbox-column"><input type="checkbox" name="ID" value="@item.ID"/></td>
-                               <td>@item.ID</td>
-               <td>@item.CompanyID</td>
-               <td>@item.SchoolNo</td>
-               <td>@item.SchoolName</td>
-               <td>@item.Content</td>
-               <td>@item.Type</td>
-               <td>@item.Status</td>
-               <td>@item.Remark</td>
+                <td class="checkbox-column"><input type="checkbox" name="ID" value="@item.ID" /></td>
+                <td>@item.ID</td>
+                <td>@item.CompanyID</td>
+                <td>@item.SchoolNo</td>
+                <td>@item.SchoolName</td>
+                <td>@item.Content</td>
+                <td>@item.Type</td>
+                <td>@item.Status</td>
+                <td>@item.Remark</td>
 
                 <td class="btns-column">
-					@Html.ViewButton("详细", "/admin/School/Detail", new { href = "/admin/School/Detail?id=" + item.ID })
-					@Html.EditButton("编辑", "/admin/School/Edit", new { href = "/admin/School/Edit?id=" + item.ID })
-					@Html.DeleteButton("删除", "/admin/School/Delete", new { href = "javascript:void(0);", onclick = "Delete('/admin/School/Delete/" + item.ID + "',this,'one');" })
-				</td>
+                    @Html.ViewButton("详细", "/admin/School/Detail", new { href = "/admin/School/Detail?id=" + item.ID })
+                    @Html.EditButton("编辑", "/admin/School/Edit", new { href = "/admin/School/Edit?id=" + item.ID })
+                    @Html.DeleteButton("删除", "/admin/School/Delete", new { href = "javascript:void(0);", onclick = "Delete('/admin/School/Delete/" + item.ID + "',this,'one');" })
+                </td>
             </tr>
         }
     </tbody>

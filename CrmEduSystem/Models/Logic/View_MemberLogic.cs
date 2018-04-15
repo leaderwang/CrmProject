@@ -8,7 +8,7 @@ using Common;
 
 namespace Models
 {
-    public partial class CustomerLogic
+    public partial class View_MemberLogic
     {
         
 

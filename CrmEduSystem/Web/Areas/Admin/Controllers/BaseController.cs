@@ -18,25 +18,39 @@ namespace Web.Areas.Admin.Controllers
         /// </summary>
         public int ID
         {
-            get
-            {
-                return CurrentMember.ID;
-            }
+            get { return CurrentMember.ID; }
+        }
 
-        }
         /// <summary>
-        /// 保存当前帐号名称
+        /// 保存当前帐号RoleID
         /// </summary>
-        public string RealName
+        public int RoleID
         {
-            get { return CurrentMember.Member.RealName; }
+            get { return CurrentMember.Member.RoleID; }
         }
+
         /// <summary>
-        /// 保存当前帐号所属组
+        /// 保存当前帐号CompanyID
+        /// </summary>
+        public int CompanyID
+        {
+            get { return CurrentMember.Member.CompanyID; }
+        }
+
+        /// <summary>
+        /// 保存当前帐号用户名
         /// </summary>
         public string UserName
         {
             get { return CurrentMember.UserName; }
+        }
+
+        /// <summary>
+        /// 保存当前帐号姓名
+        /// </summary>
+        public string RealName
+        {
+            get { return CurrentMember.RealName; }
         }
         #endregion
 

@@ -9,7 +9,7 @@ using MvcPager;
 namespace Models
 {
 	#region 实体模型
-    public partial class Employee:INotifyPropertyChanged
+    public partial class View_Member:INotifyPropertyChanged
     {
 
 		        /// <summary>
@@ -45,96 +45,96 @@ namespace Models
         /// <summary>
         ///ID
         /// </summary>
-        [ColumnAttribute("ID", false, true, false)]
+        [ColumnAttribute("ID", false, false, false)]
         public Int32 ID { get { return _ID;} set{_ID = value;OnPropertyChanged("ID");} } 
 
 
         /// <summary>
-        ///教育机构ID
+        ///CompanyID
         /// </summary>
         private Int32 _CompanyID;
         /// <summary>
-        ///教育机构ID
+        ///CompanyID
         /// </summary>
         [ColumnAttribute("CompanyID", false, false, false)]
         public Int32 CompanyID { get { return _CompanyID;} set{_CompanyID = value;OnPropertyChanged("CompanyID");} } 
 
 
         /// <summary>
-        ///员工编号
+        ///CompanyName
         /// </summary>
-        private String _EmployeeNo;
+        private String _CompanyName;
         /// <summary>
-        ///员工编号
+        ///CompanyName
         /// </summary>
-        [ColumnAttribute("EmployeeNo", false, false, false)]
-        public String EmployeeNo { get { return _EmployeeNo;} set{_EmployeeNo = value;OnPropertyChanged("EmployeeNo");} } 
+        [ColumnAttribute("CompanyName", false, false, true)]
+        public String CompanyName { get { return _CompanyName;} set{_CompanyName = value;OnPropertyChanged("CompanyName");} } 
 
 
         /// <summary>
-        ///员工姓名
+        ///RoleID
+        /// </summary>
+        private Int32 _RoleID;
+        /// <summary>
+        ///RoleID
+        /// </summary>
+        [ColumnAttribute("RoleID", false, false, false)]
+        public Int32 RoleID { get { return _RoleID;} set{_RoleID = value;OnPropertyChanged("RoleID");} } 
+
+
+        /// <summary>
+        ///RoleName
+        /// </summary>
+        private String _RoleName;
+        /// <summary>
+        ///RoleName
+        /// </summary>
+        [ColumnAttribute("RoleName", false, false, true)]
+        public String RoleName { get { return _RoleName;} set{_RoleName = value;OnPropertyChanged("RoleName");} } 
+
+
+        /// <summary>
+        ///UserNo
+        /// </summary>
+        private String _UserNo;
+        /// <summary>
+        ///UserNo
+        /// </summary>
+        [ColumnAttribute("UserNo", false, false, false)]
+        public String UserNo { get { return _UserNo;} set{_UserNo = value;OnPropertyChanged("UserNo");} } 
+
+
+        /// <summary>
+        ///UserName
         /// </summary>
         private String _UserName;
         /// <summary>
-        ///员工姓名
+        ///UserName
         /// </summary>
         [ColumnAttribute("UserName", false, false, false)]
         public String UserName { get { return _UserName;} set{_UserName = value;OnPropertyChanged("UserName");} } 
 
 
         /// <summary>
-        ///英文名
+        ///Password
         /// </summary>
-        private String _EnglishName;
+        private String _Password;
         /// <summary>
-        ///英文名
+        ///Password
         /// </summary>
-        [ColumnAttribute("EnglishName", false, false, true)]
-        public String EnglishName { get { return _EnglishName;} set{_EnglishName = value;OnPropertyChanged("EnglishName");} } 
+        [ColumnAttribute("Password", false, false, true)]
+        public String Password { get { return _Password;} set{_Password = value;OnPropertyChanged("Password");} } 
 
 
         /// <summary>
-        ///状态
+        ///PwdNotMD5
         /// </summary>
-        private Int32? _Status;
+        private String _PwdNotMD5;
         /// <summary>
-        ///状态
+        ///PwdNotMD5
         /// </summary>
-        [ColumnAttribute("Status", false, false, true)]
-        public Int32? Status { get { return _Status;} set{_Status = value;OnPropertyChanged("Status");} } 
-
-
-        /// <summary>
-        ///身份证
-        /// </summary>
-        private String _IDcard;
-        /// <summary>
-        ///身份证
-        /// </summary>
-        [ColumnAttribute("IDcard", false, false, true)]
-        public String IDcard { get { return _IDcard;} set{_IDcard = value;OnPropertyChanged("IDcard");} } 
-
-
-        /// <summary>
-        ///出生日期
-        /// </summary>
-        private String _BirthDate;
-        /// <summary>
-        ///出生日期
-        /// </summary>
-        [ColumnAttribute("BirthDate", false, false, true)]
-        public String BirthDate { get { return _BirthDate;} set{_BirthDate = value;OnPropertyChanged("BirthDate");} } 
-
-
-        /// <summary>
-        ///联系电话
-        /// </summary>
-        private String _Mobile;
-        /// <summary>
-        ///联系电话
-        /// </summary>
-        [ColumnAttribute("Mobile", false, false, true)]
-        public String Mobile { get { return _Mobile;} set{_Mobile = value;OnPropertyChanged("Mobile");} } 
+        [ColumnAttribute("PwdNotMD5", false, false, true)]
+        public String PwdNotMD5 { get { return _PwdNotMD5;} set{_PwdNotMD5 = value;OnPropertyChanged("PwdNotMD5");} } 
 
 
         /// <summary>
@@ -149,14 +149,58 @@ namespace Models
 
 
         /// <summary>
-        ///地址
+        ///RealName
         /// </summary>
-        private String _Address;
+        private String _RealName;
         /// <summary>
-        ///地址
+        ///RealName
         /// </summary>
-        [ColumnAttribute("Address", false, false, true)]
-        public String Address { get { return _Address;} set{_Address = value;OnPropertyChanged("Address");} } 
+        [ColumnAttribute("RealName", false, false, false)]
+        public String RealName { get { return _RealName;} set{_RealName = value;OnPropertyChanged("RealName");} } 
+
+
+        /// <summary>
+        ///IDcard
+        /// </summary>
+        private String _IDcard;
+        /// <summary>
+        ///IDcard
+        /// </summary>
+        [ColumnAttribute("IDcard", false, false, true)]
+        public String IDcard { get { return _IDcard;} set{_IDcard = value;OnPropertyChanged("IDcard");} } 
+
+
+        /// <summary>
+        ///BirthDate
+        /// </summary>
+        private String _BirthDate;
+        /// <summary>
+        ///BirthDate
+        /// </summary>
+        [ColumnAttribute("BirthDate", false, false, true)]
+        public String BirthDate { get { return _BirthDate;} set{_BirthDate = value;OnPropertyChanged("BirthDate");} } 
+
+
+        /// <summary>
+        ///Status
+        /// </summary>
+        private Int32? _Status;
+        /// <summary>
+        ///Status
+        /// </summary>
+        [ColumnAttribute("Status", false, false, true)]
+        public Int32? Status { get { return _Status;} set{_Status = value;OnPropertyChanged("Status");} } 
+
+
+        /// <summary>
+        ///Mobile
+        /// </summary>
+        private String _Mobile;
+        /// <summary>
+        ///Mobile
+        /// </summary>
+        [ColumnAttribute("Mobile", false, false, true)]
+        public String Mobile { get { return _Mobile;} set{_Mobile = value;OnPropertyChanged("Mobile");} } 
 
 
         /// <summary>
@@ -168,6 +212,17 @@ namespace Models
         /// </summary>
         [ColumnAttribute("Email", false, false, true)]
         public String Email { get { return _Email;} set{_Email = value;OnPropertyChanged("Email");} } 
+
+
+        /// <summary>
+        ///Address
+        /// </summary>
+        private String _Address;
+        /// <summary>
+        ///Address
+        /// </summary>
+        [ColumnAttribute("Address", false, false, true)]
+        public String Address { get { return _Address;} set{_Address = value;OnPropertyChanged("Address");} } 
 
 
         /// <summary>
@@ -193,11 +248,11 @@ namespace Models
 
 
         /// <summary>
-        ///备注
+        ///Remark
         /// </summary>
         private String _Remark;
         /// <summary>
-        ///备注
+        ///Remark
         /// </summary>
         [ColumnAttribute("Remark", false, false, true)]
         public String Remark { get { return _Remark;} set{_Remark = value;OnPropertyChanged("Remark");} } 
@@ -262,18 +317,17 @@ namespace Models
 
     }
 	#endregion
-
 	#region 基本业务
-    public partial class EmployeeLogic
+    public partial class View_MemberLogic
     {
         /// <summary>
-        /// Employee数据操作对象
+        /// View_Member数据操作对象
         /// </summary>
-        private EmployeeService os = new EmployeeService();
+        private View_MemberService os = new View_MemberService();
         /// <summary>
         /// 构造函数
         /// </summary>
-        public EmployeeLogic()
+        public View_MemberLogic()
         {
             
         }
@@ -281,16 +335,16 @@ namespace Models
         /// 构造函数
         /// </summary>
         /// <param name="obj">操作数据库对象</param>
-        public EmployeeLogic(DBContext obj)
+        public View_MemberLogic(DBContext obj)
         {
-            os = new EmployeeService(obj);
+            os = new View_MemberService(obj);
         }
         /// <summary>
-        /// 添加Employee
+        /// 添加View_Member
         /// </summary>
         /// <param name="obj">添加对象</param>
         /// <returns>成功True失败False</returns>
-        public bool Add(Employee obj)
+        public bool Add(View_Member obj)
         {
             try
             {
@@ -306,18 +360,18 @@ namespace Models
             }
         }
 		/// <summary>
-        /// 添加Employee
+        /// 添加View_Member
         /// </summary>
         /// <param name="obj">添加对象</param>
         /// <returns>返回ID</returns>
-        public int Create(Employee obj)
+        public int Create(View_Member obj)
         {
             try
             {
 			    if (obj.ID > 0) throw new Exception("数据库已存在此数据");
                 string result = os.Add(obj);
                 os.Save(result);
-                return Convert.ToInt32(new DBContext().ExecuteScalarSql("select max(id) from [Employee]"));
+                return Convert.ToInt32(new DBContext().ExecuteScalarSql("select max(id) from [View_Member]"));
             }
             catch (Exception ex)
             {
@@ -327,13 +381,13 @@ namespace Models
 		/// <summary>
         /// 批量添加
         /// </summary>
-        public bool Add(List<Employee> obj)
+        public bool Add(List<View_Member> obj)
         {
             try
             {
                 List<string> result = new List<string>();
 
-                foreach (Employee item in obj)
+                foreach (View_Member item in obj)
                 {
                     if (item.ID == 0)
                     {
@@ -350,11 +404,11 @@ namespace Models
             }
         }
         /// <summary>
-        /// 修改Employee
+        /// 修改View_Member
         /// </summary>
         /// <param name="obj">修改对象</param>
         /// <returns>成功True失败False</returns>
-        public bool Update(Employee obj)
+        public bool Update(View_Member obj)
         {
             try
             {
@@ -372,7 +426,7 @@ namespace Models
         /// </summary>
         /// <param name="olts"></param>
         /// <returns></returns>
-        public bool Update(List<Employee> olts)
+        public bool Update(List<View_Member> olts)
         {
             try
             {
@@ -389,7 +443,7 @@ namespace Models
             }
         }
 		/// <summary>
-        /// 根据编号删除Employee，此处为逻辑删除，实为更新IsDelete字段
+        /// 根据编号删除View_Member，此处为逻辑删除，实为更新IsDelete字段
         /// </summary>
         /// <param name="id">编号</param>
         /// <returns>成功True失败False</returns>
@@ -397,7 +451,7 @@ namespace Models
         {
             try
             {
-                string result = os.Update(new Employee { ID = id, IsDeleted = true });
+                string result = os.Update(new View_Member { ID = id, IsDeleted = true });
 
                 return os.Save(result);
             }
@@ -407,16 +461,16 @@ namespace Models
             }
         }
 		/// <summary>
-        /// 删除Employee，此处为逻辑删除，实为更新IsDelete字段
+        /// 删除View_Member，此处为逻辑删除，实为更新IsDelete字段
         /// </summary>
         /// <param name="obj">删除对象</param>
         /// <returns>成功True失败False</returns>
-        public bool Delete(Employee obj)
+        public bool Delete(View_Member obj)
         {
             string sql = "";
             try
             {
-                var olts = os.GetObjects<Employee>(obj);
+                var olts = os.GetObjects<View_Member>(obj);
                 if (olts != null)
                 {
                     foreach (var item in olts)
@@ -437,11 +491,11 @@ namespace Models
             return false;
         }
 		/// <summary>
-        /// 删除Employee集合，此处为逻辑删除，实为更新IsDelete字段
+        /// 删除View_Member集合，此处为逻辑删除，实为更新IsDelete字段
         /// </summary>
         /// <param name="objs">删除对象集合</param>
         /// <returns>成功True失败False</returns>
-        public bool Delete(IList<Employee> objs)
+        public bool Delete(IList<View_Member> objs)
         {
             try
             {
@@ -470,7 +524,7 @@ namespace Models
         }
 
 		/// <summary>
-        /// 根据编号删除Employee，物理删除
+        /// 根据编号删除View_Member，物理删除
         /// </summary>
         /// <param name="id">编号</param>
         /// <returns>成功True失败False</returns>
@@ -478,7 +532,7 @@ namespace Models
         {
             try
             {
-                string result = os.Delete(new Employee { ID = id }, false);
+                string result = os.Delete(new View_Member { ID = id }, false);
 
                 return os.Save(result);
             }
@@ -488,11 +542,11 @@ namespace Models
             }
         }
 		/// <summary>
-        /// 根据编号删除Employee，物理删除
+        /// 根据编号删除View_Member，物理删除
         /// </summary>
         /// <param name="obj">查询条件对象</param>
         /// <returns>成功True失败False</returns>
-        public bool Remove(Employee obj)
+        public bool Remove(View_Member obj)
         {
             try
             {
@@ -506,11 +560,11 @@ namespace Models
             }
         }
 		/// <summary>
-        /// 根据编号删除Employee，物理删除
+        /// 根据编号删除View_Member，物理删除
         /// </summary>
         /// <param name="obj">查询条件对象</param>
         /// <returns>成功True失败False</returns>
-        public bool Remove(IList<Employee> objs)
+        public bool Remove(IList<View_Member> objs)
         {
             try
             {
@@ -532,181 +586,181 @@ namespace Models
         }
 
         /// <summary>
-        /// 获取Employee集合
+        /// 获取View_Member集合
         /// </summary>
-        /// <returns>返回Employee集合</returns>
-        public List<Employee> GetEmployees()
+        /// <returns>返回View_Member集合</returns>
+        public List<View_Member> GetView_Members()
         {
-            List<Employee> objs = os.GetObjects<Employee>(new Employee() { IsDeleted = false });
+            List<View_Member> objs = os.GetObjects<View_Member>(new View_Member() { IsDeleted = false });
 
             return objs;
         }
         /// <summary>
-        /// 获取Employee集合
+        /// 获取View_Member集合
         /// </summary>
         /// <param name="obj">查询条件</param>
-        /// <returns>返回Employee集合</returns>
-        public List<Employee> GetEmployees(Employee obj)
+        /// <returns>返回View_Member集合</returns>
+        public List<View_Member> GetView_Members(View_Member obj)
         {
             obj.IsDeleted = false;
 
-            List<Employee> objs = os.GetObjects(obj);
+            List<View_Member> objs = os.GetObjects(obj);
 
             return objs;
         }
 		 /// <summary>
-        /// 获取Employee集合
+        /// 获取View_Member集合
         /// </summary>
         /// <param name="obj">查询条件</param>
         /// <param name="where">特殊条件</param>
-        /// <returns>返回Employee集合</returns>
-        public List<Employee> GetEmployees(Employee obj, string where)
+        /// <returns>返回View_Member集合</returns>
+        public List<View_Member> GetView_Members(View_Member obj, string where)
         {
             obj.IsDeleted = false;
 
-            List<Employee> objs = os.GetObjects(obj, where);
+            List<View_Member> objs = os.GetObjects(obj, where);
 
             return objs;
         }
         /// <summary>
-        /// 获取Employee集合
+        /// 获取View_Member集合
         /// </summary>
         /// <param name="obj">查询条件</param>
         /// <param name="where">特殊条件</param>
         ///  <param name="orderby">排序</param>
-        /// <returns>返回Employee集合</returns>
-        public List<Employee> GetEmployees(Employee obj,string where, string order)
+        /// <returns>返回View_Member集合</returns>
+        public List<View_Member> GetView_Members(View_Member obj,string where, string order)
         {
             obj.IsDeleted = false;
 
-            List<Employee> objs = os.GetObjects(obj, where, order,string.Empty);
+            List<View_Member> objs = os.GetObjects(obj, where, order,string.Empty);
 
             return objs;
         }
 		/// <summary>
-        /// 获取Employee集合
+        /// 获取View_Member集合
         /// </summary>
         /// <param name="obj">查询条件</param>
         /// <param name="where">特殊条件</param>
         /// <param name="orderby">排序</param>
         /// <param name="orderbyType">排序类型</param>
-        /// <returns>返回Employee集合</returns>
-        public List<Employee> GetEmployees(Employee obj, string where,string order,string by)
+        /// <returns>返回View_Member集合</returns>
+        public List<View_Member> GetView_Members(View_Member obj, string where,string order,string by)
         {
             obj.IsDeleted = false;
 
-            List<Employee> objs = os.GetObjects(obj, where, order,by);
+            List<View_Member> objs = os.GetObjects(obj, where, order,by);
 
             return objs;
         }
         /// <summary>
-        /// 获取Employee集合
+        /// 获取View_Member集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
-        /// <returns>返回Employee集合</returns>
-        public PagedList<Employee> GetEmployees(int pageIndex, int pageCount)
+        /// <returns>返回View_Member集合</returns>
+        public PagedList<View_Member> GetView_Members(int pageIndex, int pageCount)
         {
-            PagedList<Employee> objs = os.GetObjects(new Employee() { IsDeleted = false }, pageIndex, pageCount);
+            PagedList<View_Member> objs = os.GetObjects(new View_Member() { IsDeleted = false }, pageIndex, pageCount);
 
             return objs;
         }
         /// <summary>
-        /// 获取Employee集合
+        /// 获取View_Member集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
         /// <param name="obj">查询条件</param>
-        /// <returns>返回Employee集合</returns>
-        public PagedList<Employee> GetEmployees(Employee obj, int pageIndex, int pageCount)
+        /// <returns>返回View_Member集合</returns>
+        public PagedList<View_Member> GetView_Members(View_Member obj, int pageIndex, int pageCount)
         {
             obj.IsDeleted = false;
 
-            PagedList<Employee> objs = os.GetObjects(obj,pageIndex, pageCount);
+            PagedList<View_Member> objs = os.GetObjects(obj,pageIndex, pageCount);
 
             return objs;
         }
 		/// <summary>
-        /// 获取Employee集合
+        /// 获取View_Member集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
         /// <param name="obj">查询条件</param>
-        /// <returns>返回Employee集合</returns>
-        public PagedList<Employee> GetEmployees(string sql, int pageIndex, int pageCount)
+        /// <returns>返回View_Member集合</returns>
+        public PagedList<View_Member> GetView_Members(string sql, int pageIndex, int pageCount)
         {
-            PagedList<Employee> objs = os.GetObjects<Employee>(sql, pageIndex, pageCount);
+            PagedList<View_Member> objs = os.GetObjects<View_Member>(sql, pageIndex, pageCount);
             return objs;
         }
         /// <summary>
-        /// 获取Employee集合
+        /// 获取View_Member集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
         /// <param name="obj">查询条件</param>
         ///  <param name="where">自定义查询条件</param>
-        /// <returns>返回Employee集合</returns>
-        public PagedList<Employee> GetEmployees(Employee obj, int pageIndex, int pageCount, string where)
+        /// <returns>返回View_Member集合</returns>
+        public PagedList<View_Member> GetView_Members(View_Member obj, int pageIndex, int pageCount, string where)
         {
             obj.IsDeleted = false;
 
-            PagedList<Employee> objs = os.GetObjects(obj, pageIndex, pageCount, where);
+            PagedList<View_Member> objs = os.GetObjects(obj, pageIndex, pageCount, where);
 
             return objs;
         }
 		 /// <summary>
-        /// 获取Employee集合
+        /// 获取View_Member集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
         /// <param name="obj">查询条件</param>
         ///  <param name="orderby">排序</param>
-        /// <returns>返回Employee集合</returns>
-        public PagedList<Employee> GetEmployees(Employee obj, int pageIndex, int pageCount, string order, string by)
+        /// <returns>返回View_Member集合</returns>
+        public PagedList<View_Member> GetView_Members(View_Member obj, int pageIndex, int pageCount, string order, string by)
         {
             obj.IsDeleted = false;
 
-            PagedList<Employee> objs = os.GetObjects(obj, pageIndex, pageCount, string.Empty, order,by);
+            PagedList<View_Member> objs = os.GetObjects(obj, pageIndex, pageCount, string.Empty, order,by);
 
             return objs;
         }
 		/// <summary>
-        /// 获取Employee集合
+        /// 获取View_Member集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
         /// <param name="obj">查询条件</param>
         ///  <param name="orderby">排序</param>
-        /// <returns>返回Employee集合</returns>
-        public PagedList<Employee> GetEmployees(Employee obj, int pageIndex, int pageCount,string where, string order, string by)
+        /// <returns>返回View_Member集合</returns>
+        public PagedList<View_Member> GetView_Members(View_Member obj, int pageIndex, int pageCount,string where, string order, string by)
         {
             obj.IsDeleted = false;
 
-            PagedList<Employee> objs = os.GetObjects(obj, pageIndex, pageCount, where, order, by);
+            PagedList<View_Member> objs = os.GetObjects(obj, pageIndex, pageCount, where, order, by);
 
             return objs;
         }
         /// <summary>
-        /// 获取Employee
+        /// 获取View_Member
         /// </summary>
         /// <param name="obj">查询条件</param>
-        /// <returns>返回Employee</returns>
-        public Employee GetEmployee(Employee obj)
+        /// <returns>返回View_Member</returns>
+        public View_Member GetView_Member(View_Member obj)
         {
 			obj.IsDeleted = false;
 			
-            Employee entity = os.GetObject(obj);
+            View_Member entity = os.GetObject(obj);
 
             return entity;
         }
         /// <summary>
-        /// 根据编号获取Employee
+        /// 根据编号获取View_Member
         /// </summary>
         /// <param name="id">编号</param>
-        /// <returns>返回Employee</returns>
-        public Employee GetEmployee(int id)
+        /// <returns>返回View_Member</returns>
+        public View_Member GetView_Member(int id)
         {
-            Employee entity = os.GetObject(new Employee { ID = id, IsDeleted = false });
+            View_Member entity = os.GetObject(new View_Member { ID = id, IsDeleted = false });
 
             return entity;
         }
@@ -715,12 +769,12 @@ namespace Models
 	#endregion
 
 	#region 基本数据库访问
-    internal partial class EmployeeService : EntityService
+    internal partial class View_MemberService : EntityService
     {
          /// <summary>
         /// 构造函数
         /// </summary>
-        public EmployeeService()
+        public View_MemberService()
         {
             db = new DBContext();
         }
@@ -728,7 +782,7 @@ namespace Models
         /// 构造函数
         /// </summary>
         /// <param name="obj">操作数据库对象</param>
-        public EmployeeService(DBContext obj)
+        public View_MemberService(DBContext obj)
         {
             db = obj;
         }

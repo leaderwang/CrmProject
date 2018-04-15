@@ -47,7 +47,7 @@ namespace Web.Areas.Admin.Controllers
             {
                 SchoolLogic ml = new SchoolLogic();
 
-                School obj = new School() { CreateDate = DateTime.Now, CreateUserID = ID, IsDeleted = false };
+                School obj = new School() { CompanyID = CompanyID, CreateDate = DateTime.Now, CreateUserID = ID, IsDeleted = false };
 
                 UpdateModel(obj);
 

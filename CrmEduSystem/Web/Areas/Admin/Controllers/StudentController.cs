@@ -46,7 +46,7 @@ namespace Web.Areas.Admin.Controllers
             {
                 StudentLogic ml = new StudentLogic();
 
-                Student obj = new Student() { CreateDate = DateTime.Now, CreateUserID = ID,  IsDeleted = false };
+                Student obj = new Student() { CompanyID = CompanyID, CreateDate = DateTime.Now, CreateUserID = ID, IsDeleted = false };
 
                 UpdateModel(obj);
 

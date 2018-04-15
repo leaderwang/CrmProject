@@ -7,7 +7,7 @@ using Common;
 
 namespace Models
 {
-    internal partial class EmployeeService : EntityService
+    internal partial class View_MemberService : EntityService
     {
       
     }

@@ -1,16 +1,20 @@
 ﻿@using MvcPager;
 @using Models;
 @using Lib;
-@model PagedList<Models.Member>
+@model PagedList<Models.View_Member>
 <table class="table table-striped">
     <thead>
         <tr>
             <th class="checkbox-column">
                 <input type="checkbox" name="checkall" onchange="selectall(this,'ID')" />
             </th>
-            <th class="sorting" data-sort="ID">#</th>
+            <th class="sorting" data-sort="Avatar">头像</th>
+            <th class="sorting" data-sort="ID">ID</th>
+            <th class="sorting" data-sort="UserNo">编号</th>
             <th class="sorting" data-sort="UserName">用户名</th>
             <th class="sorting" data-sort="RealName">姓名</th>
+            <th class="sorting" data-sort="RoleID">角色</th>
+            <th class="sorting" data-sort="CompanyName">所属机构</th>
             <th class="sorting" data-sort="Mobile">手机</th>
             <th class="sorting" data-sort="Email">邮箱</th>
             <th class="btns-column">操作
@@ -20,15 +24,23 @@
     <tbody>
         @foreach (var item in Model)
         {
-            var rt = new RoleLogic().GetRole(item.RoleID);
-            if (rt != null && rt.ID > 0)
+            var headUrl = "/Areas/Admin/Content/images/avatar.png";
+            if (!string.IsNullOrEmpty(headUrl))
             {
+                headUrl = item.Avatar;
+            }
+            
             <tr>
                 <td class="checkbox-column">
-                    <input type="checkbox" name="ID" value="@item.ID"/></td>
+                    <input type="checkbox" name="ID" value="@item.ID"/>
+                </td>
+                <td><img src="@headUrl" style="height:30px;" /></td>
                 <td>@item.ID</td>
+                <td>@item.UserNo</td>
                 <td>@item.UserName</td>
                 <td>@item.RealName</td>
+                <td>@item.RoleName</td>
+                <td>@item.CompanyName</td>
                 <td>@item.Mobile</td>
                 <td>@item.Email</td>
                 <td class="btns-column">
@@ -39,7 +51,7 @@
                     }
                 </td>
             </tr>
-            }
+            
         }
     </tbody>
 </table>

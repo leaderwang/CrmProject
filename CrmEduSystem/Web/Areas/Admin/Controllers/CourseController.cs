@@ -45,7 +45,7 @@ namespace Web.Areas.Admin.Controllers
             {
                 CourseLogic ml = new CourseLogic();
 
-                Course obj = new Course() {  CreateDate = DateTime.Now, CreateUserID = ID,  IsDeleted = false };
+                Course obj = new Course() { CompanyID = CompanyID, CreateDate = DateTime.Now, CreateUserID = ID,  IsDeleted = false };
 
                 UpdateModel(obj);
 

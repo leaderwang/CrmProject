@@ -45,7 +45,7 @@ namespace Web.Areas.Admin.Controllers
             {
                 MaterielLogic ml = new MaterielLogic();
 
-                Materiel obj = new Materiel() { CreateDate = DateTime.Now, CreateUserID = ID,  IsDeleted = false };
+                Materiel obj = new Materiel() { CompanyID = CompanyID, CreateDate = DateTime.Now, CreateUserID = ID,  IsDeleted = false };
 
                 UpdateModel(obj);
 

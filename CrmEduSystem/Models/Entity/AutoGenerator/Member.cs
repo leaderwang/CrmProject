@@ -50,7 +50,18 @@ namespace Models
         ///ID
         /// </summary>
         [ColumnAttribute("ID", false, true, false)]
-        public Int32 ID { get { return _ID;} set{_ID = value;OnPropertyChanged("ID");} } 
+        public Int32 ID { get { return _ID;} set{_ID = value;OnPropertyChanged("ID");} }
+
+
+        /// <summary>
+        ///CompanyID
+        /// </summary>
+        private Int32 _CompanyID;
+        /// <summary>
+        ///CompanyID
+        /// </summary>
+        [ColumnAttribute("CompanyID", false, false, false)]
+        public Int32 CompanyID { get { return _CompanyID; } set { _CompanyID = value; OnPropertyChanged("CompanyID"); } }
 
 
         /// <summary>
@@ -61,7 +72,18 @@ namespace Models
         ///RoleID
         /// </summary>
         [ColumnAttribute("RoleID", false, false, false)]
-        public Int32 RoleID { get { return _RoleID;} set{_RoleID = value;OnPropertyChanged("RoleID");} } 
+        public Int32 RoleID { get { return _RoleID;} set{_RoleID = value;OnPropertyChanged("RoleID");} }
+
+
+        /// <summary>
+        ///UserNo
+        /// </summary>
+        private String _UserNo;
+        /// <summary>
+        ///UserNo
+        /// </summary>
+        [ColumnAttribute("UserNo", false, false, false)]
+        public String UserNo { get { return _UserNo; } set { _UserNo = value; OnPropertyChanged("UserNo"); } }
 
 
         /// <summary>
@@ -71,7 +93,7 @@ namespace Models
         /// <summary>
         ///UserName
         /// </summary>
-        [ColumnAttribute("UserName", false, false, true)]
+        [ColumnAttribute("UserName", false, false, false)]
         public String UserName { get { return _UserName;} set{_UserName = value;OnPropertyChanged("UserName");} } 
 
 
@@ -94,7 +116,18 @@ namespace Models
         ///PwdNotMD5
         /// </summary>
         [ColumnAttribute("PwdNotMD5", false, false, true)]
-        public String PwdNotMD5 { get { return _PwdNotMD5;} set{_PwdNotMD5 = value;OnPropertyChanged("PwdNotMD5");} } 
+        public String PwdNotMD5 { get { return _PwdNotMD5;} set{_PwdNotMD5 = value;OnPropertyChanged("PwdNotMD5");} }
+
+
+        /// <summary>
+        ///Avatar
+        /// </summary>
+        private String _Avatar;
+        /// <summary>
+        ///Avatar
+        /// </summary>
+        [ColumnAttribute("Avatar", false, false, true)]
+        public String Avatar { get { return _Avatar; } set { _Avatar = value; OnPropertyChanged("Avatar"); } }
 
 
         /// <summary>
@@ -105,7 +138,18 @@ namespace Models
         ///RealName
         /// </summary>
         [ColumnAttribute("RealName", false, false, true)]
-        public String RealName { get { return _RealName;} set{_RealName = value;OnPropertyChanged("RealName");} } 
+        public String RealName { get { return _RealName;} set{_RealName = value;OnPropertyChanged("RealName");} }
+
+
+        /// <summary>
+        ///IDcard
+        /// </summary>
+        private String _IDcard;
+        /// <summary>
+        ///IDcard
+        /// </summary>
+        [ColumnAttribute("IDcard", false, false, true)]
+        public String IDcard { get { return _IDcard; } set { _IDcard = value; OnPropertyChanged("IDcard"); } }
 
 
         /// <summary>
@@ -117,17 +161,6 @@ namespace Models
         /// </summary>
         [ColumnAttribute("Status", false, false, true)]
         public Int32? Status { get { return _Status;} set{_Status = value;OnPropertyChanged("Status");} } 
-
-
-        /// <summary>
-        ///IDcard
-        /// </summary>
-        private String _IDcard;
-        /// <summary>
-        ///IDcard
-        /// </summary>
-        [ColumnAttribute("IDcard", false, false, true)]
-        public String IDcard { get { return _IDcard;} set{_IDcard = value;OnPropertyChanged("IDcard");} } 
 
 
         /// <summary>
@@ -150,18 +183,6 @@ namespace Models
         /// </summary>
         [ColumnAttribute("Email", false, false, true)]
         public String Email { get { return _Email;} set{_Email = value;OnPropertyChanged("Email");} } 
-
-
-        /// <summary>
-        ///Avatar
-        /// </summary>
-        private String _Avatar;
-        /// <summary>
-        ///Avatar
-        /// </summary>
-        [ColumnAttribute("Avatar", false, false, true)]
-        public String Avatar { get { return _Avatar;} set{_Avatar = value;OnPropertyChanged("Avatar");} } 
-
 
         /// <summary>
         ///Address
@@ -193,7 +214,18 @@ namespace Models
         ///WeiXin
         /// </summary>
         [ColumnAttribute("WeiXin", false, false, true)]
-        public String WeiXin { get { return _WeiXin;} set{_WeiXin = value;OnPropertyChanged("WeiXin");} } 
+        public String WeiXin { get { return _WeiXin;} set{_WeiXin = value;OnPropertyChanged("WeiXin");} }
+
+
+        /// <summary>
+        ///Remark
+        /// </summary>
+        private String _Remark;
+        /// <summary>
+        ///Remark
+        /// </summary>
+        [ColumnAttribute("Remark", false, false, true)]
+        public String Remark { get { return _Remark; } set { _Remark = value; OnPropertyChanged("Remark"); } }
 
 
         /// <summary>
