@@ -1,0 +1,9 @@
+﻿@using Common;
+@using Models;
+@model EnumData
+<div class="control-group"><label class="control-label">编号</label><div class="controls"><input id="ID" name ="ID" type="text" value ="@Model.ID" required readonly="readonly" /></div></div>
+<div class="control-group"><label class="control-label">父级ID</label><div class="controls"><input id="ParentID" name ="ParentID" type="text" value ="@Model.ParentID" style="width:30px;"/></div></div>
+<div class="control-group"><label class="control-label">名称</label><div class="controls"><input id="EnumName" name ="EnumName" type="text" value ="@Model.EnumName" /></div></div>
+<div class="control-group"><label class="control-label">数值</label><div class="controls"><input id="EnumValue" name ="EnumValue" type="text" value ="@Model.EnumValue" /></div></div>
+<div class="control-group"><label class="control-label">Level</label><div class="controls"><input id="Level" name ="Level" type="text" value ="@Model.Level" style="width:30px;"/></div></div>
+<div class="control-group"><label class="control-label">TypeID</label><div class="controls"><input id="TypeID" name ="TypeID" type="text" value ="@Model.TypeID" style="width:30px;"/></div></div>

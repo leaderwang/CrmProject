@@ -50,6 +50,17 @@ namespace Models
 
 
         /// <summary>
+        ///教育机构ID
+        /// </summary>
+        private Int32 _CompanyID;
+        /// <summary>
+        ///教育机构ID
+        /// </summary>
+        [ColumnAttribute("CompanyID", false, false, false)]
+        public Int32 CompanyID { get { return _CompanyID;} set{_CompanyID = value;OnPropertyChanged("CompanyID");} } 
+
+
+        /// <summary>
         ///学校编号
         /// </summary>
         private String _SchoolNo;
@@ -74,22 +85,11 @@ namespace Models
         /// <summary>
         ///简介
         /// </summary>
-        private String _Abstract;
+        private String _Content;
         /// <summary>
         ///简介
         /// </summary>
-        [ColumnAttribute("Abstract", false, false, false)]
-        public String Abstract { get { return _Abstract;} set{_Abstract = value;OnPropertyChanged("Abstract");} } 
-
-
-        /// <summary>
-        ///详情
-        /// </summary>
-        private String _Content;
-        /// <summary>
-        ///详情
-        /// </summary>
-        [ColumnAttribute("Content", false, false, false)]
+        [ColumnAttribute("Content", false, false, true)]
         public String Content { get { return _Content;} set{_Content = value;OnPropertyChanged("Content");} } 
 
 
@@ -113,6 +113,17 @@ namespace Models
         /// </summary>
         [ColumnAttribute("Status", false, false, false)]
         public Int32 Status { get { return _Status;} set{_Status = value;OnPropertyChanged("Status");} } 
+
+
+        /// <summary>
+        ///备注
+        /// </summary>
+        private String _Remark;
+        /// <summary>
+        ///备注
+        /// </summary>
+        [ColumnAttribute("Remark", false, false, false)]
+        public String Remark { get { return _Remark;} set{_Remark = value;OnPropertyChanged("Remark");} } 
 
 
         /// <summary>

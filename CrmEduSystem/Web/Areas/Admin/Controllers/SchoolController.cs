@@ -7,6 +7,7 @@ using Models;
 using MvcPager;
 using DbUtility;
 using Lib;
+using Common;
 
 namespace Web.Areas.Admin.Controllers
 {
@@ -35,9 +36,10 @@ namespace Web.Areas.Admin.Controllers
 
         public ActionResult Create()
         {
-            return View(new School());
+            return View(new School() { SchoolNo = Character.GetUniqueCodeString("SCH") });
         }
 
+        [ValidateInput(false)]
         [HttpPost]
         public ActionResult Create(FormCollection formCollection)
         {
@@ -45,7 +47,7 @@ namespace Web.Areas.Admin.Controllers
             {
                 SchoolLogic ml = new SchoolLogic();
 
-                School obj = new School() {  CreateDate = DateTime.Now, CreateUserID = ID,  IsDeleted = false };
+                School obj = new School() { CreateDate = DateTime.Now, CreateUserID = ID, IsDeleted = false };
 
                 UpdateModel(obj);
 
@@ -55,7 +57,7 @@ namespace Web.Areas.Admin.Controllers
             }
             catch (Exception ex)
             {
-                return Content(ContentIcon.Error + "|"+ErrorWirter(RouteData, ex.Message));
+                return Content(ContentIcon.Error + "|" + ErrorWirter(RouteData, ex.Message));
             }
         }
 
@@ -75,6 +77,7 @@ namespace Web.Areas.Admin.Controllers
             }
         }
 
+        [ValidateInput(false)]
         [HttpPost]
         public ActionResult Edit(int id, FormCollection formCollection)
         {

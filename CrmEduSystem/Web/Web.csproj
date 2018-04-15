@@ -178,9 +178,10 @@
     <Compile Include="Areas\Admin\Controllers\EmployeeController.cs" />
     <Compile Include="Areas\Admin\Controllers\AuditionRecordController.cs" />
     <Compile Include="Areas\Admin\Controllers\CommunicateRecordController.cs" />
-    <Compile Include="Areas\Admin\Controllers\EduCompanyController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CompanyController.cs" />
     <Compile Include="Areas\Admin\Controllers\MatResItemController.cs" />
     <Compile Include="Areas\Admin\Controllers\WorkTaskController.cs" />
+    <Compile Include="Areas\Admin\Controllers\EnumDataController.cs" />
     <Compile Include="Areas\Admin\FileResize\CameraSave.aspx.cs">
       <DependentUpon>CameraSave.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1535,7 +1536,6 @@
     <Content Include="Areas\Admin\Content\print.css" />
     <Content Include="Areas\Admin\FileResize\Avatar.aspx" />
     <Content Include="Areas\Admin\FileResize\CameraSave.aspx" />
-    <Content Include="DBScripts\DataBase.sql" />
     <Content Include="DBScripts\md5.sql" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -1846,13 +1846,13 @@
     <Content Include="Areas\Admin\Views\CommunicateRecord\_Form.cshtml" />
     <Content Include="Areas\Admin\Views\CommunicateRecord\Detail.cshtml" />
     <Content Include="Areas\Admin\Views\CommunicateRecord\_Detail.cshtml" />
-    <Content Include="Areas\Admin\Views\EduCompany\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\EduCompany\_Index.cshtml" />
-    <Content Include="Areas\Admin\Views\EduCompany\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\EduCompany\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\EduCompany\_Form.cshtml" />
-    <Content Include="Areas\Admin\Views\EduCompany\Detail.cshtml" />
-    <Content Include="Areas\Admin\Views\EduCompany\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Company\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Company\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Company\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Company\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Company\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\Company\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Company\_Detail.cshtml" />
     <Content Include="Areas\Admin\Views\MatResItem\Index.cshtml" />
     <Content Include="Areas\Admin\Views\MatResItem\_Index.cshtml" />
     <Content Include="Areas\Admin\Views\MatResItem\Create.cshtml" />
@@ -1867,6 +1867,13 @@
     <Content Include="Areas\Admin\Views\WorkTask\_Form.cshtml" />
     <Content Include="Areas\Admin\Views\WorkTask\Detail.cshtml" />
     <Content Include="Areas\Admin\Views\WorkTask\_Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\EnumData\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\EnumData\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\EnumData\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\EnumData\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\EnumData\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\EnumData\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\EnumData\_Detail.cshtml" />
     <Content Include="Areas\Mobile\Views\Web.config" />
     <Content Include="Views\Shared\_AtuoLayout.cshtml" />
     <Content Include="_Documents\项目结构图例.pdf" />

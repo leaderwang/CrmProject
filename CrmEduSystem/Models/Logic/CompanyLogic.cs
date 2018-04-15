@@ -8,7 +8,7 @@ using Common;
 
 namespace Models
 {
-    public partial class EduCompanyLogic
+    public partial class CompanyLogic
     {
         
 

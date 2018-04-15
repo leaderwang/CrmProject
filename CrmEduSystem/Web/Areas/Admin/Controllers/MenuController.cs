@@ -25,9 +25,14 @@ namespace Web.Areas.Admin.Controllers
                 IList<Menu> objs = ml.GetMenus(entity).ToPagedList(pageIndex ?? PageIndex, pageSize ?? PageSizeMax);
 
                 if (Request.IsAjaxRequest())
+                {
                     return PartialView("_Index", objs);
-                ViewData["TR"] = ForeachMenuByTr(0);
-                return View(objs);
+                }
+                else
+                {
+                    ViewData["TR"] = ForeachMenuByTr(0);
+                    return View(objs);
+                }
             }
             catch (Exception ex)
             {
@@ -111,6 +116,7 @@ namespace Web.Areas.Admin.Controllers
                 return Content(ContentIcon.Error + "|" + ErrorWirter(RouteData, ex.Message));
             }
         }
+
         [HttpGet]
         public ActionResult Delete(int id)
         {
@@ -130,6 +136,7 @@ namespace Web.Areas.Admin.Controllers
                 return Content(ErrorWirter(RouteData, ex.Message));
             }
         }
+
         [HttpPost]
         public ActionResult Delete(int? id, FormCollection collection)
         {
@@ -220,17 +227,14 @@ namespace Web.Areas.Admin.Controllers
         private string ForeachMenuByTr(int? ParentID)
         {
             string tr = "<tr><td class='checkbox-column'><input type='checkbox' name='ID' value='{0}'/></td>" +
-                        "<td>" +
-                            "{0}" +
-                        "</td>" +
-                        "<td>" +
-                         "   {2}" +
-                        "</td>    " +
-                        @"<td>{3}</td><td class='btns-column'>
-                <a href='/admin/menu/Create?ParentID={0}' class='tip' title='添加子栏目'><i class='icol-chart-organisation'></i></a>
-                <a href='/admin/Menu/Edit?id={0}' class='tip' title='编辑'><i class='icon-pencil'></i></a>" +
-                "<a href='javascript:void(0);' onclick=\"Delete('/admin/Menu/Delete/{0}',this,'one');\"><i class='icon-trash tip' title='编辑'></i></a></td>" +
-                    "</tr>";
+                        "<td>{0}</td>" +
+                        "<td>{1}</td>" +
+                        "<td>{2}</td>" +
+                        @"<td>{3}</td>
+                          <td class='btns-column'>
+                              <a href='/admin/menu/Create?ParentID={0}' class='tip' title='添加子栏目'><i class='icol-chart-organisation'></i></a>
+                              <a href='/admin/Menu/Edit?id={0}' class='tip' title='编辑'><i class='icon-pencil'></i></a>"
+                              +"<a href='javascript:void(0);' onclick=\"Delete('/admin/Menu/Delete/{0}',this,'one');\"><i class='icon-trash tip' title='编辑'></i></a></td></tr>";
             StringBuilder html = new StringBuilder();
             List<Menu> menulist = new MenuLogic().GetMenus(new Menu { ParentID = ParentID }, string.Empty, "Sort", "Asc");
             var i = 0;

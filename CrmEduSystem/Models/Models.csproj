@@ -75,10 +75,11 @@
     <Compile Include="Entity\AutoGenerator\Employee.cs" />
     <Compile Include="Entity\AutoGenerator\AuditionRecord.cs" />
     <Compile Include="Entity\AutoGenerator\CommunicateRecord.cs" />
-    <Compile Include="Entity\AutoGenerator\EduCompany.cs" />
     <Compile Include="Entity\AutoGenerator\MatResItem.cs" />
     <Compile Include="Entity\AutoGenerator\View_Student.cs" />
     <Compile Include="Entity\AutoGenerator\WorkTask.cs" />
+    <Compile Include="Entity\AutoGenerator\Company.cs" />
+    <Compile Include="Entity\AutoGenerator\EnumData.cs" />
     <Compile Include="Entity\AutoPage.cs" />
     <Compile Include="Entity\Member.cs" />
     <Compile Include="Entity\PermissionData.cs" />
@@ -114,10 +115,11 @@
     <Compile Include="Logic\EmployeeLogic.cs" />
     <Compile Include="Logic\AuditionRecordLogic.cs" />
     <Compile Include="Logic\CommunicateRecordLogic.cs" />
-    <Compile Include="Logic\EduCompanyLogic.cs" />
     <Compile Include="Logic\MatResItemLogic.cs" />
     <Compile Include="Logic\View_StudentLogic.cs" />
     <Compile Include="Logic\WorkTaskLogic.cs" />
+    <Compile Include="Logic\CompanyLogic.cs" />
+    <Compile Include="Logic\EnumDataLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -162,10 +164,11 @@
     <Compile Include="Service\EmployeeService.cs" />
     <Compile Include="Service\AuditionRecordService.cs" />
     <Compile Include="Service\CommunicateRecordService.cs" />
-    <Compile Include="Service\EduCompanyService.cs" />
     <Compile Include="Service\MatResItemService.cs" />
     <Compile Include="Service\View_StudentService.cs" />
     <Compile Include="Service\WorkTaskService.cs" />
+    <Compile Include="Service\CompanyService.cs" />
+    <Compile Include="Service\EnumDataService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

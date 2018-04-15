@@ -1,0 +1,36 @@
+﻿@using Common;
+@using Models;
+@model Company
+
+<div class="control-group">
+    <label class="control-label">ID</label>
+    <div class="controls"><input id="ID" name="ID" type="text" value="@Model.ID" required readonly="readonly" /></div>
+</div>
+<div class="control-group">
+    <label class="control-label">编号</label>
+    <div class="controls"><input id="CompanyNo" name="CompanyNo" type="text" value="@Model.CompanyNo" required /></div>
+</div>
+<div class="control-group">
+    <label class="control-label">名称</label>
+    <div class="controls"><textarea id="CompanyName" name="CompanyName" required>@Model.CompanyName</textarea></div>
+</div>
+<div class="control-group">
+    <label class="control-label">状态</label>
+    <div class="controls">
+        <select id="Status" name="Status" val="@Model.Status" required>
+            <option value="0">正常</option>
+            <option value="1">锁定</option>
+        </select>
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label">简介</label>
+    <div class="controls"><textarea id="Abstract" name="Abstract" required>@Model.Abstract</textarea></div>
+</div>
+<div class="control-group">
+    <label class="control-label">详情</label>
+    <div class="controls">
+        <input class="Fckeditor" id="Content" name="Content" type="text" value="@Model.Content" />
+    </div>
+</div>
+

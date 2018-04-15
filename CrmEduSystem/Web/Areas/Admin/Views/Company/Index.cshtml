@@ -2,7 +2,7 @@
 @using MvcPager;
 @using Lib;
 @using Models;
-@model PagedList<School>
+@model PagedList<Company>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -11,7 +11,7 @@
     <div class="datatable span12">
         <div class="navbar">
             <div class="navbar-inner">
-                @Html.CreateButton("创建新记录", "/admin/School/Create", new { href = "/admin/School/Create" })
+                @Html.CreateButton("创建新记录", "/admin/Company/Create", new { href = "/admin/Company/Create" })
                 <div class="nav-collapse pull-right">
                     <ul class="nav">
                         <li class="active"><a href="javascript:void(0);"><i class="icol-table"></i> 列表</a></li>
@@ -25,7 +25,7 @@
                     <div class="row-fluid">
                         <div class="span6">
                             <div class="btn-group pull-left">
-                                @Html.DeleteAllButton("删除", "/Admin/School/Delete", new { href = "javascript:void(0);", onclick = "Delete('/Admin/School/Delete',this,'all');" })
+                                @Html.DeleteAllButton("删除", "/Admin/Company/Delete", new { href = "javascript:void(0);", onclick = "Delete('/Admin/Company/Delete',this,'all');" })
                                 @*<a class="btn"><span><i class="icol-doc-excel-csv"></i> 导出</span></a>
                                     <a class="btn"><span><i class="icol-printer"></i> 打印</span></a>*@
                                 <a class="btn" href="javascript:void(0)" onclick="$('#control_search').slideToggle()"><span><i class="icos-preview"></i>筛选</span></a>
@@ -53,15 +53,15 @@
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label">学校编号</label>
+                            <label class="control-label">编号</label>
                             <div class="controls">
-                                <input id="SchoolNo" name="SchoolNo" type="text" />
+                                <input id="CompanyNo" name="CompanyNo" type="text" />
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label">学校名称</label>
+                            <label class="control-label">名称</label>
                             <div class="controls">
-                                <input id="SchoolName" name="SchoolName" type="text" />
+                                <input id="CompanyName" name="CompanyName" type="text" />
                                 <button class="btn skip" type="submit"><i class="icos-magnifying-glass"></i>搜 索</button>
                             </div>
                         </div>

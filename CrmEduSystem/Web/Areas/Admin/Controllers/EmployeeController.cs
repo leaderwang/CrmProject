@@ -7,6 +7,7 @@ using Models;
 using MvcPager;
 using DbUtility;
 using Lib;
+using Common;
 
 namespace Web.Areas.Admin.Controllers
 {
@@ -35,7 +36,7 @@ namespace Web.Areas.Admin.Controllers
 
         public ActionResult Create()
         {
-            return View(new Employee());
+            return View(new Employee() { EmployeeNo = Character.GetUniqueCodeString("EMP") });
         }
 
         [HttpPost]

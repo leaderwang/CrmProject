@@ -1,10 +1,58 @@
 ﻿@using Common;
 @using Models;
 @model School
-<div class="control-group"><label class="control-label">ID</label><div class="controls"><input id="ID" name ="ID" type="text" value ="@Model.ID" required readonly="readonly" /></div></div>
-<div class="control-group"><label class="control-label">学校编号</label><div class="controls"><input id="SchoolNo" name ="SchoolNo" type="text" value ="@Model.SchoolNo" required /></div></div>
-<div class="control-group"><label class="control-label">学校名称</label><div class="controls"><textarea id="SchoolName" name ="SchoolName" required>@Model.SchoolName</textarea></div></div>
-<div class="control-group"><label class="control-label">简介</label><div class="controls"><textarea id="Abstract" name ="Abstract" required>@Model.Abstract</textarea></div></div>
-<div class="control-group"><label class="control-label">详情</label><div class="controls"><input id="Content" name ="Content" type="text" value ="@Model.Content" required /></div></div>
-<div class="control-group"><label class="control-label">类型</label><div class="controls"><input id="Type" name ="Type" type="text" value ="@Model.Type" style="width:30px;" required/></div></div>
-<div class="control-group"><label class="control-label">状态</label><div class="controls"><input id="Status" name ="Status" type="text" value ="@Model.Status" style="width:30px;" required/></div></div>
+<div class="control-group">
+    <label class="control-label">ID</label>
+    <div class="controls">
+        <input id="ID" name="ID" type="text" value="@Model.ID" required readonly="readonly" />
+    </div>
+</div>
+@*<div class="control-group">
+    <label class="control-label">教育机构ID</label>
+    <div class="controls">
+        <input id="CompanyID" name="CompanyID" type="text" value="@Model.CompanyID" required readonly="readonly" />
+    </div>
+</div>*@
+<div class="control-group">
+    <label class="control-label">学校编号</label>
+    <div class="controls">
+        <input id="SchoolNo" name="SchoolNo" type="text" value="@Model.SchoolNo" required readonly="readonly" />
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label">学校名称</label>
+    <div class="controls">
+        <textarea id="SchoolName" name="SchoolName" required>@Model.SchoolName</textarea>
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label">类型</label>
+    <div class="controls">
+        <select id="Type" name="Type" val="@Model.Type" required>
+            <option value="">==请选择==</option>
+            <option value="0">公立学校</option>
+            <option value="1">私立学校</option>
+        </select>
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label">状态</label>
+    <div class="controls">
+        <select id="Status" name="Status" val="@Model.Status">
+            <option value="0">启用</option>
+            <option value="1">禁用</option>
+        </select>
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label">简介</label>
+    <div class="controls">
+        <input class="Fckeditor" id="Content" name="Content" type="text" value="@Model.Content" />
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label">备注</label>
+    <div class="controls">
+        <textarea id="Remark" name="Remark" required>@Model.Remark</textarea>
+    </div>
+</div>

@@ -17,6 +17,7 @@ namespace Web.Areas.Admin.Controllers
                 return Redirect("/admin");
             return View();
         }
+
         [PermissionFilter(false)]
         [HttpPost]
         public ActionResult LogOn(string username, string password, bool? auto, string returnUrl, FormCollection form)

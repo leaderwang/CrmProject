@@ -7,7 +7,7 @@ using Common;
 
 namespace Models
 {
-    internal partial class EduCompanyService : EntityService
+    internal partial class EnumDataService : EntityService
     {
       
     }

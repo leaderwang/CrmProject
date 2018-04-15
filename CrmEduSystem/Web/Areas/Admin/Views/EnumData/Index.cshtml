@@ -2,7 +2,7 @@
 @using MvcPager;
 @using Lib;
 @using Models;
-@model PagedList<EduCompany>
+@model PagedList<EnumData>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -11,7 +11,7 @@
     <div class="datatable span12">
         <div class="navbar">
             <div class="navbar-inner">
-				@Html.CreateButton("创建新记录", "/admin/EduCompany/Create", new { href = "/admin/EduCompany/Create" })
+				@Html.CreateButton("创建新记录", "/admin/EnumData/Create", new { href = "/admin/EnumData/Create" })
                 <div class="nav-collapse pull-right">
                     <ul class="nav">
                         <li class="active"><a href="javascript:void(0);"><i class="icol-table"></i> 列表</a></li>
@@ -25,7 +25,7 @@
                 <div class="row-fluid">
                     <div class="span6">
                         <div class="btn-group pull-left">
-							@Html.DeleteAllButton("删除", "/Admin/EduCompany/Delete", new { href = "javascript:void(0);", onclick = "Delete('/Admin/EduCompany/Delete',this,'all');" })
+							@Html.DeleteAllButton("删除", "/Admin/EnumData/Delete", new { href = "javascript:void(0);", onclick = "Delete('/Admin/EnumData/Delete',this,'all');" })
 							<a class="btn"><span><i class="icol-doc-excel-csv"></i> 导出</span></a>
 							<a class="btn"><span><i class="icol-printer"></i> 打印</span></a>
 							<a class="btn" href="javascript:void(0)" onclick="$('#control_search').slideToggle()"><span><i class="icos-preview"></i>筛选</span></a>

@@ -609,6 +609,7 @@ namespace Common
         #endregion
 
         #region  生成制定长度的随机数
+
         /// <summary>
         /// 生成制定长度的随机数
         /// </summary>
@@ -653,7 +654,13 @@ namespace Common
 
             return RandomCode;
         }
+
         #endregion
+
+        public static string GetUniqueCodeString(string headTag)
+        {
+            return headTag + DateTime.Now.ToString("yyyyMMddHHmmss") + RandomString("all", 6);
+        }
 
         #region 防止sql注入
         public static string ReplaceSqlKey(string text, int maxlength)
@@ -724,6 +731,7 @@ namespace Common
         {
             return new Random((int)DateTime.Now.Ticks).Next(min, max).ToString();
         }
+
         /// <summary>
         /// 给地址栏参数格式化
         /// </summary>
@@ -783,6 +791,7 @@ namespace Common
                 return DateTime.Parse("1970-1-1").AddSeconds((int)second);
             }
         }
+
         /// <summary>
         /// 日期类型转成Int
         /// </summary>
@@ -798,6 +807,7 @@ namespace Common
                 return (int)ts.TotalSeconds;
             }
         }
+
         #region 汉字转拼音
         //定义拼音区编码数组  
         private static int[] getValue = new int[]  
@@ -947,7 +957,6 @@ namespace Common
             return pystr;//返回获取到的汉字拼音  
         }
         #endregion
-
 
         #region 人民币转中文
         /// <summary>   

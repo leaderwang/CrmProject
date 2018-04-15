@@ -9,7 +9,7 @@ using MvcPager;
 namespace Models
 {
 	#region 实体模型
-    public partial class Student:INotifyPropertyChanged
+    public partial class EnumData:INotifyPropertyChanged
     {
 
 		        /// <summary>
@@ -39,243 +39,91 @@ namespace Models
                 }
         }
         /// <summary>
-        ///ID
+        ///编号
         /// </summary>
         private Int32 _ID;
         /// <summary>
-        ///ID
+        ///编号
         /// </summary>
         [ColumnAttribute("ID", false, true, false)]
-        public Int32 ID { get { return _ID;} set{_ID = value;OnPropertyChanged("ID");} }
-
-        /// <summary>
-        ///教育机构ID
-        /// </summary>
-        private Int32 _CompanyID;
-        /// <summary>
-        ///教育机构ID
-        /// </summary>
-        [ColumnAttribute("CompanyID", false, false, false)]
-        public Int32 CompanyID { get { return _CompanyID; } set { _CompanyID = value; OnPropertyChanged("CompanyID"); } }
-
-        /// <summary>
-        ///学员编号
-        /// </summary>
-        private String _StudentNo;
-        /// <summary>
-        ///学员编号
-        /// </summary>
-        [ColumnAttribute("StudentNo", false, false, false)]
-        public String StudentNo { get { return _StudentNo;} set{_StudentNo = value;OnPropertyChanged("StudentNo");} } 
+        public Int32 ID { get { return _ID;} set{_ID = value;OnPropertyChanged("ID");} } 
 
 
         /// <summary>
-        ///姓名
+        ///父级ID
         /// </summary>
-        private String _UserName;
+        private Int32 _ParentID;
         /// <summary>
-        ///姓名
+        ///父级ID
         /// </summary>
-        [ColumnAttribute("UserName", false, false, false)]
-        public String UserName { get { return _UserName;} set{_UserName = value;OnPropertyChanged("UserName");} } 
+        [ColumnAttribute("ParentID", false, false, false)]
+        public Int32 ParentID { get { return _ParentID;} set{_ParentID = value;OnPropertyChanged("ParentID");} } 
 
 
         /// <summary>
-        ///英文名
+        ///名称
         /// </summary>
-        private String _EnglishName;
+        private String _EnumName;
         /// <summary>
-        ///英文名
+        ///名称
         /// </summary>
-        [ColumnAttribute("EnglishName", false, false, true)]
-        public String EnglishName { get { return _EnglishName;} set{_EnglishName = value;OnPropertyChanged("EnglishName");} } 
+        [ColumnAttribute("EnumName", false, false, false)]
+        public String EnumName { get { return _EnumName;} set{_EnumName = value;OnPropertyChanged("EnumName");} } 
 
 
         /// <summary>
-        ///学员类型（0-非学员|1-学员）
+        ///数值
         /// </summary>
-        private Int32 _Type;
+        private String _EnumValue;
         /// <summary>
-        ///学员类型（0-非学员|1-学员）
+        ///数值
         /// </summary>
-        [ColumnAttribute("Type", false, false, false)]
-        public Int32 Type { get { return _Type;} set{_Type = value;OnPropertyChanged("Type");} } 
+        [ColumnAttribute("EnumValue", false, false, false)]
+        public String EnumValue { get { return _EnumValue;} set{_EnumValue = value;OnPropertyChanged("EnumValue");} } 
 
 
         /// <summary>
-        ///状态（0-无效数据|1-有效数据|2-已邀约|3-已到访|4-已
+        ///排序
         /// </summary>
-        private Int32 _Status;
+        private Int32? _Sort;
         /// <summary>
-        ///状态（0-无效数据|1-有效数据|2-已邀约|3-已到访|4-已
+        ///排序
         /// </summary>
-        [ColumnAttribute("Status", false, false, false)]
-        public Int32 Status { get { return _Status;} set{_Status = value;OnPropertyChanged("Status");} } 
+        [ColumnAttribute("Sort", false, false, true)]
+        public Int32? Sort { get { return _Sort;} set{_Sort = value;OnPropertyChanged("Sort");} } 
 
 
         /// <summary>
-        ///身份证
+        ///Level
         /// </summary>
-        private String _IDcard;
+        private Int32 _Level;
         /// <summary>
-        ///身份证
+        ///Level
         /// </summary>
-        [ColumnAttribute("IDcard", false, false, true)]
-        public String IDcard { get { return _IDcard;} set{_IDcard = value;OnPropertyChanged("IDcard");} } 
+        [ColumnAttribute("Level", false, false, false)]
+        public Int32 Level { get { return _Level;} set{_Level = value;OnPropertyChanged("Level");} } 
 
 
         /// <summary>
-        ///出生日期
+        ///是否删除
         /// </summary>
-        private String _BirthDate;
+        private Boolean _IsDeleted;
         /// <summary>
-        ///出生日期
+        ///是否删除
         /// </summary>
-        [ColumnAttribute("BirthDate", false, false, true)]
-        public String BirthDate { get { return _BirthDate;} set{_BirthDate = value;OnPropertyChanged("BirthDate");} } 
+        [ColumnAttribute("IsDeleted", false, false, false)]
+        public Boolean IsDeleted { get { return _IsDeleted;} set{_IsDeleted = value;OnPropertyChanged("IsDeleted");} } 
 
 
         /// <summary>
-        ///联系方式一
+        ///TypeID
         /// </summary>
-        private String _Mobile;
+        private Int32? _TypeID;
         /// <summary>
-        ///联系方式一
+        ///TypeID
         /// </summary>
-        [ColumnAttribute("Mobile", false, false, true)]
-        public String Mobile { get { return _Mobile;} set{_Mobile = value;OnPropertyChanged("Mobile");} } 
-
-
-        /// <summary>
-        ///联系方式二
-        /// </summary>
-        private String _TelePhone;
-        /// <summary>
-        ///联系方式二
-        /// </summary>
-        [ColumnAttribute("TelePhone", false, false, true)]
-        public String TelePhone { get { return _TelePhone;} set{_TelePhone = value;OnPropertyChanged("TelePhone");} } 
-
-
-        /// <summary>
-        ///就读学校ID
-        /// </summary>
-        private Int32? _AttendSchoolID;
-        /// <summary>
-        ///就读学校ID
-        /// </summary>
-        [ColumnAttribute("AttendSchoolID", false, false, true)]
-        public Int32? AttendSchoolID { get { return _AttendSchoolID;} set{_AttendSchoolID = value;OnPropertyChanged("AttendSchoolID");} } 
-
-
-        /// <summary>
-        ///Avatar
-        /// </summary>
-        private String _Avatar;
-        /// <summary>
-        ///Avatar
-        /// </summary>
-        [ColumnAttribute("Avatar", false, false, true)]
-        public String Avatar { get { return _Avatar;} set{_Avatar = value;OnPropertyChanged("Avatar");} } 
-
-
-        /// <summary>
-        ///地址
-        /// </summary>
-        private String _Address;
-        /// <summary>
-        ///地址
-        /// </summary>
-        [ColumnAttribute("Address", false, false, true)]
-        public String Address { get { return _Address;} set{_Address = value;OnPropertyChanged("Address");} } 
-
-
-        /// <summary>
-        ///话务专员ID
-        /// </summary>
-        private Int32? _TelOfficerID;
-        /// <summary>
-        ///话务专员ID
-        /// </summary>
-        [ColumnAttribute("TelOfficerID", false, false, true)]
-        public Int32? TelOfficerID { get { return _TelOfficerID;} set{_TelOfficerID = value;OnPropertyChanged("TelOfficerID");} } 
-
-
-        /// <summary>
-        ///市场推广专员ID
-        /// </summary>
-        private Int32? _MarOfficerID;
-        /// <summary>
-        ///市场推广专员ID
-        /// </summary>
-        [ColumnAttribute("MarOfficerID", false, false, true)]
-        public Int32? MarOfficerID { get { return _MarOfficerID;} set{_MarOfficerID = value;OnPropertyChanged("MarOfficerID");} } 
-
-
-        /// <summary>
-        ///Email
-        /// </summary>
-        private String _Email;
-        /// <summary>
-        ///Email
-        /// </summary>
-        [ColumnAttribute("Email", false, false, true)]
-        public String Email { get { return _Email;} set{_Email = value;OnPropertyChanged("Email");} } 
-
-
-        /// <summary>
-        ///QQ
-        /// </summary>
-        private String _QQ;
-        /// <summary>
-        ///QQ
-        /// </summary>
-        [ColumnAttribute("QQ", false, false, true)]
-        public String QQ { get { return _QQ;} set{_QQ = value;OnPropertyChanged("QQ");} } 
-
-
-        /// <summary>
-        ///WeiXin
-        /// </summary>
-        private String _WeiXin;
-        /// <summary>
-        ///WeiXin
-        /// </summary>
-        [ColumnAttribute("WeiXin", false, false, true)]
-        public String WeiXin { get { return _WeiXin;} set{_WeiXin = value;OnPropertyChanged("WeiXin");} } 
-
-
-        /// <summary>
-        ///备注
-        /// </summary>
-        private String _Remark;
-        /// <summary>
-        ///备注
-        /// </summary>
-        [ColumnAttribute("Remark", false, false, true)]
-        public String Remark { get { return _Remark;} set{_Remark = value;OnPropertyChanged("Remark");} } 
-
-
-        /// <summary>
-        ///CreateDate
-        /// </summary>
-        private DateTime _CreateDate;
-        /// <summary>
-        ///CreateDate
-        /// </summary>
-        [ColumnAttribute("CreateDate", false, false, false)]
-        public DateTime CreateDate { get { return _CreateDate;} set{_CreateDate = value;OnPropertyChanged("CreateDate");} } 
-
-
-        /// <summary>
-        ///CreateUserID
-        /// </summary>
-        private Int32 _CreateUserID;
-        /// <summary>
-        ///CreateUserID
-        /// </summary>
-        [ColumnAttribute("CreateUserID", false, false, false)]
-        public Int32 CreateUserID { get { return _CreateUserID;} set{_CreateUserID = value;OnPropertyChanged("CreateUserID");} } 
+        [ColumnAttribute("TypeID", false, false, true)]
+        public Int32? TypeID { get { return _TypeID;} set{_TypeID = value;OnPropertyChanged("TypeID");} } 
 
 
         /// <summary>
@@ -301,14 +149,25 @@ namespace Models
 
 
         /// <summary>
-        ///IsDeleted
+        ///CreateDate
         /// </summary>
-        private Boolean _IsDeleted;
+        private DateTime? _CreateDate;
         /// <summary>
-        ///IsDeleted
+        ///CreateDate
         /// </summary>
-        [ColumnAttribute("IsDeleted", false, false, false)]
-        public Boolean IsDeleted { get { return _IsDeleted;} set{_IsDeleted = value;OnPropertyChanged("IsDeleted");} } 
+        [ColumnAttribute("CreateDate", false, false, true)]
+        public DateTime? CreateDate { get { return _CreateDate;} set{_CreateDate = value;OnPropertyChanged("CreateDate");} } 
+
+
+        /// <summary>
+        ///CreateUserID
+        /// </summary>
+        private Int32? _CreateUserID;
+        /// <summary>
+        ///CreateUserID
+        /// </summary>
+        [ColumnAttribute("CreateUserID", false, false, true)]
+        public Int32? CreateUserID { get { return _CreateUserID;} set{_CreateUserID = value;OnPropertyChanged("CreateUserID");} } 
 
 
 
@@ -316,16 +175,16 @@ namespace Models
     }
 	#endregion
 	#region 基本业务
-    public partial class StudentLogic
+    public partial class EnumDataLogic
     {
         /// <summary>
-        /// Student数据操作对象
+        /// EnumData数据操作对象
         /// </summary>
-        private StudentService os = new StudentService();
+        private EnumDataService os = new EnumDataService();
         /// <summary>
         /// 构造函数
         /// </summary>
-        public StudentLogic()
+        public EnumDataLogic()
         {
             
         }
@@ -333,16 +192,16 @@ namespace Models
         /// 构造函数
         /// </summary>
         /// <param name="obj">操作数据库对象</param>
-        public StudentLogic(DBContext obj)
+        public EnumDataLogic(DBContext obj)
         {
-            os = new StudentService(obj);
+            os = new EnumDataService(obj);
         }
         /// <summary>
-        /// 添加Student
+        /// 添加EnumData
         /// </summary>
         /// <param name="obj">添加对象</param>
         /// <returns>成功True失败False</returns>
-        public bool Add(Student obj)
+        public bool Add(EnumData obj)
         {
             try
             {
@@ -358,18 +217,18 @@ namespace Models
             }
         }
 		/// <summary>
-        /// 添加Student
+        /// 添加EnumData
         /// </summary>
         /// <param name="obj">添加对象</param>
         /// <returns>返回ID</returns>
-        public int Create(Student obj)
+        public int Create(EnumData obj)
         {
             try
             {
 			    if (obj.ID > 0) throw new Exception("数据库已存在此数据");
                 string result = os.Add(obj);
                 os.Save(result);
-                return Convert.ToInt32(new DBContext().ExecuteScalarSql("select max(id) from [Student]"));
+                return Convert.ToInt32(new DBContext().ExecuteScalarSql("select max(id) from [EnumData]"));
             }
             catch (Exception ex)
             {
@@ -379,13 +238,13 @@ namespace Models
 		/// <summary>
         /// 批量添加
         /// </summary>
-        public bool Add(List<Student> obj)
+        public bool Add(List<EnumData> obj)
         {
             try
             {
                 List<string> result = new List<string>();
 
-                foreach (Student item in obj)
+                foreach (EnumData item in obj)
                 {
                     if (item.ID == 0)
                     {
@@ -402,11 +261,11 @@ namespace Models
             }
         }
         /// <summary>
-        /// 修改Student
+        /// 修改EnumData
         /// </summary>
         /// <param name="obj">修改对象</param>
         /// <returns>成功True失败False</returns>
-        public bool Update(Student obj)
+        public bool Update(EnumData obj)
         {
             try
             {
@@ -424,7 +283,7 @@ namespace Models
         /// </summary>
         /// <param name="olts"></param>
         /// <returns></returns>
-        public bool Update(List<Student> olts)
+        public bool Update(List<EnumData> olts)
         {
             try
             {
@@ -441,7 +300,7 @@ namespace Models
             }
         }
 		/// <summary>
-        /// 根据编号删除Student，此处为逻辑删除，实为更新IsDelete字段
+        /// 根据编号删除EnumData，此处为逻辑删除，实为更新IsDelete字段
         /// </summary>
         /// <param name="id">编号</param>
         /// <returns>成功True失败False</returns>
@@ -449,7 +308,7 @@ namespace Models
         {
             try
             {
-                string result = os.Update(new Student { ID = id, IsDeleted = true });
+                string result = os.Update(new EnumData { ID = id, IsDeleted = true });
 
                 return os.Save(result);
             }
@@ -459,16 +318,16 @@ namespace Models
             }
         }
 		/// <summary>
-        /// 删除Student，此处为逻辑删除，实为更新IsDelete字段
+        /// 删除EnumData，此处为逻辑删除，实为更新IsDelete字段
         /// </summary>
         /// <param name="obj">删除对象</param>
         /// <returns>成功True失败False</returns>
-        public bool Delete(Student obj)
+        public bool Delete(EnumData obj)
         {
             string sql = "";
             try
             {
-                var olts = os.GetObjects<Student>(obj);
+                var olts = os.GetObjects<EnumData>(obj);
                 if (olts != null)
                 {
                     foreach (var item in olts)
@@ -489,11 +348,11 @@ namespace Models
             return false;
         }
 		/// <summary>
-        /// 删除Student集合，此处为逻辑删除，实为更新IsDelete字段
+        /// 删除EnumData集合，此处为逻辑删除，实为更新IsDelete字段
         /// </summary>
         /// <param name="objs">删除对象集合</param>
         /// <returns>成功True失败False</returns>
-        public bool Delete(IList<Student> objs)
+        public bool Delete(IList<EnumData> objs)
         {
             try
             {
@@ -522,7 +381,7 @@ namespace Models
         }
 
 		/// <summary>
-        /// 根据编号删除Student，物理删除
+        /// 根据编号删除EnumData，物理删除
         /// </summary>
         /// <param name="id">编号</param>
         /// <returns>成功True失败False</returns>
@@ -530,7 +389,7 @@ namespace Models
         {
             try
             {
-                string result = os.Delete(new Student { ID = id }, false);
+                string result = os.Delete(new EnumData { ID = id }, false);
 
                 return os.Save(result);
             }
@@ -540,11 +399,11 @@ namespace Models
             }
         }
 		/// <summary>
-        /// 根据编号删除Student，物理删除
+        /// 根据编号删除EnumData，物理删除
         /// </summary>
         /// <param name="obj">查询条件对象</param>
         /// <returns>成功True失败False</returns>
-        public bool Remove(Student obj)
+        public bool Remove(EnumData obj)
         {
             try
             {
@@ -558,11 +417,11 @@ namespace Models
             }
         }
 		/// <summary>
-        /// 根据编号删除Student，物理删除
+        /// 根据编号删除EnumData，物理删除
         /// </summary>
         /// <param name="obj">查询条件对象</param>
         /// <returns>成功True失败False</returns>
-        public bool Remove(IList<Student> objs)
+        public bool Remove(IList<EnumData> objs)
         {
             try
             {
@@ -584,181 +443,181 @@ namespace Models
         }
 
         /// <summary>
-        /// 获取Student集合
+        /// 获取EnumData集合
         /// </summary>
-        /// <returns>返回Student集合</returns>
-        public List<Student> GetStudents()
+        /// <returns>返回EnumData集合</returns>
+        public List<EnumData> GetEnumDatas()
         {
-            List<Student> objs = os.GetObjects<Student>(new Student() { IsDeleted = false });
+            List<EnumData> objs = os.GetObjects<EnumData>(new EnumData() { IsDeleted = false });
 
             return objs;
         }
         /// <summary>
-        /// 获取Student集合
+        /// 获取EnumData集合
         /// </summary>
         /// <param name="obj">查询条件</param>
-        /// <returns>返回Student集合</returns>
-        public List<Student> GetStudents(Student obj)
+        /// <returns>返回EnumData集合</returns>
+        public List<EnumData> GetEnumDatas(EnumData obj)
         {
             obj.IsDeleted = false;
 
-            List<Student> objs = os.GetObjects(obj);
+            List<EnumData> objs = os.GetObjects(obj);
 
             return objs;
         }
 		 /// <summary>
-        /// 获取Student集合
+        /// 获取EnumData集合
         /// </summary>
         /// <param name="obj">查询条件</param>
         /// <param name="where">特殊条件</param>
-        /// <returns>返回Student集合</returns>
-        public List<Student> GetStudents(Student obj, string where)
+        /// <returns>返回EnumData集合</returns>
+        public List<EnumData> GetEnumDatas(EnumData obj, string where)
         {
             obj.IsDeleted = false;
 
-            List<Student> objs = os.GetObjects(obj, where);
+            List<EnumData> objs = os.GetObjects(obj, where);
 
             return objs;
         }
         /// <summary>
-        /// 获取Student集合
+        /// 获取EnumData集合
         /// </summary>
         /// <param name="obj">查询条件</param>
         /// <param name="where">特殊条件</param>
         ///  <param name="orderby">排序</param>
-        /// <returns>返回Student集合</returns>
-        public List<Student> GetStudents(Student obj,string where, string order)
+        /// <returns>返回EnumData集合</returns>
+        public List<EnumData> GetEnumDatas(EnumData obj,string where, string order)
         {
             obj.IsDeleted = false;
 
-            List<Student> objs = os.GetObjects(obj, where, order,string.Empty);
+            List<EnumData> objs = os.GetObjects(obj, where, order,string.Empty);
 
             return objs;
         }
 		/// <summary>
-        /// 获取Student集合
+        /// 获取EnumData集合
         /// </summary>
         /// <param name="obj">查询条件</param>
         /// <param name="where">特殊条件</param>
         /// <param name="orderby">排序</param>
         /// <param name="orderbyType">排序类型</param>
-        /// <returns>返回Student集合</returns>
-        public List<Student> GetStudents(Student obj, string where,string order,string by)
+        /// <returns>返回EnumData集合</returns>
+        public List<EnumData> GetEnumDatas(EnumData obj, string where,string order,string by)
         {
             obj.IsDeleted = false;
 
-            List<Student> objs = os.GetObjects(obj, where, order,by);
+            List<EnumData> objs = os.GetObjects(obj, where, order,by);
 
             return objs;
         }
         /// <summary>
-        /// 获取Student集合
+        /// 获取EnumData集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
-        /// <returns>返回Student集合</returns>
-        public PagedList<Student> GetStudents(int pageIndex, int pageCount)
+        /// <returns>返回EnumData集合</returns>
+        public PagedList<EnumData> GetEnumDatas(int pageIndex, int pageCount)
         {
-            PagedList<Student> objs = os.GetObjects(new Student() { IsDeleted = false }, pageIndex, pageCount);
+            PagedList<EnumData> objs = os.GetObjects(new EnumData() { IsDeleted = false }, pageIndex, pageCount);
 
             return objs;
         }
         /// <summary>
-        /// 获取Student集合
+        /// 获取EnumData集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
         /// <param name="obj">查询条件</param>
-        /// <returns>返回Student集合</returns>
-        public PagedList<Student> GetStudents(Student obj, int pageIndex, int pageCount)
+        /// <returns>返回EnumData集合</returns>
+        public PagedList<EnumData> GetEnumDatas(EnumData obj, int pageIndex, int pageCount)
         {
             obj.IsDeleted = false;
 
-            PagedList<Student> objs = os.GetObjects(obj,pageIndex, pageCount);
+            PagedList<EnumData> objs = os.GetObjects(obj,pageIndex, pageCount);
 
             return objs;
         }
 		/// <summary>
-        /// 获取Student集合
+        /// 获取EnumData集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
         /// <param name="obj">查询条件</param>
-        /// <returns>返回Student集合</returns>
-        public PagedList<Student> GetStudents(string sql, int pageIndex, int pageCount)
+        /// <returns>返回EnumData集合</returns>
+        public PagedList<EnumData> GetEnumDatas(string sql, int pageIndex, int pageCount)
         {
-            PagedList<Student> objs = os.GetObjects<Student>(sql, pageIndex, pageCount);
+            PagedList<EnumData> objs = os.GetObjects<EnumData>(sql, pageIndex, pageCount);
             return objs;
         }
         /// <summary>
-        /// 获取Student集合
+        /// 获取EnumData集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
         /// <param name="obj">查询条件</param>
         ///  <param name="where">自定义查询条件</param>
-        /// <returns>返回Student集合</returns>
-        public PagedList<Student> GetStudents(Student obj, int pageIndex, int pageCount, string where)
+        /// <returns>返回EnumData集合</returns>
+        public PagedList<EnumData> GetEnumDatas(EnumData obj, int pageIndex, int pageCount, string where)
         {
             obj.IsDeleted = false;
 
-            PagedList<Student> objs = os.GetObjects(obj, pageIndex, pageCount, where);
+            PagedList<EnumData> objs = os.GetObjects(obj, pageIndex, pageCount, where);
 
             return objs;
         }
 		 /// <summary>
-        /// 获取Student集合
+        /// 获取EnumData集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
         /// <param name="obj">查询条件</param>
         ///  <param name="orderby">排序</param>
-        /// <returns>返回Student集合</returns>
-        public PagedList<Student> GetStudents(Student obj, int pageIndex, int pageCount, string order, string by)
+        /// <returns>返回EnumData集合</returns>
+        public PagedList<EnumData> GetEnumDatas(EnumData obj, int pageIndex, int pageCount, string order, string by)
         {
             obj.IsDeleted = false;
 
-            PagedList<Student> objs = os.GetObjects(obj, pageIndex, pageCount, string.Empty, order,by);
+            PagedList<EnumData> objs = os.GetObjects(obj, pageIndex, pageCount, string.Empty, order,by);
 
             return objs;
         }
 		/// <summary>
-        /// 获取Student集合
+        /// 获取EnumData集合
         /// </summary>
         /// <param name="pageIndex">页数</param>
         /// <param name="pageCount">每页多少条</param>
         /// <param name="obj">查询条件</param>
         ///  <param name="orderby">排序</param>
-        /// <returns>返回Student集合</returns>
-        public PagedList<Student> GetStudents(Student obj, int pageIndex, int pageCount,string where, string order, string by)
+        /// <returns>返回EnumData集合</returns>
+        public PagedList<EnumData> GetEnumDatas(EnumData obj, int pageIndex, int pageCount,string where, string order, string by)
         {
             obj.IsDeleted = false;
 
-            PagedList<Student> objs = os.GetObjects(obj, pageIndex, pageCount, where, order, by);
+            PagedList<EnumData> objs = os.GetObjects(obj, pageIndex, pageCount, where, order, by);
 
             return objs;
         }
         /// <summary>
-        /// 获取Student
+        /// 获取EnumData
         /// </summary>
         /// <param name="obj">查询条件</param>
-        /// <returns>返回Student</returns>
-        public Student GetStudent(Student obj)
+        /// <returns>返回EnumData</returns>
+        public EnumData GetEnumData(EnumData obj)
         {
 			obj.IsDeleted = false;
 			
-            Student entity = os.GetObject(obj);
+            EnumData entity = os.GetObject(obj);
 
             return entity;
         }
         /// <summary>
-        /// 根据编号获取Student
+        /// 根据编号获取EnumData
         /// </summary>
         /// <param name="id">编号</param>
-        /// <returns>返回Student</returns>
-        public Student GetStudent(int id)
+        /// <returns>返回EnumData</returns>
+        public EnumData GetEnumData(int id)
         {
-            Student entity = os.GetObject(new Student { ID = id, IsDeleted = false });
+            EnumData entity = os.GetObject(new EnumData { ID = id, IsDeleted = false });
 
             return entity;
         }
@@ -767,12 +626,12 @@ namespace Models
 	#endregion
 
 	#region 基本数据库访问
-    internal partial class StudentService : EntityService
+    internal partial class EnumDataService : EntityService
     {
          /// <summary>
         /// 构造函数
         /// </summary>
-        public StudentService()
+        public EnumDataService()
         {
             db = new DBContext();
         }
@@ -780,7 +639,7 @@ namespace Models
         /// 构造函数
         /// </summary>
         /// <param name="obj">操作数据库对象</param>
-        public StudentService(DBContext obj)
+        public EnumDataService(DBContext obj)
         {
             db = obj;
         }

@@ -11,18 +11,18 @@ using Lib;
 namespace Web.Areas.Admin.Controllers
 {
 	/// <summary>
-    /// EduCompany 控制器
+    /// EnumData 控制器
     /// </summary>
-    public class EduCompanyController : BaseController
+    public class EnumDataController : BaseController
     {
 
-        public ActionResult Index(int? pageIndex, int? pageSize, EduCompany entity)
+        public ActionResult Index(int? pageIndex, int? pageSize, EnumData entity)
         {
             try
             {
-                EduCompanyLogic ml = new EduCompanyLogic();
+                EnumDataLogic ml = new EnumDataLogic();
 				entity.IsDeleted = false;
-				PagedList<EduCompany> page = ml.GetEduCompanys(entity, pageIndex ?? PageIndex, pageSize ?? PageSize, Order,By);
+				PagedList<EnumData> page = ml.GetEnumDatas(entity, pageIndex ?? PageIndex, pageSize ?? PageSize, Order,By);
                 if (Request.IsAjaxRequest())
                     return PartialView("_Index",  page);
                 return View(page);
@@ -35,7 +35,7 @@ namespace Web.Areas.Admin.Controllers
 
         public ActionResult Create()
         {
-            return View(new EduCompany());
+            return View(new EnumData());
         }
 
         [HttpPost]
@@ -43,15 +43,15 @@ namespace Web.Areas.Admin.Controllers
         {
             try
             {
-                EduCompanyLogic ml = new EduCompanyLogic();
+                EnumDataLogic ml = new EnumDataLogic();
 
-                EduCompany obj = new EduCompany() {  CreateDate = DateTime.Now, CreateUserID = ID,  IsDeleted = false };
+                EnumData obj = new EnumData() {  CreateDate = DateTime.Now, CreateUserID = ID,  IsDeleted = false };
 
                 UpdateModel(obj);
 
                 bool result = ml.Add(obj);
 
-                return result ? Content(ContentIcon.Succeed + "|操作成功|/Admin/EduCompany/Index") : Content(ContentIcon.Error + "|操作失败");
+                return result ? Content(ContentIcon.Succeed + "|操作成功|/Admin/EnumData/Index") : Content(ContentIcon.Error + "|操作失败");
             }
             catch (Exception ex)
             {
@@ -63,9 +63,9 @@ namespace Web.Areas.Admin.Controllers
         {
             try
             {
-                EduCompanyLogic ml = new EduCompanyLogic();
+                EnumDataLogic ml = new EnumDataLogic();
 
-                EduCompany obj = ml.GetEduCompany(id);
+                EnumData obj = ml.GetEnumData(id);
 
                 return View(obj);
             }
@@ -80,9 +80,9 @@ namespace Web.Areas.Admin.Controllers
         {
             try
             {
-                EduCompanyLogic ml = new EduCompanyLogic();
+                EnumDataLogic ml = new EnumDataLogic();
 
-				EduCompany obj = ml.GetEduCompany(id);
+				EnumData obj = ml.GetEnumData(id);
 
 				UpdateModel(obj);
 
@@ -105,7 +105,7 @@ namespace Web.Areas.Admin.Controllers
         {
             try
             {
-                EduCompanyLogic ml = new EduCompanyLogic();
+                EnumDataLogic ml = new EnumDataLogic();
                 if (id != null && id > 0)
                     ml.Delete(id ?? 0);
                 else
@@ -129,9 +129,9 @@ namespace Web.Areas.Admin.Controllers
         {
             try
             {
-                EduCompanyLogic ml = new EduCompanyLogic();
+                EnumDataLogic ml = new EnumDataLogic();
 
-                EduCompany obj = ml.GetEduCompany(id);
+                EnumData obj = ml.GetEnumData(id);
 
                 return View(obj);
             }

@@ -12,31 +12,31 @@ using Common;
 namespace Web.Areas.Admin.Controllers
 {
 	/// <summary>
-    /// Student 控制器
+    /// Company 控制器
     /// </summary>
-    public class StudentController : BaseController
+    public class CompanyController : BaseController
     {
 
-        public ActionResult Index(int? pageIndex, int? pageSize, View_Student entity)
+        public ActionResult Index(int? pageIndex, int? pageSize, Company entity)
         {
             try
             {
-                View_StudentLogic ml = new View_StudentLogic();
-                entity.IsDeleted = false;
-                PagedList<View_Student> page = ml.GetView_Students(entity, pageIndex ?? PageIndex, pageSize ?? PageSize, Order, By);
+                CompanyLogic ml = new CompanyLogic();
+				entity.IsDeleted = false;
+				PagedList<Company> page = ml.GetCompanys(entity, pageIndex ?? PageIndex, pageSize ?? PageSize, Order,By);
                 if (Request.IsAjaxRequest())
-                    return PartialView("_Index", page);
+                    return PartialView("_Index",  page);
                 return View(page);
             }
             catch (Exception ex)
             {
-                return Content(ContentIcon.Error + "|" + ErrorWirter(RouteData, ex.Message));
+                return Content(ContentIcon.Error + "|"+ErrorWirter(RouteData, ex.Message));
             }
         }
 
         public ActionResult Create()
         {
-            return View(new Student() { StudentNo = Character.GetUniqueCodeString("STU")});
+            return View(new Company() { CompanyNo = Character.GetUniqueCodeString("COM") });
         }
 
         [HttpPost]
@@ -44,15 +44,15 @@ namespace Web.Areas.Admin.Controllers
         {
             try
             {
-                StudentLogic ml = new StudentLogic();
+                CompanyLogic ml = new CompanyLogic();
 
-                Student obj = new Student() { CreateDate = DateTime.Now, CreateUserID = ID,  IsDeleted = false };
+                Company obj = new Company() {  CreateDate = DateTime.Now, CreateUserID = ID,  IsDeleted = false };
 
                 UpdateModel(obj);
 
                 bool result = ml.Add(obj);
 
-                return result ? Content(ContentIcon.Succeed + "|操作成功|/Admin/Student/Index") : Content(ContentIcon.Error + "|操作失败");
+                return result ? Content(ContentIcon.Succeed + "|操作成功|/Admin/Company/Index") : Content(ContentIcon.Error + "|操作失败");
             }
             catch (Exception ex)
             {
@@ -64,9 +64,9 @@ namespace Web.Areas.Admin.Controllers
         {
             try
             {
-                StudentLogic ml = new StudentLogic();
+                CompanyLogic ml = new CompanyLogic();
 
-                Student obj = ml.GetStudent(id);
+                Company obj = ml.GetCompany(id);
 
                 return View(obj);
             }
@@ -81,9 +81,9 @@ namespace Web.Areas.Admin.Controllers
         {
             try
             {
-                StudentLogic ml = new StudentLogic();
+                CompanyLogic ml = new CompanyLogic();
 
-				Student obj = ml.GetStudent(id);
+				Company obj = ml.GetCompany(id);
 
 				UpdateModel(obj);
 
@@ -106,7 +106,7 @@ namespace Web.Areas.Admin.Controllers
         {
             try
             {
-                StudentLogic ml = new StudentLogic();
+                CompanyLogic ml = new CompanyLogic();
                 if (id != null && id > 0)
                     ml.Delete(id ?? 0);
                 else
@@ -130,9 +130,9 @@ namespace Web.Areas.Admin.Controllers
         {
             try
             {
-                StudentLogic ml = new StudentLogic();
+                CompanyLogic ml = new CompanyLogic();
 
-                Student obj = ml.GetStudent(id);
+                Company obj = ml.GetCompany(id);
 
                 return View(obj);
             }

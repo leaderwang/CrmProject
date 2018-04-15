@@ -1,6 +1,8 @@
-﻿@model Models.Menu 
-@{ ViewBag.Title = "Create";
-   Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+﻿@using Models;
+@model EnumData 
+@{ 
+	ViewBag.Title = "Edit";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 <div class="row-fluid">
     <div class="span12 widget">
@@ -9,10 +11,9 @@
         </div>
         <div class="widget-content form-container">
             <form name="myform" id="myform" action="" method="post" class="form-horizontal validator">
-            @{ Html.RenderPartial("_Form", Model, ViewData); }
-            <div class="form-actions">
+            @Html.Partial("_Form", Model, ViewData)
+            <div class="form-actions fixed">
                 <input type="submit" class="btn btn-primary" value="保 存" />
-                @*<a class="btn" href="Index">取 消</a>*@
                 <a class="btn" href="@Common.UrlHelper.BackUrl">返 回</a>
             </div>
             </form>

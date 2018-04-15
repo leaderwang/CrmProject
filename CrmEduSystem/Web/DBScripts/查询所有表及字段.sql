@@ -75,5 +75,4 @@ FROM    sys.columns C
         ) IDX ON C.[object_id] = IDX.[object_id]
                  AND C.column_id = IDX.column_id
 --WHERE O.name=N'customer' -- 如果只查询指定表,加上此条件
-ORDER BY O.name ,
-        C.column_id
+ORDER BY O.name , C.column_id
