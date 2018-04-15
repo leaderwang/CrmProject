@@ -26,7 +26,6 @@
                 <td>@item.CompanyNo</td>
                 <td>@item.CompanyName</td>
                 <td>@(item.Status == 0 ? "正常" : "锁定")</td>
-
                 <td class="btns-column">
                     @Html.ViewButton("详细", "/admin/Company/Detail", new { href = "/admin/Company/Detail?id=" + item.ID })
                     @Html.EditButton("编辑", "/admin/Company/Edit", new { href = "/admin/Company/Edit?id=" + item.ID })

@@ -16,14 +16,14 @@
             <th class="sorting" data-sort="EnglishName">英文名</th>
             <th class="sorting" data-sort="Type">类型</th>
             <th class="sorting" data-sort="Status">状态</th>
-            <th class="sorting" data-sort="IDcard">身份证</th>
-            <th class="sorting" data-sort="BirthDate">出生日期</th>
+            @*<th class="sorting" data-sort="IDcard">身份证</th>
+            <th class="sorting" data-sort="BirthDate">出生日期</th>*@
             <th class="sorting" data-sort="Mobile">联系方式</th>
             <th class="sorting" data-sort="SchoolName">就读学校</th>
-            <th class="sorting" data-sort="Address">联系地址</th>
+            @*<th class="sorting" data-sort="Address">联系地址</th>*@
             <th class="sorting" data-sort="TelOfficerName">话务专员</th>
             <th class="sorting" data-sort="MarOfficerName">市场专员</th>
-            <th class="sorting" data-sort="Email">Email</th>
+            @*<th class="sorting" data-sort="Email">Email</th>*@
 
             <th class="btns-column">
                 操作
@@ -33,23 +33,29 @@
     <tbody>
         @foreach (var item in Model)
         {
+            var headUrl = "/Areas/Admin/Content/images/avatar.png";
+            if (!string.IsNullOrEmpty(headUrl))
+            {
+                headUrl = item.Avatar;
+            }
+
             <tr>
                 <td class="checkbox-column"><input type="checkbox" name="ID" value="@item.ID" /></td>
                 <td>@item.ID</td>
-                <td>@item.Avatar</td>
+                <td><img src="@headUrl" style="height:30px;" /></td>
                 <td>@item.StudentNo</td>
                 <td>@item.UserName</td>
                 <td>@item.EnglishName</td>
-                <td>@item.Type</td>
+                <td>@(item.Type==0? "非学员" : "学员")</td>
                 <td>@item.Status</td>
-                <td>@item.IDcard</td>
-                <td>@item.BirthDate</td>
+                @*<td>@item.IDcard</td>
+                <td>@item.BirthDate</td>*@
                 <td>@item.Mobile</td>
                 <td>@item.SchoolName</td>
-                <td>@item.Address</td>
+                @*<td>@item.Address</td>*@
                 <td>@item.TelOfficerName</td>
                 <td>@item.MarOfficerName</td>
-                <td>@item.Email</td>
+                @*<td>@item.Email</td>*@
 
                 <td class="btns-column">
                     @Html.ViewButton("详细", "/admin/Student/Detail", new { href = "/admin/Student/Detail?id=" + item.ID })
